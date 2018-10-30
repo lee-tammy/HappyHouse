@@ -2,12 +2,90 @@
 <!--
   Setting up files for now.
 -->
+<style>
+
+body {
+  margin: 0 auto;
+}
+
+#main-page-header {
+  margin: 0 auto;
+  position: relative;
+  background: white;
+  color: grey;
+  overflow: hidden;
+  font-family: sans-serif;
+  padding-top: 45px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.header a {
+  margin: 0 auto;
+  float: left;
+  text-align: center;
+}
+
+.centered {
+  margin: 0 auto;
+  position: absolute;
+  padding-top: 45px;
+  top: 50%;
+  left: 50%;
+  font-size: 20px;
+  transform: translate(-50%, -50%);
+}
+
+.right-side a {
+  float: right;
+  margin: 0 auto;
+}
+
+.button-options button{
+  text-align: center;
+  background-color: grey;
+  border: 1px black;
+  color: black;
+  padding: 20px 45px;
+  cursor: pointer;
+  width: 50%;
+  display: block;
+}
+
+.button-options button:not(:last-child) {
+  border-bottom: none;
+}
+
+#log-off {
+  text-align: center;
+}
+
+</style>
 
 <html>
   <head>
-    <t1>Test</t1>
+    <title>Home page</title>
   </head>
-    <p>This should be the home page</p>
   <body>
+
+    <div class="header" id="main-page-header">
+      <div class="centered">
+        <p>Happy House</p>
+      </div>
+      <a href="#roommates" id="roommates">Roommates Icon</a>
+      <div class="right-side">
+        <a href="#notifications" id="nofications">Notifications Icon<a>
+      </div>
+    </div>
+
+    <div class="buttons-options">
+      <button>MY TO DO LIST</button>
+      <button>TASKS</button>
+      <button>HOUSE RULES</button>
+      <button>SCHEDULES<button>
+    </div>
+
+    <a href="#log-off" id="log-off-button">LOG OFF</a>
+
   </body>
 </html>
