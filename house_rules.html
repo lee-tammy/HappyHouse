@@ -11,9 +11,35 @@
   </head>
 
   <body>
-    <p><b>THIS PAGE IS BLANK! Click <a href="index.html">here</a> to go back.</b></p>
+    <p><b>THIS PAGE IS BEING FIXED! Click <a href="index.html">here</a> to go back.</b></p>
+
+    <ol id="list_of_rules">
+        <li>test</li>
+    </ol>
+
+    <input type="text" id="candidate"/>
+    <button onclick="addItem()">add item</button>
+    <button onclick="removeItem()">remove item</button>
+
+
   </body>
 
   <script>
+    function addItem() {
+    var ul = document.getElementById("list_of_rules");
+    var candidate = document.getElementById("candidate");
+    var li = document.createElement("li");
+    li.setAttribute('id',candidate.value);
+    li.appendChild(document.createTextNode(candidate.value));
+    ul.appendChild(li);
+    }
+
+  function removeItem() {
+    var ul = document.getElementById("list_of_rules");
+    var candidate = document.getElementById("candidate");
+    var item = document.getElementById(candidate.value);
+    ul.removeChild(item);
+    }
+
   </script>
 </html>
