@@ -2,3 +2,158 @@
 <!--
   Helpful link: https://www.w3schools.com/howto/howto_js_full_page_tabs.asp
 -->
+
+<style>
+
+#taskPageHeader {
+  margin: 0 auto;
+  position: relative;
+  background: white;
+  color: black;
+  overflow: hidden;
+  font-family: sans-serif;
+  padding-top: 45px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.header a {
+  margin: 0 auto;
+  float: left;
+  text-align: center;
+}
+
+.centered {
+  /*margin: 0 auto;*/
+  position: absolute;
+  padding-top: 45px;
+  top: 50%;
+  left: 50%;
+  font-size: 20px;
+  transform: translate(-50%, -50%);
+}
+
+.right-side a {
+  float: right;
+  margin: 0 auto;
+}
+
+/*.header{
+  text-align: center;
+} */
+
+.btn{
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.newTask{
+  background: #gray;
+  color: black;
+}
+
+/* enables full page tabs */
+body, html{
+  height: 100%;
+  margin: 0 auto;
+  font-family: sans-serif;
+}
+
+/* style tab links */
+.tablink{
+  color: black;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 33.33%;
+}
+
+.tablink:hover{
+  background-color: #777;
+}
+
+.tabcontent{
+  color: black;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+
+/*#Home {background-color: white;}*/
+/*#In-Progress {background-color: white;}*/
+/*#Completed {background-color: white;}*/
+
+</style>
+
+
+
+<!-- THE START OF THE HTML -->
+<html>
+  <head>
+    <title>TASKS</title>
+  </head>
+  <body>
+
+  <div class="header" id="taskPageHeader">
+    <div class="centered">
+      <p>TASKS</p>
+    </div>
+    <div class="right-side">
+      <a href="#homepage" id="homepage">Homepage<a>
+    </div>
+  </div>
+
+
+    <button class="tablink" onclick="openPage('New', this, '#777')">New</button>
+    <button class="tablink" onclick="openPage('In-Progress', this, '#777')">In-Progress</buton>
+    <button class="tablink" onclick="openPage('Completed', this, '#777')">Completed</button>
+
+
+<!--New Task Tab-->
+    <div id="New" class="tabcontent">
+      <h3>New</h3>
+        <button class="btn newTask"> New Task? </button>
+    </div>
+
+<!--In-Progress Task Tab-->
+    <div id="In-Progress" class="tabcontent">
+      <h3>In-Progress</h3>
+    </div>
+
+<!--Completed Task Tab-->
+    <div id="Completed" class="tabcontent">
+      <p> A list of the user's completed tasks </p>
+    </div>
+
+    <script>
+      function openPage(pageName, elmnt, color){
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for(i = 0; i < tabcontent.length; i++){
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for(i = 0; i < tablinks.length; i++){
+          tablinks[i].style.backgroundColor="";
+        }
+        document.getElementById(pageName).style.display="block";
+        elmnt.style.backgroundColor=color;
+
+        document.getElementById("defaultOpen").click();
+      }
+    </script>
+
+
+  </body>
+
+
+
+
+</html>
