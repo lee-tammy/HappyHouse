@@ -2,67 +2,69 @@
 <!--
   Setting up files for now.
 -->
-<style>
-
-body {
-  margin: 0 auto;
-}
-
-#main-page-header {
-  margin: 0 auto;
-  position: relative;
-  background: white;
-  color: grey;
-  overflow: hidden;
-  font-family: sans-serif;
-  padding-top: 45px;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-.header a {
-  margin: 0 auto;
-  float: left;
-  text-align: center;
-}
-
-.centered {
-  margin: 0 auto;
-  position: absolute;
-  padding-top: 45px;
-  top: 50%;
-  left: 50%;
-  font-size: 20px;
-  transform: translate(-50%, -50%);
-}
-
-.right-side a {
-  float: right;
-  margin: 0 auto;
-}
-
-.button-options button{
-  text-align: center;
-  background-color: grey;
-  border: 1px black;
-  color: black;
-  padding: 20px 45px;
-  cursor: pointer;
-  width: 50%;
-  display: block;
-}
-
-.button-options button:not(:last-child) {
-  border-bottom: none;
-}
-
-#log-off {
-  text-align: center;
-}
-
-</style>
-
 <html>
+
+  <style>
+
+    body {
+      margin: 0 auto;
+    }
+
+    #main-page-header {
+      margin: 0 auto;
+      position: relative;
+      background: white;
+      color: grey;
+      overflow: hidden;
+      font-family: sans-serif;
+      padding-top: 45px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    .header a {
+      margin: 0 auto;
+      float: left;
+      text-align: center;
+    }
+
+    .centered {
+      margin: 0 auto;
+      position: absolute;
+      padding-top: 45px;
+      top: 50%;
+      left: 50%;
+      font-size: 20px;
+      transform: translate(-50%, -50%);
+    }
+
+    .right-side a {
+      float: right;
+      margin: 0 auto;
+    }
+
+    .button1, .button2, .button3, .button4 {
+      font-family: sans-serif;
+      text-align: center;
+      left: 50%;
+    }
+
+    button {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      width: 90%;
+    }
+
+    .logoff {
+      font-family: sans-serif;
+      text-align: center;
+      left: 50%;
+    }
+
+
+  </style>
+
+
   <head>
     <title>Home page</title>
   </head>
@@ -74,18 +76,18 @@ body {
       </div>
       <a href="#roommates" id="roommates">Roommates Icon</a>
       <div class="right-side">
-        <a href="#notifications" id="nofications">Notifications Icon<a>
+        <a href="#-notifications" id="nofications">Notifications Icon<a>
       </div>
     </div>
 
-    <div class="buttons-options">
-      <button>MY TO DO LIST</button>
-      <button>TASKS</button>
-      <button>HOUSE RULES</button>
-      <button>SCHEDULES<button>
+    <div class="vertical-buttons">
+      <p class="button1"><button>MY TO DO LIST</button></p>
+      <p class="button2"><button>TASKS</button></p>
+      <p class="button3"><button>HOUSE RULES</button></p>
+      <p class="button4"><button>SCHEDULES</button></p>
     </div>
 
-    <a href="#log-off" id="log-off-button">LOG OFF</a>
+    <p class="logoff"><a href="#">LOG OFF</a></p>
 
   </body>
 </html>
