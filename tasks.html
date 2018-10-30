@@ -24,10 +24,7 @@
 }
 
 .centered {
-  /*margin: 0 auto;*/
   position: absolute;
-  padding-top: 45px;
-  top: 50%;
   left: 50%;
   font-size: 20px;
   transform: translate(-50%, -50%);
@@ -37,10 +34,6 @@
   float: right;
   margin: 0 auto;
 }
-
-/*.header{
-  text-align: center;
-} */
 
 .btn{
   border: 2px solid black;
@@ -80,41 +73,36 @@ body, html{
 }
 
 .tabcontent{
+  margin: 0 auto;
   color: black;
   display: none;
   padding: 100px 20px;
   height: 100%;
 }
 
-/*#Home {background-color: white;}*/
-/*#In-Progress {background-color: white;}*/
-/*#Completed {background-color: white;}*/
-
 </style>
-
-
 
 <!-- THE START OF THE HTML -->
 <html>
   <head>
     <title>TASKS</title>
   </head>
+
+
   <body>
-
-  <div class="header" id="taskPageHeader">
-    <div class="centered">
-      <p>TASKS</p>
+    <!--THE TOP OF THE TASKS PAGE (TITLE) (ICONS)-->
+    <div class="header" id="taskPageHeader">
+      <div class="centered">
+        <p>TASKS</p>
+      </div>
+      <div class="right-side">
+        <a href="index.html" id="homepage">Homepage<a>
+      </div>
     </div>
-    <div class="right-side">
-      <a href="#homepage" id="homepage">Homepage<a>
-    </div>
-  </div>
-
 
     <button class="tablink" onclick="openPage('New', this, '#777')">New</button>
     <button class="tablink" onclick="openPage('In-Progress', this, '#777')">In-Progress</buton>
     <button class="tablink" onclick="openPage('Completed', this, '#777')">Completed</button>
-
 
 <!--New Task Tab-->
     <div id="New" class="tabcontent">
@@ -124,7 +112,11 @@ body, html{
 
 <!--In-Progress Task Tab-->
     <div id="In-Progress" class="tabcontent">
-      <h3>In-Progress</h3>
+      <div class = "centered">
+        <input type = "checkbox" id = "myCheck" onclick = "myFunction()">
+        task being worked on by user one
+        <button id="text" style="display:none">View Chat?</button>
+      </div>
     </div>
 
 <!--Completed Task Tab-->
@@ -133,6 +125,20 @@ body, html{
     </div>
 
     <script>
+    /* for the checkbox*/
+    function myFunction(){
+      var checkbox = document.getElementById("myCheck");
+      var text = document.getElementById("text");
+      if (checkbox.checked == true){
+        text.style.display = "block";
+      }
+      else{
+        text.style.display = "none";
+      }
+    }
+
+
+    /* for the tabs*/
       function openPage(pageName, elmnt, color){
         var i, tabcontent, tablinks;
         tabcontent = document.getElementsByClassName("tabcontent");
@@ -149,11 +155,5 @@ body, html{
         document.getElementById("defaultOpen").click();
       }
     </script>
-
-
   </body>
-
-
-
-
 </html>
