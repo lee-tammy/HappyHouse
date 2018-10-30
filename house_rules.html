@@ -5,21 +5,64 @@
 
 <html>
   <style>
+
+    body {
+      margin: 0 auto;
+    }
+
+      #house-rules-header {
+        margin: 0 auto;
+        position: relative;
+        background: #eaeaeb;
+        color: grey;
+        overflow: hidden;
+        font-family: sans-serif;
+        padding: 20px;
+      }
+
+      .centered {
+        margin: 0 auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 20px;
+        transform: translate(-50%, -50%);
+      }
+
+      .right-side a {
+        float: right;
+        margin: 0 auto;
+      }
+
+      .list-of-rules {
+        padding: 10px;
+      }
+
   </style>
 
   <head>
   </head>
 
   <body>
-    <p><b>THIS PAGE IS BEING FIXED! Click <a href="index.html">here</a> to go back.</b></p>
 
-    <ol id="list_of_rules">
-        <li>test</li>
-    </ol>
+    <div class="header" id="house-rules-header">
+      <div class="centered">
+        <p><b>HOUSE RULES</b></p>
+      </div>
+      <div class="right-side">
+        <a href="index.html" id="homepage">Homepage<a>
+      </div>
+    </div>
 
-    <input type="text" id="candidate"/>
-    <button onclick="addItem()">add item</button>
-    <button onclick="removeItem()">remove item</button>
+    <div class="list-of-rules">
+      <ol id="list_of_rules">
+          <li>test</li>
+      </ol>
+
+      <input type="text" id="candidate"/>
+      <button onclick="addItem()">add item</button>
+      <button onclick="removeItem()">remove item</button>
+    </div>
 
 
   </body>

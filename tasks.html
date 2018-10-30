@@ -5,26 +5,20 @@
 
 <style>
 
-#taskPageHeader {
-  margin: 0 auto;
-  position: relative;
-  background: white;
-  color: black;
-  overflow: hidden;
-  font-family: sans-serif;
-  padding-top: 45px;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-.header a {
-  margin: 0 auto;
-  float: left;
-  text-align: center;
-}
+ #tasks-header {
+   margin: 0 auto;
+   position: relative;
+   background: #eaeaeb;
+   color: grey;
+   overflow: hidden;
+   font-family: sans-serif;
+   padding: 20px;
+ }
 
 .centered {
+  margin: 0 auto;
   position: absolute;
+  top: 50%;
   left: 50%;
   font-size: 20px;
   transform: translate(-50%, -50%);
@@ -90,9 +84,9 @@ body, html{
 
   <body>
     <!--THE TOP OF THE TASKS PAGE (TITLE) (ICONS)-->
-    <div class="header" id="taskPageHeader">
+    <div class="header" id="tasks-header">
       <div class="centered">
-        <p>TASKS</p>
+        <p><b>TASKS</b></p>
       </div>
       <div class="right-side">
         <a href="index.html" id="homepage">Homepage<a>

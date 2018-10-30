@@ -5,13 +5,51 @@
 
 <html>
   <style>
+
+    body {
+      margin: 0 auto;
+    }
+
+      #to-do-list-header {
+        margin: 0 auto;
+        position: relative;
+        background: #eaeaeb;
+        color: grey;
+        overflow: hidden;
+        font-family: sans-serif;
+        padding: 20px;
+      }
+
+      .centered {
+        margin: 0 auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 20px;
+        transform: translate(-50%, -50%);
+      }
+
+      .right-side a {
+        float: right;
+        margin: 0 auto;
+      }
+
   </style>
 
   <head>
   </head>
 
   <body>
-    <p><b>THIS PAGE IS BLANK! Click <a href="index.html">here</a> to go back.</b></p>
+
+    <div class="header" id="to-do-list-header">
+      <div class="centered">
+        <p><b>MY TO DO LIST</b></p>
+      </div>
+      <div class="right-side">
+        <a href="index.html" id="homepage">Homepage<a>
+      </div>
+    </div>
+
   </body>
 
   <script>
