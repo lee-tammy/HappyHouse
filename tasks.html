@@ -32,6 +32,11 @@
     text-align: center;
   }
 
+.tabheader{
+    margin: 25px;
+    padding: 20px 20px;
+}
+
 /* To position the homepage icon*/
  .right-side a {
    float: right;
@@ -95,26 +100,39 @@
     <!--New Task Tab-->
     <!--What first appears on the new task tab-->
     <div id="New" class="tabcontent">
+
+      <div class="tabheader">
+        <h1>NEW TASKS</h1>
+        <p>Choose a task to assign</p>
+      </div>
+
       <div id="initial">
         <input type = "checkbox" id = "checkNewTask" onclick = "checkNew()">
         new task to complete
       </div>
-        <button id = "assign" style = "display:none" onclick = "toAssign()"> Assign? </button>
+
+      <div id="assignButton" style="display:none">
+        <button onclick = "toAssign()">Assign</button>
+      </div>
 
       <!--What appears when the user wants to assign a task-->
       <div id="assigning" style="display:none">
         <p>Assign a task to</p>
-        <select>
-          <option value="user1">User 1</option>
-          <option value="user2">User 2</option>
-          <option value="user3">User 3</option>
-        </select>
+
+        <form>
+          <input type="radio" name="user1" value="User1"> User 1 <br>
+          <input type="radio" name="user2" value="User2"> User 2 <br>
+          <input type="radio" name="user3" value="User3"> User 3 <br>
+        </form>
+
+        <!--In the future this needs to be a submit button for the form-->
         <button onclick="assignDone()">Assign</button>
-        <button>Cancel</button>
+        <button onclick="newTaskHome()">Cancel</button>
       </div>
 
       <div id="pendingApproval" style="display:none">
         <p>Task request sent to user for approval</p>
+        <button onclick = "newTaskHome()">Done</button>
       </div>
 
       <!--NEED TO DO FLOW FOR CANCEL-->
@@ -123,21 +141,55 @@
 
     <!--In-Progress Task Tab-->
     <div id="In-Progress" class="tabcontent">
+
+      <div class="tabheader">
+        <h1>TASKS IN-PROGRESS</h1>
+        <p>Choose a message thread to view</p>
+      </div>
+
+
+      <!--What first appears on the in-progress tab-->
+      <div id="initialIP">
         <input type = "checkbox" id = "myCheckIP" onclick = "checkFunctionIP()">
         task being worked on by user one
-        <button id="textIP" style="display:none">View Chat?</button>
+      </div>
 
-        <!--NEED TO DO MESSAGE THREAD FLOW-->
+      <div id="textIP" style="display:none">
+        <button onclick = "viewChat()">View Chat?</button>
+      </div>
+
+      <!-- I NEED TO FINISH THIS -->
+      <div id="messageThread" style="display:none">
+        <form>
+          <input type = "text" name = "message" value = "New Message">
+          <!--<input type = "submit" value = "Send"> -->
+        </form>
+        <button>Send</button>
+      </div>
 
     </div>
 
     <!--Completed Task Tab-->
     <div id="Completed" class="tabcontent">
-        <p> A list of the user's completed tasks </p>
+
+      <div class="tabheader">
+        <h1>COMPLETED TASKS</h1>
+        <p>A list of the user's completed tasks</p>
+      </div>
     </div>
 
     <script>
+    /*
+     * FUNCTIONS IN THE NEW TAB
+     */
+    /* To go to the home screen for new task tab */
+    function newTaskHome(){
+      document.getElementById("initial").style.display = "block";
+      document.getElementById("pendingApproval").style.display = "none";
+      document.getElementById("assigning").style.display = "none";
+    }
 
+    /* To show the message about pending approval */
     function assignDone(){
       document.getElementById("pendingApproval").style.display = "block";
       document.getElementById("assigning").style.display = "none";
@@ -145,7 +197,7 @@
 
     /* To assign a task */
     function toAssign(){
-      document.getElementById("assign").style.display = "none";
+      document.getElementById("assignButton").style.display = "none";
       document.getElementById("initial").style.display = "none";
       document.getElementById("assigning").style.display = "block";
     }
@@ -153,7 +205,7 @@
     /* for the checkbox in new tab*/
     function checkNew(){
       var checkbox = document.getElementById("checkNewTask");
-      var text = document.getElementById("assign");
+      var text = document.getElementById("assignButton");
       if (checkbox.checked == true){
         text.style.display = "block";
       }
@@ -162,6 +214,9 @@
       }
     }
 
+    /*
+     * FUNCTIONS IN THE IN-PROGRESS TAB
+     */
     /* for the checkbox in in-progress tab*/
     function checkFunctionIP(){
       var checkbox = document.getElementById("myCheckIP");
@@ -174,8 +229,20 @@
       }
     }
 
+    /* to show the home screen of the in-progress tab */
+    function inProgressHome(){
+      document.getElementById("initialIP").style.display = "block";
+    }
+
+    /* to add a message */
+    function viewChat(){
+      document.getElementById("initialIP").style.display = "none";
+      document.getElementById("textIP").style.display = "none";
+      document.getElementById("messageThread").style.display = "block";
+    }
+
     /* for the tabs*/
-      function openPage(pageName, elmnt, color){
+    function openPage(pageName, elmnt, color){
         var i, tabcontent, tablinks;
         tabcontent = document.getElementsByClassName("tabcontent");
         for(i = 0; i < tabcontent.length; i++){
