@@ -5,6 +5,7 @@
 
 <style>
 
+/* For the header */
  #tasks-header {
    margin: 0 auto;
    position: relative;
@@ -15,43 +16,37 @@
    padding: 20px;
  }
 
-.centered {
-  margin: 0 auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  font-size: 20px;
-  transform: translate(-50%, -50%);
-}
+ /* To center the objects */
+ .centered {
+   margin: 0 auto;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   font-size: 20px;
+   font-family: sans-serif;
+   transform: translate(-50%, -50%);
+ }
 
-.right-side a {
-  float: right;
-  margin: 0 auto;
-}
+ .tabcontent{
+    padding: 20px 20px;
+    text-align: center;
+  }
 
-.btn{
-  border: 2px solid black;
-  background-color: white;
-  color: black;
-  padding: 14px 28px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.newTask{
-  background: #gray;
-  color: black;
-}
+/* To position the homepage icon*/
+ .right-side a {
+   float: right;
+   margin: 0 auto;
+ }
 
 /* enables full page tabs */
-body, html{
+  body, html{
   height: 100%;
   margin: 0 auto;
   font-family: sans-serif;
 }
 
-/* style tab links */
-.tablink{
+/* For the tabs */
+  .tablink{
   color: black;
   float: left;
   border: none;
@@ -62,16 +57,14 @@ body, html{
   width: 33.33%;
 }
 
-.tablink:hover{
+  .tablink:hover{
   background-color: #777;
 }
 
-.tabcontent{
-  margin: 0 auto;
-  color: black;
-  display: none;
-  padding: 100px 20px;
-  height: 100%;
+  button {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 90%;
 }
 
 </style>
@@ -82,8 +75,9 @@ body, html{
     <title>TASKS</title>
   </head>
 
-  <body>
-    <!--THE TOP OF THE TASKS PAGE (TITLE) (ICONS)-->
+  <body onload="openPage('New', this, '#777')">
+
+    <!--The header-->
     <div class="header" id="tasks-header">
       <div class="centered">
         <p><b>TASKS</b></p>
@@ -93,35 +87,73 @@ body, html{
       </div>
     </div>
 
+    <!--The New, In-Progress, and Completed Tabs-->
     <button class="tablink" onclick="openPage('New', this, '#777')">New</button>
     <button class="tablink" onclick="openPage('In-Progress', this, '#777')">In-Progress</buton>
     <button class="tablink" onclick="openPage('Completed', this, '#777')">Completed</button>
 
-<!--New Task Tab-->
+    <!--New Task Tab-->
+    <!--What first appears on the new task tab-->
     <div id="New" class="tabcontent">
-      <h3>New</h3>
-        <button class="btn newTask"> New Task? </button>
-    </div>
-
-<!--In-Progress Task Tab-->
-    <div id="In-Progress" class="tabcontent">
-      <div class = "centered">
-        <input type = "checkbox" id = "myCheck" onclick = "myFunction()">
-        task being worked on by user one
-        <button id="text" style="display:none">View Chat?</button>
+      <div id="initial">
+        <input type = "checkbox" id = "checkNewTask" onclick = "checkNew()">
+        new task to complete
       </div>
+        <button id = "assign" style = "display:none" onclick = "toAssign()"> Assign? </button>
+
+      <!--What appears when the user wants to assign a task-->
+      <div id="assigning" style="display:none">
+        <p>Assign a task to</p>
+        <select>
+          <option value="user1">User 1</option>
+          <option value="user2">User 2</option>
+          <option value="user3">User 3</option>
+        </select>
+        <button onclick="assignDone()">Assign</button>
+        <button>Cancel</button>
+      </div>
+
+      <div id="pendingApproval" style="display:none">
+        <p>Task request sent to user for approval</p>
+      </div>
+
+      <!--NEED TO DO FLOW FOR CANCEL-->
+
     </div>
 
-<!--Completed Task Tab-->
+    <!--In-Progress Task Tab-->
+    <div id="In-Progress" class="tabcontent">
+        <input type = "checkbox" id = "myCheckIP" onclick = "checkFunctionIP()">
+        task being worked on by user one
+        <button id="textIP" style="display:none">View Chat?</button>
+
+        <!--NEED TO DO MESSAGE THREAD FLOW-->
+
+    </div>
+
+    <!--Completed Task Tab-->
     <div id="Completed" class="tabcontent">
-      <p> A list of the user's completed tasks </p>
+        <p> A list of the user's completed tasks </p>
     </div>
 
     <script>
-    /* for the checkbox*/
-    function myFunction(){
-      var checkbox = document.getElementById("myCheck");
-      var text = document.getElementById("text");
+
+    function assignDone(){
+      document.getElementById("pendingApproval").style.display = "block";
+      document.getElementById("assigning").style.display = "none";
+    }
+
+    /* To assign a task */
+    function toAssign(){
+      document.getElementById("assign").style.display = "none";
+      document.getElementById("initial").style.display = "none";
+      document.getElementById("assigning").style.display = "block";
+    }
+
+    /* for the checkbox in new tab*/
+    function checkNew(){
+      var checkbox = document.getElementById("checkNewTask");
+      var text = document.getElementById("assign");
       if (checkbox.checked == true){
         text.style.display = "block";
       }
@@ -130,6 +162,17 @@ body, html{
       }
     }
 
+    /* for the checkbox in in-progress tab*/
+    function checkFunctionIP(){
+      var checkbox = document.getElementById("myCheckIP");
+      var text = document.getElementById("textIP");
+      if (checkbox.checked == true){
+        text.style.display = "block";
+      }
+      else{
+        text.style.display = "none";
+      }
+    }
 
     /* for the tabs*/
       function openPage(pageName, elmnt, color){
