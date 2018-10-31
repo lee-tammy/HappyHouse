@@ -80,7 +80,7 @@
     <title>TASKS</title>
   </head>
 
-  <body onload="openPage('New', this, '#777')">
+    <body>
 
     <!--The header-->
     <div class="header" id="tasks-header">
@@ -93,7 +93,7 @@
     </div>
 
     <!--The New, In-Progress, and Completed Tabs-->
-    <button class="tablink" onclick="openPage('New', this, '#777')">New</button>
+    <button id="openingTab" class="tablink" onclick="openPage('New', this, '#777')">New</button>
     <button class="tablink" onclick="openPage('In-Progress', this, '#777')">In-Progress</buton>
     <button class="tablink" onclick="openPage('Completed', this, '#777')">Completed</button>
 
@@ -179,6 +179,7 @@
     </div>
 
     <script>
+        document.getElementById("openingTab").click();
     /*
      * FUNCTIONS IN THE NEW TAB
      */
