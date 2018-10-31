@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <!--
-  Still fixing
+  Helpful site: https://www.w3schools.com/howto/howto_css_modals.asp
 -->
 
 <html>
@@ -34,8 +34,22 @@
         margin: 0 auto;
       }
 
-      .list-of-rules {
-        padding: 10px;
+      .house-rules {
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      ol {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .house-rules li {
+        text-align: left;
+        margin: 10px;
+        padding: 15px;
+        background: #bfbfbf;
       }
 
   </style>
@@ -54,9 +68,11 @@
       </div>
     </div>
 
-    <div class="list-of-rules">
+    <div class="house-rules">
       <ol id="list_of_rules">
-          <li>test</li>
+          <li id="test">test</li>
+          <li id="test">test</li>
+          <li id="test">test</li>
       </ol>
 
       <input type="text" id="candidate"/>
@@ -68,13 +84,14 @@
   </body>
 
   <script>
-    function addItem() {
-    var ul = document.getElementById("list_of_rules");
-    var candidate = document.getElementById("candidate");
-    var li = document.createElement("li");
-    li.setAttribute('id',candidate.value);
-    li.appendChild(document.createTextNode(candidate.value));
-    ul.appendChild(li);
+
+  function addItem() {
+     var ul = document.getElementById("list_of_rules");
+     var candidate = document.getElementById("candidate");
+     var li = document.createElement("li");
+     li.setAttribute('id',candidate.value);
+     li.appendChild(document.createTextNode(candidate.value));
+     ul.appendChild(li);
     }
 
   function removeItem() {
