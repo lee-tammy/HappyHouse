@@ -145,11 +145,10 @@
         <p>Choose a message thread to view</p>
       </div>
 
-
       <!--What first appears on the in-progress tab-->
       <div id="initialIP">
         <input type = "checkbox" id = "myCheckIP" onclick = "checkFunctionIP()">
-        task being worked on by user one
+        task is being worked on by User 1
       </div>
 
       <div id="textIP" style="display:none">
@@ -158,11 +157,14 @@
 
       <!-- I NEED TO FINISH THIS -->
       <div id="messageThread" style="display:none">
-        <form>
-          <input type = "text" name = "message" value = "New Message">
+        <p id = "chat">
+        <form id="mForm">
+          <input type = "text" name = "message">
           <!--<input type = "submit" value = "Send"> -->
         </form>
-        <button>Send</button>
+          <input type = "button" onclick="sendMessage()" value = "Send">
+
+          <button onclick="inProgressHome()">Close</button>
       </div>
 
     </div>
@@ -241,6 +243,7 @@
     /* to show the home screen of the in-progress tab */
     function inProgressHome(){
       document.getElementById("initialIP").style.display = "block";
+      document.getElementById("messageThread").style.display = "none";
     }
 
     /* to add a message */
@@ -248,6 +251,21 @@
       document.getElementById("initialIP").style.display = "none";
       document.getElementById("textIP").style.display = "none";
       document.getElementById("messageThread").style.display = "block";
+    }
+
+    /* to send a message */
+    function sendMessage(){
+      var f = document.getElementById("mForm");
+      var m = f.elements["message"].value;
+      var node = document.createElement("p");
+      var nodetext = document.createTextNode(m);
+      node.appendChild(nodetext);
+      document.getElementById("chat").appendChild(node);
+
+      var n = document.createElement("p");
+      var nt = document.createTextNode("-User 1");
+      n.appendChild(nt);
+      document.getElementById("chat").appendChild(n);
     }
 
     /* for the tabs*/
@@ -266,6 +284,7 @@
 
         document.getElementById("defaultOpen").click();
       }
+
     </script>
   </body>
 </html>
