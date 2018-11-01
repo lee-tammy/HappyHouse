@@ -108,34 +108,32 @@
 
       <div id="initial">
         <input type = "checkbox" id = "checkNewTask" onclick = "checkNew()">
-        new task to complete
+        Name of task
       </div>
 
+      <!--The button that appears when the users wants to assign a task-->
       <div id="assignButton" style="display:none">
-        <button onclick = "toAssign()">Assign</button>
+        <button onclick = "toAssign()">Assign?</button>
       </div>
 
       <!--What appears when the user wants to assign a task-->
       <div id="assigning" style="display:none">
         <p>Assign a task to</p>
 
-        <form>
-          <input type="radio" name="user1" value="User1"> User 1 <br>
-          <input type="radio" name="user2" value="User2"> User 2 <br>
-          <input type="radio" name="user3" value="User3"> User 3 <br>
+        <form id="assignUser">
+          <input type="radio" name="user" value="User 1"> User 1 <br>
+          <input type="radio" name="user" value="User 2"> User 2 <br>
+          <input type="radio" name="user" value="User 3"> User 3 <br>
         </form>
 
-        <!--In the future this needs to be a submit button for the form-->
-        <button onclick="assignDone()">Assign</button>
+        <input type="submit" value="Assign" onclick="assignDone()">
         <button onclick="newTaskHome()">Cancel</button>
       </div>
 
       <div id="pendingApproval" style="display:none">
-        <p>Task request sent to user for approval</p>
+        <p>Task request sent to <h4 id="userName"></h4>for approval</p>
         <button onclick = "newTaskHome()">Done</button>
       </div>
-
-      <!--NEED TO DO FLOW FOR CANCEL-->
 
     </div>
 
@@ -194,6 +192,16 @@
     function assignDone(){
       document.getElementById("pendingApproval").style.display = "block";
       document.getElementById("assigning").style.display = "none";
+      var val;
+      var f = document.getElementById("assignUser");
+      var radios = f.elements["user"];
+      for(var i = 0, len = radios.length; i < len; i++){
+        if(radios[i].checked){
+          val = radios[i].value;
+          break;
+        }
+      }
+      document.getElementById("userName").innerHTML = val;
     }
 
     /* To assign a task */
