@@ -119,6 +119,7 @@ button{
       <div id="initial">
         <input type = "checkbox" id = "checkNewTask" onclick = "checkNew()">
         Name of task
+
         <div id="addedTask">
           <p id="newTaskAdded">
         </div>
@@ -127,28 +128,17 @@ button{
           <button onclick = "toAssign()">Assign?</button>
         </div>
 
-        <div id="makeTask" style="display:none">
-          <form id = "tform">
-            <input type = "text" name = "newTask">
-          </form>
-            <input type = "button" value = "Create" onclick = "addTask()">
-
-            <button onclick = "newTaskHome()">Done</button>
-        </div>
-
         <button onclick="addTask()" id="atbutton">Add New Task</button>
       </div>
 
-      <!--<div id="makeTask" style="display:none">
-        <p>
+      <div id="makeTask" style="display:none">
         <form id = "tform">
           <input type = "text" name = "newTask">
         </form>
           <input type = "button" value = "Create" onclick = "addTask()">
 
-          <button onclick = "newTaskHome()">Cancel</button>
-      </div> -->
-
+          <button onclick = "newTaskHome()">Exit</button>
+      </div>
 
       <!--The button that appears when the users wants to assign a task-->
       <!--<div id="assignButton" style="display:none">
@@ -232,10 +222,6 @@ button{
        document.getElementById("initial").style.display = "none";
        document.getElementById("makeTask").style.display = "block";
        document.getElementById("atbutton").style.display = "none";
-
-       var node1 = document.createElement("input");
-       node1.type = "checkbox";
-       document.getElementById("newTaskAdded").appendChild(node1);
 
        var f = document.getElementById("tform");
        var t = f.elements["newTask"].value;
