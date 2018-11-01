@@ -60,16 +60,27 @@
   padding: 14px 16px;
   font-size: 17px;
   width: 33.33%;
+  margin: 0;
 }
 
   .tablink:hover{
   background-color: #777;
 }
 
-  button {
-  padding-top: 5px;
-  padding-bottom: 5px;
-  width: 90%;
+.messageThread li{
+  margin: 10px;
+  padding: 15px;
+  background: #eaeaeb;
+}
+
+ol {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+button{
+  margin: 10px;
 }
 
 </style>
@@ -98,7 +109,6 @@
     <button class="tablink" onclick="openPage('Completed', this, '#777')">Completed</button>
 
     <!--New Task Tab-->
-    <!--What first appears on the new task tab-->
     <div id="New" class="tabcontent">
 
       <div class="tabheader">
@@ -118,7 +128,6 @@
         </div>
 
         <div id="makeTask" style="display:none">
-          <p>
           <form id = "tform">
             <input type = "text" name = "newTask">
           </form>
@@ -190,14 +199,14 @@
         <button onclick = "viewChat()">View Chat?</button>
       </div>
 
-      <div id="messageThread" style="display:none">
-        <p id = "chat">
-        <form id="mForm">
-          <input type = "text" name = "message">
-          <input type = "button" onclick="sendMessage()" value = "Send">
-        </form>
-        <p><br></p>
-          <button onclick="inProgressHome()">Close</button>
+      <div class="messageThread" id="messageThread" style="display:none">
+        <ol id="chat">
+            <li id="test">Sample Message<br>-User 1</li>
+
+        </ol>
+        <input type="text" id="message"/>
+        <button onclick="sendMessage()">Send</button>
+        <button onclick="inProgressHome()">Exit Chat</button>
       </div>
 
     </div>
@@ -220,7 +229,7 @@
 
      /*NEED TO FIX*/
      function addTask(){
-       /*document.getElementById("initial").style.display = "none";*/
+       document.getElementById("initial").style.display = "none";
        document.getElementById("makeTask").style.display = "block";
        document.getElementById("atbutton").style.display = "none";
 
@@ -243,6 +252,7 @@
       document.getElementById("assigning").style.display = "none";
       document.getElementById("makeTask").style.display = "none";
       document.getElementById("atbutton").style.display = "block";
+      document.getElementById("checkNewTask").checked = false;
     }
 
     /* To show the message about pending approval */
@@ -297,6 +307,7 @@
 
     /* to show the home screen of the in-progress tab */
     function inProgressHome(){
+      document.getElementById("myCheckIP").checked = false;
       document.getElementById("initialIP").style.display = "block";
       document.getElementById("messageThread").style.display = "none";
       document.getElementById("instIP1").style.display = "block";
@@ -314,17 +325,15 @@
 
     /* to send a message */
     function sendMessage(){
-      var f = document.getElementById("mForm");
-      var m = f.elements["message"].value;
-      var node = document.createElement("p");
-      var nodetext = document.createTextNode(m);
-      node.appendChild(nodetext);
-      document.getElementById("chat").appendChild(node);
-
-      var n = document.createElement("p");
-      var nt = document.createTextNode("-User 1");
-      n.appendChild(nt);
-      document.getElementById("chat").appendChild(n);
+      var ul = document.getElementById("chat");
+      var message = document.getElementById("message");
+      var li = document.createElement("li");
+      li.setAttribute('id',message.value);
+      li.appendChild(document.createTextNode(message.value));
+      var b = document.createElement("br");
+      li.appendChild(b);
+      li.appendChild(document.createTextNode("-User 1"));
+      ul.appendChild(li);
     }
 
     /* for the tabs*/
