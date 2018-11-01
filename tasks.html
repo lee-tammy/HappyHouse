@@ -103,18 +103,52 @@
 
       <div class="tabheader">
         <h1>NEW TASKS</h1>
-        <p>Choose a task to assign</p>
+        <p>Choose a task to assign or create new task</p>
       </div>
 
       <div id="initial">
         <input type = "checkbox" id = "checkNewTask" onclick = "checkNew()">
         Name of task
+        <div id="addedTask">
+          <p id="newTaskAdded">
+        </div>
+
+        <div id="assignButton" style="display:none">
+          <button onclick = "toAssign()">Assign?</button>
+        </div>
+
+        <div id="makeTask" style="display:none">
+          <p>
+          <form id = "tform">
+            <input type = "text" name = "newTask">
+          </form>
+            <input type = "button" value = "Create" onclick = "addTask()">
+
+            <button onclick = "newTaskHome()">Done</button>
+        </div>
+
+        <button onclick="addTask()" id="atbutton">Add New Task</button>
       </div>
 
+      <!--<div id="makeTask" style="display:none">
+        <p>
+        <form id = "tform">
+          <input type = "text" name = "newTask">
+        </form>
+          <input type = "button" value = "Create" onclick = "addTask()">
+
+          <button onclick = "newTaskHome()">Cancel</button>
+      </div> -->
+
+
       <!--The button that appears when the users wants to assign a task-->
-      <div id="assignButton" style="display:none">
+      <!--<div id="assignButton" style="display:none">
         <button onclick = "toAssign()">Assign?</button>
-      </div>
+      </div> -->
+
+      <!--<div id="addNewTaskButton">
+        <button onclick="addTask()">Add New Task</button>
+      </div> -->
 
       <!--What appears when the user wants to assign a task-->
       <div id="assigning" style="display:none">
@@ -160,7 +194,6 @@
         <p id = "chat">
         <form id="mForm">
           <input type = "text" name = "message">
-          <!--<input type = "submit" value = "Send"> -->
         </form>
           <input type = "button" onclick="sendMessage()" value = "Send">
 
@@ -183,11 +216,33 @@
     /*
      * FUNCTIONS IN THE NEW TAB
      */
+
+
+     /*NEED TO FIX*/
+     function addTask(){
+       /*document.getElementById("initial").style.display = "none";*/
+       document.getElementById("makeTask").style.display = "block";
+       document.getElementById("atbutton").style.display = "none";
+
+       var node1 = document.createElement("input");
+       node1.type = "checkbox";
+       document.getElementById("newTaskAdded").appendChild(node1);
+
+       var f = document.getElementById("tform");
+       var t = f.elements["newTask"].value;
+       var node = document.createElement("p");
+       var nodetext = document.createTextNode(t);
+       node.appendChild(nodetext);
+       document.getElementById("newTaskAdded").appendChild(node);
+     }
+
     /* To go to the home screen for new task tab */
     function newTaskHome(){
       document.getElementById("initial").style.display = "block";
       document.getElementById("pendingApproval").style.display = "none";
       document.getElementById("assigning").style.display = "none";
+      document.getElementById("makeTask").style.display = "none";
+      document.getElementById("atbutton").style.display = "block";
     }
 
     /* To show the message about pending approval */
