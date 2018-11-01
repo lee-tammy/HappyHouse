@@ -176,7 +176,8 @@
 
       <div class="tabheader">
         <h1>TASKS IN-PROGRESS</h1>
-        <p>Choose a message thread to view</p>
+        <p id="instIP1">Choose a message thread to view</p>
+        <p id="instIP2" style="display:none">Add a message to this thread</p>
       </div>
 
       <!--What first appears on the in-progress tab-->
@@ -189,14 +190,13 @@
         <button onclick = "viewChat()">View Chat?</button>
       </div>
 
-      <!-- I NEED TO FINISH THIS -->
       <div id="messageThread" style="display:none">
         <p id = "chat">
         <form id="mForm">
           <input type = "text" name = "message">
-        </form>
           <input type = "button" onclick="sendMessage()" value = "Send">
-
+        </form>
+        <p><br></p>
           <button onclick="inProgressHome()">Close</button>
       </div>
 
@@ -299,6 +299,8 @@
     function inProgressHome(){
       document.getElementById("initialIP").style.display = "block";
       document.getElementById("messageThread").style.display = "none";
+      document.getElementById("instIP1").style.display = "block";
+      document.getElementById("instIP2").style.display = "none";
     }
 
     /* to add a message */
@@ -306,6 +308,8 @@
       document.getElementById("initialIP").style.display = "none";
       document.getElementById("textIP").style.display = "none";
       document.getElementById("messageThread").style.display = "block";
+      document.getElementById("instIP1").style.display = "none";
+      document.getElementById("instIP2").style.display = "block";
     }
 
     /* to send a message */
