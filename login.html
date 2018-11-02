@@ -4,19 +4,36 @@
 -->
 
 <html>
-  <meta name="google-signin-client_id" content="862567215097-7vf19aggl34jt9e35muj25dqeqi41aqi.apps.googleusercontent.com">
-
-  <style>
-  </style>
 
   <head>
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <script src="js/login.js"></script>
   </head>
 
   <body>
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
-    <p><b>THIS LOGIN PAGE IS BLANK! Click <a href="index.html">here</a> to go back.</b></p>
+    <div id="parent">
+      <form id="form">
+        <div class="image">INSERT IMAGE OF APP HERE</div>
+      
+        <div class="username" id="username">
+          <label for="uname"><b>Username</b></label><br>
+          <input class="textbox" type="text" placeholder="Enter Username" name="uname" required>
+          
+        </div>
+        <div class="password" id="password">    
+            <label for="psw"><b>Password</b></label><br>
+            <input class="textbox" type="password" placeholder="Enter Password" name="psw" required>
+      
+            </label>
+        </div>
+
+        <div class="submit">
+          <button type="button" onclick="goToHomePage();"id="button">Log In</button>
+        </div>
+      </form>
+    </div>
   </body>
 
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  
 
 </html>

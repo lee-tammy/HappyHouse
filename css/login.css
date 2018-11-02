@@ -1,0 +1,35 @@
+
+div{
+    padding:10px;
+    text-align: center;
+}
+.textbox{
+    height:20px;
+    font-size:14pt;
+    flex-flow: center;
+}
+
+.submit{
+    padding:5px;
+    text-align: center;
+}
+
+
+
+label{
+     font-size:20px;
+ }
+
+ #parent {
+    display: table;
+    width: 100%;
+ }
+
+ #form {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+ }
+
+
+
