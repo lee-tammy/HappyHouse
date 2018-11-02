@@ -33,25 +33,25 @@
   }
 
 .tabheader{
-    margin: 25px;
+    /*margin: 25px;*/
     padding: 20px 20px;
 }
 
 /* To position the homepage icon*/
- .right-side a {
+.right-side a {
    float: right;
    margin: 0 auto;
  }
 
 /* enables full page tabs */
-  body, html{
+body, html{
   height: 100%;
   margin: 0 auto;
   font-family: sans-serif;
-}
+  }
 
 /* For the tabs */
-  .tablink{
+.tablink{
   color: black;
   float: left;
   border: none;
@@ -64,24 +64,30 @@
 }
 
   .tablink:hover{
-  background-color: #777;
-}
+    background-color: #777;
+  }
 
-.messageThread li{
-  margin: 10px;
-  padding: 15px;
-  background: #eaeaeb;
-}
+  .messageThread li{
+    margin: 10px;
+    padding: 15px;
+    background: #eaeaeb;
+  }
 
-ol {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
+  ol {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
 
-button{
-  margin: 10px;
-}
+  button{
+    margin: 10px;
+  }
+
+  .completedList{
+    background-color: lightgrey;
+    margin: 10px;
+    padding: 10px;
+  }
 
 </style>
 
@@ -116,7 +122,7 @@ button{
         <p>Choose a task to assign or create new task</p>
       </div>
 
-      <div id="initial">
+      <div id="initial" style="background-color:lightgrey">
         <input type = "checkbox" id = "checkNewTask" onclick = "checkNew()">
         Name of task
 
@@ -180,7 +186,7 @@ button{
       </div>
 
       <!--What first appears on the in-progress tab-->
-      <div id="initialIP">
+      <div id="initialIP" style="background-color:lightgrey">
         <input type = "checkbox" id = "myCheckIP" onclick = "checkFunctionIP()">
         task is being worked on by User 1
       </div>
@@ -205,9 +211,37 @@ button{
     <div id="Completed" class="tabcontent">
 
       <div class="tabheader">
-        <h1>COMPLETED TASKS</h1>
-        <p>A list of the user's completed tasks</p>
+        <!--<h2>COMPLETED TASKS</h2>
+        <p>A list of the user's completed tasks</p>-->
       </div>
+
+      <div class="completedList">
+        <h3><input type="checkbox" checked="true"> task name<br></h3>
+        completed on<br>xx/xx/xxx
+      </div>
+
+      <div class="completedList">
+        <h3><input type="checkbox" checked="true"> task name<br></h3>
+        completed on<br>xx/xx/xxx
+      </div>
+
+      <div class="completedList">
+        <h3><input type="checkbox" checked="true"> task name<br></h3>
+        completed on<br>xx/xx/xxx
+      </div>
+
+      <div class="completedList">
+        <h3><input type="checkbox" checked="true"> task name<br></h3>
+        completed on<br>xx/xx/xxx
+      </div>
+
+      <div class="completedList">
+        <h3><input type="checkbox" checked="true"> task name<br></h3>
+        completed on<br>xx/xx/xxx
+      </div>
+
+      <button>Show More</button>
+
     </div>
 
     <script>
