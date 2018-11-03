@@ -109,11 +109,6 @@
     padding-bottom: 25px;
   }
 
-  /*#initial{
-    background-color: lightgrey;
-    margin: 10px;
-    padding: 10px;
-  } */
 </style>
 
 <!-- THE START OF THE HTML -->
@@ -147,20 +142,6 @@
         <p>Choose a task to assign or create new task</p>-->
       </div>
 
-      <!--<div id="initial">
-        <input type = "checkbox" id = "checkNewTask" onclick = "checkNew()">
-        Name of task
-
-        <div id="addedTask">
-          <p id="newTaskAdded">
-        </div>
-
-        <div id="assignButton" style="display:none">
-          <button onclick = "toAssign()">Assign?</button>
-        </div>
-      </div>-->
-
-
 
       <!--<div id="initial" class="messageThread"> -->
       <div class="messageThread" id="initial">
@@ -193,15 +174,6 @@
           <input type = "button" value = "Create" onclick = "addTask()">
           <button onclick = "newTaskHome()">Exit</button>
       </div>
-
-      <!--The button that appears when the users wants to assign a task-->
-      <!--<div id="assignButton" style="display:none">
-        <button onclick = "toAssign()">Assign?</button>
-      </div> -->
-
-      <!--<div id="addNewTaskButton">
-        <button onclick="addTask()">Add New Task</button>
-      </div> -->
 
       <!--What appears when the user wants to assign a task-->
       <div id="assigning" style="display:none">
@@ -329,11 +301,6 @@
 
      function addTask(){
        var ul = document.getElementById("tasks");
-
-       /*var c = document.createElement("input");
-       c.type="checkbox";
-       ul.appendChild(c);*/
-
        var message = document.getElementById("newTask");
        var li = document.createElement("li");
        li.setAttribute('id',message.value);
