@@ -1,0 +1,109 @@
+/* For the header */
+#tasks-header {
+    margin: 0 auto;
+    position: relative;
+    background: #eaeaeb;
+    color: grey;
+    overflow: hidden;
+    font-family: sans-serif;
+    padding: 20px;
+}
+ 
+/* To center the objects */
+.centered {
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 20px;
+    font-family: sans-serif;
+    transform: translate(-50%, -50%);
+}
+ 
+.textIP{
+    margin: 0 auto;
+    left: 50%;
+}
+ 
+.tabcontent{
+     padding: 20px 20px;
+     text-align: center;
+}
+ 
+.tabheader{
+    /*margin: 25px;*/
+    padding: 20px 20px;
+}
+ 
+/* To position the homepage icon*/
+.right-side a {
+    float: right;
+    margin: 0 auto;
+}
+ 
+ 
+/*
+ * FOR THE MENU
+ */
+.tablink{
+     color: black;
+     float: left;
+     border: none;
+     outline: none;
+     cursor: pointer;
+     padding: 14px 16px;
+     font-size: 17px;
+     width: 33.33%;
+     margin: 0;
+}
+ 
+.tablink:hover{
+    background-color: #777;
+}
+ 
+body, html{
+    height: 100%;
+    margin: 0 auto;
+    font-family: sans-serif;
+    }
+button{
+     margin: 10px;
+}
+ 
+ /*
+  * FOR THE IN-PROGRESS TAB
+  */
+    .inprogresslist{
+      background-color: #eaeaeb;
+      margin: 10px;
+      padding: 10px;
+      padding-bottom: 25px;
+    }
+ 
+    ol {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+ 
+    .messageThread li{
+      margin: 10px;
+      padding: 15px;
+      background: #eaeaeb;
+    }
+ 
+   /*
+    * FOR THE COMPLETED TAB
+    */
+   .completedList{
+     background-color: #eaeaeb;
+     margin: 10px;
+     padding: 10px;
+     padding-bottom: 25px;
+   }
+ 
+   /*#initial{
+     background-color: lightgrey;
+     margin: 10px;
+     padding: 10px;
+   } */

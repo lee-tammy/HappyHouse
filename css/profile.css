@@ -1,0 +1,31 @@
+body {
+    margin: 0 auto;
+  }
+
+  #profile-header {
+    margin: 0 auto;
+    position: relative;
+    background: #eaeaeb;
+    color: grey;
+    overflow: hidden;
+    font-family: sans-serif;
+    padding: 20px;
+  }
+
+  .centered {
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 20px;
+    transform: translate(-50%, -50%);
+  }
+
+  .right-side a {
+    float: right;
+    margin: 0 auto;
+  }
+
+  .list-of-rules {
+    padding: 10px;
+  }

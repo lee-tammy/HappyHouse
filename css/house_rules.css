@@ -1,0 +1,66 @@
+body {
+    margin: 0 auto;
+  }
+
+    #house-rules-header {
+      margin: 0 auto;
+      position: relative;
+      background: #eaeaeb;
+      color: grey;
+      overflow: hidden;
+      font-family: sans-serif;
+      padding: 20px;
+    }
+
+    .centered {
+      margin: 0 auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-size: 20px;
+      transform: translate(-50%, -50%);
+    }
+
+    .right-side a {
+      float: right;
+      margin: 0 auto;
+    }
+
+    ul {
+      padding: 0;
+      margin: 0;
+    }
+
+    .house-rules li {
+      margin: 10px;
+      padding: 15px;
+      background: #bfbfbf;
+    }
+
+    /* Style the close button */
+    .close {
+      float: right;
+      padding: 2px;
+    }
+
+    .close:hover {
+      background-color: white;
+      color: black;
+      cursor: pointer;
+    }
+
+    /* Style the input */
+    input {
+      margin: 10px;
+      font-size: 15px;
+      font-family: sans-serif;
+    }
+
+    /* Style the "Add" button */
+   .addBtn {
+      padding: 5px;
+      background: #bfbfbf;
+      font-size: 15px;
+      cursor: pointer;
+      border-radius: 0;
+    }
