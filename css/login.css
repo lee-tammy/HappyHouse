@@ -14,7 +14,11 @@ div{
     text-align: center;
 }
 
-
+#image{
+    margin-top:75px;
+    width:500px;
+    height:100px;
+}
 
 label{
      font-size:20px;
