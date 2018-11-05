@@ -1,3 +1,5 @@
+var taskStorage = window.localStorage;
+
 document.getElementById("openingTab").click();
 
     /*
@@ -9,6 +11,30 @@ document.getElementById("openingTab").click();
        document.getElementById("atbutton").style.display = "none";
 
      }
+
+    var popup = document.getElementById("button");
+    popup.addEventListener("click", function(){
+        document.querySelector(".popup").style.display="flex";
+        document.querySelector(".popup-content").style.display="table";
+    });
+
+    document.querySelector(".close").addEventListener("click", function(){
+        document.querySelector(".popup").style.display="none";
+        document.querySelector(".popup-content").style.display="none";
+    });
+
+    var submit = document.getElementById("submit");
+    submit.addEventListener("click", function(){
+        document.querySelector(".popup-content").style.display="none";
+        document.querySelector(".confirmation-content").style.display="table";
+    });
+
+    var done = document.getElementById("done");
+    done.addEventListener("click", function(){
+        document.querySelector(".confirmation-content").style.display="none";
+        document.querySelector(".popup").style.display = "none";
+        addTask();
+    })
 
      function addTask(){
        var ul = document.getElementById("tasks");
@@ -22,7 +48,7 @@ document.getElementById("openingTab").click();
        li.setAttribute('id',message.value);
        li.appendChild(document.createTextNode(message.value));
        ul.appendChild(li);
-
+       
        newTaskHome()
      }
 
@@ -40,8 +66,6 @@ document.getElementById("openingTab").click();
 
     /* To show the message about pending approval */
     function assignDone(){
-      document.getElementById("pendingApproval").style.display = "block";
-      document.getElementById("assigning").style.display = "none";
       var val;
       var f = document.getElementById("assignUser");
       var radios = f.elements["user"];
@@ -51,8 +75,8 @@ document.getElementById("openingTab").click();
           break;
         }
       }
-      document.getElementById("userName").innerHTML = val;
 
+      document.getElementById("userName").innerHTML = val;
       if(document.getElementById("checkNewTask").checked==true){
         document.getElementById("tasks1").style.display = "none";
       }

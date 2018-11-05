@@ -48,9 +48,36 @@
         </div>
       </div>-->
 
-
-
       <!--<div id="initial" class="messageThread"> -->
+
+
+      <!--POPUP FOR ADDING NEW TASKS-->
+      <button id="button">Add New Task</button>
+      <div class="popup">
+
+        <!-- FILL OUT INFO OF TASK AND ASSIGNEE -->
+        <div class="popup-content">
+            <button class="close">X</button>
+            <h1>Name of task</h1>
+            
+            <p>Assign a task to</p>
+            
+            <form id="assignUser">
+              <input type="radio" name="user" value="User 1"> User 1 <br>
+              <input type="radio" name="user" value="User 2"> User 2 <br>
+              <input type="radio" name="user" value="User 3"> User 3 <br>
+            </form>
+
+            <input id="submit" type="submit" value="Assign" onclick="assignDone()">
+        </div>
+
+        <!-- CONFIRMATION POPUP-->
+        <div class="confirmation-content">
+          <p>Task request sent to <h4 id="userName"></h4>for approval</p>
+          <button id="done">Done</button>
+        </div>
+      </div>
+
       <div class="messageThread" id="initial">
         <ol id="tasks1">
             <li><h3><input type="checkbox" id="checkNewTask" onclick="checkNew()"> task name 1</h3>
@@ -74,8 +101,6 @@
         </ol>
       </div>
 
-      <button onclick="writeTask()" id="atbutton" class="textIP">Add New Task</button>
-
       <div id="makeTask" style="display:none">
           <input type = "text" id="newTask">
           <input type = "button" value = "Create" onclick = "addTask()">
@@ -92,23 +117,7 @@
       </div> -->
 
       <!--What appears when the user wants to assign a task-->
-      <div id="assigning" style="display:none">
-        <p>Assign a task to</p>
-
-        <form id="assignUser">
-          <input type="radio" name="user" value="User 1"> User 1 <br>
-          <input type="radio" name="user" value="User 2"> User 2 <br>
-          <input type="radio" name="user" value="User 3"> User 3 <br>
-        </form>
-
-        <input type="submit" value="Assign" onclick="assignDone()">
-        <button onclick="newTaskHome()">Cancel</button>
-      </div>
-
-      <div id="pendingApproval" style="display:none">
-        <p>Task request sent to <h4 id="userName"></h4>for approval</p>
-        <button onclick = "newTaskHome()">Done</button>
-      </div>
+      
 
     </div>
 
