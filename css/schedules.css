@@ -3,26 +3,27 @@ body {
  }
 
  #schedules-header {
-    margin: 0 auto;
-    position: relative;
-    background: #eaeaeb;
-    color: grey;
-    overflow: hidden;
-    font-family: sans-serif;
-    padding: 20px;
-  }
+   margin: 0 auto;
+   position: relative;
+   background: #eaeaeb;
+   color: grey;
+   overflow: hidden;
+   font-family: sans-serif;
+   padding: 30px;
+   padding-left: 45px;
+   padding-right: 45px;
+ }
 
-  .centered {
-    margin: 0 auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    font-size: 20px;
-    transform: translate(-50%, -50%);
-  }
+ .centered {
+   margin: 0 auto;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   font-size: 20px;
+   transform: translate(-50%, -50%);
+ }
 
-  .right-side a {
-    float: right;
-    margin: 0 auto;
-  }
-  
+ .left-side a {
+   float: left;
+   margin: 0 auto;
+ }
