@@ -5,25 +5,69 @@ document.getElementById("openingTab").click();
      */
      function writeTask(){
        document.getElementById("initial").style.display = "none";
-       document.getElementById("makeTask").style.display = "block";
        document.getElementById("atbutton").style.display = "none";
 
      }
 
+    var popup = document.getElementById("addNewTaskButton");
+    popup.addEventListener("click", function(){
+        document.querySelector(".popup-background").style.display="flex";
+        document.querySelector(".popup-content").style.display="table";
+    });
+
+    document.querySelector(".close").addEventListener("click", function(){
+        document.querySelector(".popup-background").style.display="none";
+        document.querySelector(".popup-content").style.display="none";
+    });
+
+    var submit = document.getElementById("submit");
+    submit.addEventListener("click", function(){
+        document.querySelector(".popup-background").style.display = "none";
+        document.querySelector(".popup-content").style.display="none";
+    });
+
      function addTask(){
        var ul = document.getElementById("tasks");
 
-       /*var c = document.createElement("input");
-       c.type="checkbox";
-       ul.appendChild(c);*/
-
-       var message = document.getElementById("newTask");
+       var message = document.getElementById("task-description");
        var li = document.createElement("li");
-       li.setAttribute('id',message.value);
-       li.appendChild(document.createTextNode(message.value));
+
+       var checkbox = document.createElement("input")
+       checkbox.type="checkbox";
+       checkbox.name="checkbox";
+       checkbox.onclick = checkNew;
+       checkbox.style.cssText = "transform:scale(1.5); margin:10px;";
+       li.appendChild(checkbox);
+
+       var h3 = document.createElement("h3");
+        h3.style.cssText = "display:inline-block;"
+       h3.innerHTML = message.value;       
+       li.appendChild(h3);
+
+       var br1 = document.createElement("br");
+       li.appendChild(br1);
+
+       li.appendChild(document.createTextNode("made by YOU"));
+       
+       var br2 = document.createElement("br");
+       li.appendChild(br2);
+
+       li.appendChild(document.createTextNode("insert time this task was created"));
+      
+       var br3 = document.createElement("br");
+       li.appendChild(br3);
+
        ul.appendChild(li);
 
-       newTaskHome()
+        
+        // Putting task into local storage
+        var info = {
+            "taskName": message.value, "userName": "This user", "timeCreated": "now" 
+           };
+        
+        addToStorage("created-tasks", info);
+
+        newTaskHome()
      }
 
     /* To go to the home screen for new task tab */
@@ -31,11 +75,6 @@ document.getElementById("openingTab").click();
       document.getElementById("initial").style.display = "block";
       document.getElementById("pendingApproval").style.display = "none";
       document.getElementById("assigning").style.display = "none";
-      document.getElementById("makeTask").style.display = "none";
-      document.getElementById("atbutton").style.display = "block";
-      document.getElementById("checkNewTask").checked = false;
-      document.getElementById("checkNewTask2").checked = false;
-      document.getElementById("checkNewTask3").checked = false;
     }
 
     /* To show the message about pending approval */
@@ -51,26 +90,22 @@ document.getElementById("openingTab").click();
           break;
         }
       }
-      document.getElementById("userName").innerHTML = val;
 
-      if(document.getElementById("checkNewTask").checked==true){
-        document.getElementById("tasks1").style.display = "none";
-      }
+        document.getElementById("userName").innerHTML = val;
 
-      if(document.getElementById("checkNewTask2").checked==true){
-        document.getElementById("tasks2").style.display = "none";
-      }
+        $("input[name='checkbox']").each(function() {
+            var $this = $(this);
+            if ($this.is(":checked")) {
+                $(this).parent().remove()
+            }
+        });
 
-      if(document.getElementById("checkNewTask3").checked==true){
-        document.getElementById("tasks3").style.display = "none";
-      }
+        document.getElementById("assignButton").style.display = "none";
+      
     }
 
     /* To assign a task */
     function toAssign(){
-      document.getElementById("assignButton").style.display = "none";
-      document.getElementById("assignButton2").style.display = "none";
-      document.getElementById("assignButton3").style.display = "none";
       document.getElementById("initial").style.display = "none";
       document.getElementById("assigning").style.display = "block";
       document.getElementById("atbutton").style.display = "none";
@@ -78,32 +113,15 @@ document.getElementById("openingTab").click();
 
     /* for the checkbox in new tab*/
     function checkNew(){
-      var checkbox = document.getElementById("checkNewTask");
-      var text = document.getElementById("assignButton");
-      if (checkbox.checked == true){
-        text.style.display = "block";
-      }
-      else{
-        text.style.display = "none";
-      }
+        var atLeastOneIsChecked = $("input[name='checkbox']:checked").length > 0;
 
-      var checkbox = document.getElementById("checkNewTask2");
-      var text = document.getElementById("assignButton2");
-      if (checkbox.checked == true){
-        text.style.display = "block";
+        var button = document.getElementById("assignButton");
+      if(atLeastOneIsChecked){
+        button.style.display = "block";
+      }else{
+        button.style.display = "none";
       }
-      else{
-        text.style.display = "none";
-      }
-
-      var checkbox = document.getElementById("checkNewTask3");
-      var text = document.getElementById("assignButton3");
-      if (checkbox.checked == true){
-        text.style.display = "block";
-      }
-      else{
-        text.style.display = "none";
-      }
+      
     }
 
     /*

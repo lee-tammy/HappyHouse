@@ -16,6 +16,18 @@ i {
   color: gray;
 }
 
+.anchor{
+    left: 0;
+    top: 0;
+    width: 100%;
+    position: fixed;
+}
+
+.spacer{
+    width: 100%;
+    height: 150px;
+}
+
 /* To center the objects */
 .centered {
   margin: 0 auto;
@@ -32,12 +44,11 @@ i {
 }
 
 .tabcontent{
-     padding: 20px 20px;
+     
      text-align: center;
 }
 
 .tabheader{
-    /*margin: 25px;*/
     padding: 20px 20px;
 }
 
@@ -68,7 +79,7 @@ i {
 }
 
 body, html{
-    height: 100%;
+    height: 100%; 
     margin: 0 auto;
     font-family: sans-serif;
     }
@@ -114,70 +125,91 @@ button{
      padding: 10px;
    } */
 
-   /* Customize the label */
-   .container{
-     display: block;
-     position: relative;
-     padding-left: 35px;
-     margin-bottom: 12px;
-     cursor: pointer;
-     font-size: 22px;
-     -webkit-user-select: none;
-     -moz-user-select: none;
-     -ms-user-select: none;
-     user-select: none;
-   }
+.container{
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }   
 
-   /* Hide the browser's default checkbox*/
-   /*.container input{
-     position: absolute;
-     opacity: 0;
-     cursor: pointer;
-     height: 0;
-     width: 0;
-   } */
+/* Popup for adding new tasks*/
+.popup-background{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity:1;
+    position:fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    display: none;
+}
 
-    /* Create a custom checkbox */
-    /*.checkmark{
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 25px;
-      width: 25px;
-      background-color: #eee;
-    }*/
+.popup-content{
+    width: 250px;
+    position:fixed;
+    display:flex;
+    height: 200px;
+    background-color: white;
 
-    /* On mouse-over, add a grey background color */
-    /*.container: hover input ~ .checkmark{
-      background-color: #ccc;
-    }*/
+    opacity:1;
+    display:none;
+}
 
-    /* When the checkbox is checked, add a blue background */
-    /*.container input: checked ~ .checkmark{
-      background-color: #2196F3;
-    }*/
+.confirmation-content{
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    border-radius: 4px;
+    opacity:1;
+    display: table;
+    display:none;
+}
 
-    /* Create the checkmark/indicator (hidden when not checked)*/
-    /*.checkmark: after{
-      content: "";
-      position: absolute:absolute;
-      display: none;
-    }*/
+form{
+    top:50%;
+    width:50%; 
+    margin:0 auto;
+}
 
-    /* Show the checkmark when checked */
-    /*.container input:checked ~ .checkmark:after{
-      display: block;
-    }*/
+.close{
+    margin-left:90%;
+    background-color:red;
+    color: white;
+}
 
-    /* Style the checkmark/indicator */
-    /*.container .checkmark:after{
-      left: 9px;
-      top: 5px;
-      width: 5px;
-      height: 10px;
-      border: solid white;
-      border-width: 0 3px 3px 0;
-      -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-      transform: rotate(45deg);
-    } */
+#task-description{
+    height:20px;
+    width:200px;
+}
+
+label{
+    font-size:20px;
+}
+
+.task-popup{
+    margin:7px;
+}
+
+
+.fixedbutton {
+    position: fixed;
+    top: 160px;
+    left:45%;
+}
+
+#addNewTaskButton{
+    left:42%;
+}
+
+#assignButton{
+    left:52%;
+    display: none;
+}

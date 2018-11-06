@@ -15,24 +15,48 @@
   </head>
 
     <body>
-
-    <!--The header-->
-    <div class="header" id="tasks-header">
-      <div class="centered">
-        <p><b>TASKS</b></p>
+    <div class="anchor">
+      <!--The header-->
+      <div class="header" id="tasks-header">
+        <div class="centered">
+          <p><b>TASKS</b></p>
+        </div>
+        <div class="left-side">
+          <a href="index.html" id="homepage"><i class="fas fa-home"></i><a>
+        </div>
       </div>
-      <div class="left-side">
-        <a href="index.html" id="homepage"><i class="fas fa-home"></i><a>
-      </div>
+      <!--The New, In-Progress, and Completed Tabs-->
+      <button id="openingTab" class="tablink" onclick="openPage('New', this, '#777')">New</button>
+      <button class="tablink" onclick="openPage('In-Progress', this, '#777')">In-Progress</buton>
+      <button class="tablink" onclick="openPage('Completed', this, '#777')">Completed</button>
+    
+      
     </div>
 
-    <!--The New, In-Progress, and Completed Tabs-->
-    <button id="openingTab" class="tablink" onclick="openPage('New', this, '#777')">New</button>
-    <button class="tablink" onclick="openPage('In-Progress', this, '#777')">In-Progress</buton>
-    <button class="tablink" onclick="openPage('Completed', this, '#777')">Completed</button>
+    <div class="spacer">
+        &nbsp;
+    </div>
+
+    <button id="addNewTaskButton" class="fixedbutton">Add New Task</button>
+    <button id="assignButton" class="fixedbutton" onclick="toAssign()">Assign User</button>
 
     <!--New Task Tab-->
     <div id="New" class="tabcontent">
+
+      <!--POPUP FOR ADDING NEW TASKS-->
+     
+    
+      <div class="popup-background">
+
+        <!-- FILL OUT INFO OF TASK AND ASSIGNEE -->
+        <div class="popup-content">
+          <button class="close">X</button>
+
+          <label for="task-name" id="task-name" class="task-popup"><b>Task Name</b></label><br>
+          <input id="task-description" class="task-popup" type="text" placeholder="Enter Task" required><br>
+          <input id="submit" type="submit" value="Add" class="task-popup" onclick="addTask()">
+        </div>
+      </div>
 
       <div class="tabheader">
         <!--<h1>NEW TASKS</h1>
@@ -41,29 +65,30 @@
 
       <!--<div id="initial" class="messageThread"> -->
       <div class="messageThread" id="initial">
-        <ol id="tasks1">
-            <li><h3><input type="checkbox" id="checkNewTask" onclick="checkNew()"> task name 1</h3>
+      <ol id="tasks1">
+            <li>
+              <input type="checkbox" name = "checkbox" id="checkNewTask1" onclick="checkNew()">
+              <h3 style ="display: inline-block"> task name 1</h3><br>
               made by user 2<br>
-              made today
-            <button onclick="toAssign()" style="display:none" id="assignButton" class="textIP">Assign?</button></li>
+              made today<br>
         </ol>
         <ol id="tasks2">
-            <li><h3><input type="checkbox" id="checkNewTask2" onclick="checkNew()"> task name 2</h3>
+            <li>
+              <input type="checkbox" name = "checkbox" id="checkNewTask2" onclick="checkNew()">
+              <h3 style ="display: inline-block"> task name 1</h3><br>
               made by user 2<br>
-              made today
-            <button onclick="toAssign()" style="display:none" id="assignButton2" class="textIP">Assign?</button></li>
+              made today<br>
         </ol>
         <ol id="tasks3">
-            <li><h3><input type="checkbox" id="checkNewTask3" onclick="checkNew()"> task name 3</h3>
+            <li>
+              <input type="checkbox" name = "checkbox" id="checkNewTask3" onclick="checkNew()">
+              <h3 style ="display: inline-block"> task name 1</h3><br>
               made by user 2<br>
-              made today
-            <button onclick="toAssign()" style="display:none" id="assignButton3" class="textIP">Assign?</button></</li>
+              made today<br>
         </ol>
         <ol id="tasks">
         </ol>
       </div>
-
-      <button onclick="writeTask()" id="atbutton" class="textIP">Add New Task</button>
 
       <div id="makeTask" style="display:none">
           <input type = "text" id="newTask">
@@ -182,5 +207,8 @@
 
     </div>
   </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/local-storage.js"></script>
   <script type="text/javascript" src="js/tasks.js"></script>
+  
 </html>
