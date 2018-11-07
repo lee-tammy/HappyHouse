@@ -33,35 +33,60 @@
       <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;mode=WEEK&amp;height=400&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=ucsd.edu_47ib06grd43f4m65scnaa749po%40group.calendar.google.com&amp;color=%2323164E&amp;ctz=America%2FLos_Angeles" style="border-width:0" width="90%" height="500px" frameborder="0" scrolling="no"></iframe>
     </div> -->
 
-    <button class="collapsible"> Add Event </button>
+    <!--<button class="collapsible"> Add Event </button>
     <div class="content">
-      Name: <input type="text"><br><br>
+      Name: <input type="text" value=""><br><br>
       Start: <input type="time"><br><br>
       End: <input type="time"><br><br>
       Start Date: <input type="date"><br><br>
       End Date: <input type="date"><br><br>
       <button> Create Event </button>
+    </div> -->
+
+<!-- payment collapsible -->
+    <button class="collapsible"> Payments </button>
+    <div class="content">
+      <script id="bill-list" type="text/x-handlebars-template">
+        <div class="notification-group" id="notification{{index}}">
+          <h3 class="billName">{{billName}}</h3>
+          <p class="amount">{{amount}}</p>
+          <p class="dueDate">{{dueDate}}</p>
+        </div>
+      </script>
+
+      <div id="new-bills">
+        <!-- notifiations will be inputed here-->
+      </div>
+
+
+      <h2> Add New Bill </h2>
+      Name <br><input type="text" placeholder="Bill Name"><br><br>
+      Amount <br><input type="number" step="any" placeholder="00.00"><br><br>
+      Due Date <br><input type="date"><br><br>
+      <button onclick="addBill()"> Add Bill </button>
     </div>
 
-    <div id="newEvent">
+<!-- class schedule collapsible -->
+    <button class="collapsible"> Tammy's Class Schedule </button>
+    <div class="content">
+      <p> Class 1 </p>
+    </div>
+
+
+    <button class="collapsible"> Janselle's Class Schedule </button>
+    <div class="content">
+      <p> Class 1 </p>
+    </div>
+
+    <button class="collapsible"> Allison's Class Schedule </button>
+    <div class="content">
+      <p> Class 1 </p>
     </div>
 
   </body>
 
-  <script>
-    var coll = document.getElementsByClassName("collapsible");
-    var i;
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script type="text/javascript" src="js/handlebars-v4.0.11.js"></script>
+  <script type="text/javascript" src="js/schedules.js"></script>
 
-    for (i = 0; i < coll.length; i++) {
-      coll[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        if (content.style.display === "block") {
-          content.style.display = "none";
-        } else {
-          content.style.display = "block";
-        }
-      });
-    }
-  </script>
 </html>
