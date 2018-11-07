@@ -32,3 +32,25 @@ i {
   font-size: 50px;
   color: gray;
 }
+
+.notification-group {
+  margin: 10px 20px 10px 20px;
+  padding: 30px;
+  color: black;
+  background: #b3b3b3;
+  font-family: sans-serif;
+  font-size: 30px;
+}
+
+.notification-group (lastChild) {
+  margin-bottom: 10px;
+}
+
+.notification-group p {
+  margin: 0;
+}
+
+.Time-stamp {
+  float: right;
+  font-size: 20px;
+}

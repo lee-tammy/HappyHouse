@@ -22,8 +22,24 @@
         <a href="index.html" id="homepage"><i class="fas fa-home"></i><a>
       </div>
     </div>
+
+
+    <!-- List of old notifications via Handlebars -->
+    <script id="entry-notifications" type="text/x-handlebars-template">
+      <div class="notification-group" id="notification{{index}}">
+        <p class="Text-on-notification">{{nameOfUser}} {{notificationText}}</p>
+        <p class="Time-stamp">{{timeStamp}}</p>
+      </div>
+    </script>
+
+    <div id="list-of-notifications">
+      <!-- notifiations will be inputed here-->
+    </div>
+
   </body>
 
-  <script>
-  </script>
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script type="text/javascript" src="js/handlebars-v4.0.11.js"></script>
+  <script type="text/javascript" src="js/notifications.js"></script>
+
 </html>
