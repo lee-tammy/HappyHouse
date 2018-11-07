@@ -29,7 +29,7 @@ var parentDiv = $("#list-of-notifications");
 
 //copied from the slides
 
-for(var i = (complexData.length - 1); i >= 0; i--) {
+for (var i = (complexData.length - 1); i >= 0; i--) {
   var curData = complexData[i];
   var curHtml = template(curData);
   parentDiv.append(curHtml);
