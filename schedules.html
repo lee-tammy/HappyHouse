@@ -32,15 +32,7 @@
     <div><iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;mode=WEEK&amp;height=400&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=ucsd.edu_47ib06grd43f4m65scnaa749po%40group.calendar.google.com&amp;color=%2323164E&amp;ctz=America%2FLos_Angeles" style="border-width:0" width="90%" height="500px" frameborder="0" scrolling="no"></iframe></div>
 -->
 
-<!--
-      <h2> Add New Bill </h2>
-      Name <br><input type="text" placeholder="Bill Name" id="billID"><br><br>
-      Amount <br><input type="number" step="any" placeholder="00.00" id="amountID"><br><br>
-      Due Date <br><input type="date" id="dueID"><br><br>
-      <button> Add Bill </button>
-    </div>
-  -->
-
+<!-- the tabs -->
   <button class="tablink" onclick="openPage('bills', this, 'gray')" id="defaultOpen">BILLS</button>
   <button class="tablink" onclick="openPage('classes', this, 'gray')">CLASSES</button>
   <button class="tablink" onclick="openPage('work', this, 'gray')">WORK</button>
@@ -48,14 +40,29 @@
 
 <!-- bill tab -->
   <div id="bills" class="tabcontent">
-    <div>
-      <h2> Add New Bill </h2>
-      Name <br><input type="text" placeholder="Bill Name" id="billID"><br><br>
-      Amount <br><input type="number" step="any" placeholder="00.00" id="amountID"><br><br>
-      Due Date <br><input type="date" id="dueID"><br><br>
-      <button> Add Bill </button>
+
+    <!-- Trigger/Open The Modal -->
+    <button id="writeBill"> Create New Bill </button>
+
+    <!-- the popup -->
+    <div id="billPopup" class="modal">
+      <!-- the popup content -->
+      <div class="popup-content">
+        <span class="close">&times;</span>
+        <h2> Create New Bill </h2>
+
+          Name <br><input type="text" placeholder="Bill Name" id="billID"><br><br>
+          <!--Amount <br><input type="number" step="any" placeholder="00.00" id="amountID"><br><br>
+          Due Date <br><input type="date" id="dueID"><br><br> -->
+
+        <button onclick="addBill()"> Add Bill </button>
+      </div>
     </div>
+
+    <ul id="billList"></ul>
+
   </div>
+
 
 
 
@@ -79,6 +86,7 @@
   </body>
 
   <script src="https://code.jquery.com/jquery.js"></script>
+  <script type="text/javascript" src="js/handlebars-v4.0.11.js"></script>
   <script type="text/javascript" src="js/schedules.js"></script>
 
 </html>
