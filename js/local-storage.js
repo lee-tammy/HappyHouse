@@ -22,7 +22,7 @@ var justoJanselleInfo = {
     "user-name": "janju129",
     "email": "jcjusto@ucsd.edu",
     "phone-number": "(608)298-2791",
-    "group": "cogsv120 house"
+    "group": "cogs 120 house"
 }
 localStorage.setItem("janju129", JSON.stringify(justoJanselleInfo));
 
