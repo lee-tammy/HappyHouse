@@ -44,7 +44,7 @@ i {
 }
 
 .tabcontent{
-     
+    
      text-align: center;
 }
 
@@ -58,6 +58,9 @@ i {
   margin: 0 auto;;
 }
 
+body {
+    overflow: none;
+}
 
 /*
  * FOR THE MENU
@@ -104,9 +107,11 @@ button{
     }
 
     .messageThread li{
-      margin: 10px;
       padding: 15px;
       background: #eaeaeb;
+      width: 50%;
+      margin-left: 25%;
+      margin-top:10px;
     }
 
    /*
@@ -118,12 +123,6 @@ button{
      padding: 10px;
      padding-bottom: 25px;
    }
-
-   /*#initial{
-     background-color: lightgrey;
-     margin: 10px;
-     padding: 10px;
-   } */
 
 .container{
     display: block;
@@ -198,6 +197,12 @@ label{
     margin:7px;
 }
 
+.task_name{
+    margin:0px;
+    float:left;
+    margin-left:10px;
+    font-size:20px;
+}
 
 .fixedbutton {
     position: fixed;
@@ -212,4 +217,55 @@ label{
 #assignButton{
     left:52%;
     display: none;
+}
+
+.task_checkbox{
+    float:left;
+    margin-left: 10%;
+    transform:scale(1.5);
+}
+
+#tasks {
+    margin-top: 150px;
+    overflow-y: scroll;
+    height: 500px;
+    z-index: -1;
+
+}
+
+#assigning{
+    margin-top: 150px;
+}
+#pendingApproval{
+    margin-top:150px;
+}
+
+#initial {
+    overflow: hidden;
+}
+
+body {
+    overflow: hidden;
+}
+
+.creator{
+    margin-bottom:1px;
+    float:right;
+}
+
+.time{
+    margin:0px;
+    float:right;
+}
+
+.username_div{
+
+    float:right;
+}
+
+.time_div{
+  
+    clear:right;
+    margin-bottom:10px;
+    
 }

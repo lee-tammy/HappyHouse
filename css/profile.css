@@ -1,7 +1,10 @@
 body {
     margin: 0 auto;
   }
-
+  
+  * {
+    font-family: 'Raleway', sans-serif;
+  }
   #profile-header {
     margin: 0 auto;
     position: relative;
@@ -31,4 +34,100 @@ body {
   i {
     font-size: 50px;
     color: gray;
+  }
+
+  div{
+    align-content: center;
+  }
+
+  .to_add {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 20px 0px 0px calc((100% - 200px)/2);
+  }
+
+  .profile_box {
+    width: 250px;
+    height: 77.5%;
+    margin: 1% 15px 5% 25px;
+    background-color: #f7f6f8;
+    border-radius: 5px;
+    border: 1px solid grey;
+    position: fixed;
+  }
+
+  #name {
+      font-size: 30px;
+      color: grey;
+      text-align: center;
+  }
+
+.groupName{
+  margin-left:45%;
+  font-size: 50px;
+  margin-bottom:10px;
+}
+
+  .groupAddressPicture{
+    margin-left:38%;
+    float:left;
+    margin-top:5px;
+  }
+
+  .groupAddress{
+    margin-left: 41%;
+    font-size: 30px;
+    margin-top:0px
+  }
+
+  .group_div {
+    border-radius: 4px;
+    float: left;
+    background-color: #808080;
+    width: calc((100% - 375px) / 3);
+    color: white;
+    margin: 1% 0px 0px 25px;
+    position: relative;
+  }
+
+  .group_member_picture {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid white;
+  }     
+
+  .emailPicture{
+    margin-left:10px;
+    float:left;
+  }
+
+  .email{
+    font-size: 17px;
+    margin-left:15px;
+    float:left;
+    margin-top:5px;
+  }
+
+  .phonePicture{
+    margin-left: 10px;
+    clear:left;
+    float:left;
+  }
+
+  .phoneNumber{
+    font-size: 17px;
+    margin-left: 15px;
+    float:left;
+    margin-top:5px;
+    text-align:center;
+  }
+
+  .groupMemberEmail{
+    font-size: 17px;
+    margin-left:15px;
+    margin-top:5px;
+    text-align: center;
   }

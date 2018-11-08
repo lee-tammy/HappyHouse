@@ -7,6 +7,8 @@
 
   <head>
     <link rel="stylesheet" type="text/css" href="css/login.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/local-storage.js"></script>
     <script src="js/login.js"></script>
   </head>
 
@@ -19,7 +21,7 @@
       
         <div class="username" id="username">
           <label for="uname"><b>Username</b></label><br>
-          <input class="textbox" type="text" placeholder="Enter Username" name="uname" required>
+          <input class="textbox" id="usernameTextbox" type="text" placeholder="Enter Username" name="uname" required>
           
         </div>
         <div class="password" id="password">    
@@ -30,7 +32,7 @@
         </div>
 
         <div class="submit">
-          <button type="button" onclick="goToHomePage();"id="button">Log In</button>
+          <button type="button" onclick='goToHomePage()' id="button">Log In</button>
         </div>
       </form>
     </div>

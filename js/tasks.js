@@ -36,26 +36,33 @@ document.getElementById("openingTab").click();
        checkbox.type="checkbox";
        checkbox.name="checkbox";
        checkbox.onclick = checkNew;
-       checkbox.style.cssText = "transform:scale(1.5); margin:10px;";
+       checkbox.classList = "task_checkbox"
        li.appendChild(checkbox);
 
-       var h3 = document.createElement("h3");
-        h3.style.cssText = "display:inline-block;"
-       h3.innerHTML = message.value;       
-       li.appendChild(h3);
+       var p = document.createElement("p");
+       p.innerHTML = message.value; 
+       p.classList = "task_name";      
+       li.appendChild(p);
 
        var br1 = document.createElement("br");
        li.appendChild(br1);
 
-       li.appendChild(document.createTextNode("made by YOU"));
-       
-       var br2 = document.createElement("br");
-       li.appendChild(br2);
+       let firstDiv = document.createElement('div');
+       let currentUser = (JSON.parse(localStorage.getItem("current-user")))["user-name"];
+       let creator = document.createElement("p");
+       creator.innerHTML = currentUser;
+       creator.classList = "creator";
+       firstDiv.appendChild(creator);
+       firstDiv.classList = "username_div";
+       li.appendChild(firstDiv);
 
-       li.appendChild(document.createTextNode("insert time this task was created"));
-      
-       var br3 = document.createElement("br");
-       li.appendChild(br3);
+       let secondDiv = document.createElement('div');
+       let timeCreated = document.createElement("p");
+       timeCreated.innerHTML = "insert time this task was created";
+       timeCreated.classList = "time";
+      secondDiv.appendChild(timeCreated);
+      secondDiv.classList = "time_div";
+      li.appendChild(secondDiv);
 
        ul.appendChild(li);
 
@@ -75,6 +82,8 @@ document.getElementById("openingTab").click();
       document.getElementById("initial").style.display = "block";
       document.getElementById("pendingApproval").style.display = "none";
       document.getElementById("assigning").style.display = "none";
+
+      document.getElementById("addNewTaskButton").style.display = "block";
     }
 
     /* To show the message about pending approval */
@@ -101,14 +110,15 @@ document.getElementById("openingTab").click();
         });
 
         document.getElementById("assignButton").style.display = "none";
-      
     }
 
     /* To assign a task */
     function toAssign(){
       document.getElementById("initial").style.display = "none";
       document.getElementById("assigning").style.display = "block";
-      document.getElementById("atbutton").style.display = "none";
+
+      document.getElementById("addNewTaskButton").style.display = "none";
+      document.getElementById("assignButton").style.display = "none";
     }
 
     /* for the checkbox in new tab*/
