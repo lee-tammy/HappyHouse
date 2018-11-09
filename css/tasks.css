@@ -176,8 +176,9 @@ form{
 }
 
 .close{
-    margin-left:90%;
-    background-color:red;
+    margin-left:85%;
+    text-align: center;
+    background-color:grey;
     color: white;
 }
 
@@ -208,11 +209,12 @@ label{
 }
 
 #addNewTaskButton{
-    left:42%;
+    float: center;
 }
 
 #assignButton{
-    left:52%;
+    float: center;
+    left:65%;
     display: none;
 }
 
@@ -223,7 +225,7 @@ label{
 }
 
 #tasks {
-    margin-top: 150px;
+    margin-top: 200px;
     overflow-y: scroll;
     height: 500px;
     z-index: -1;
@@ -231,10 +233,10 @@ label{
 }
 
 #assigning{
-    margin-top: 150px;
+    margin-top: 200px;
 }
 #pendingApproval{
-    margin-top:150px;
+    margin-top:200px;
 }
 
 #initial {
