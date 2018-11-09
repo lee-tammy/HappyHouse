@@ -94,9 +94,9 @@
         <p>Assign a task to</p>
 
         <form id="assignUser">
-          <input type="radio" name="user" value="User 1"> Allison Patacsil <br>
-          <input type="radio" name="user" value="User 2"> Janselle Justo <br>
-          <input type="radio" name="user" value="User 3"> Tammy Lee <br>
+          <input type="radio" name="user" value="Allison Patacsil"> Allison Patacsil <br>
+          <input type="radio" name="user" value="Janselle Justo"> Janselle Justo <br>
+          <input type="radio" name="user" value="Tammy Lee"> Tammy Lee <br>
         </form>
 
         <input type="submit" value="Assign" onclick="assignDone();assigningTaskNote();">
@@ -104,7 +104,7 @@
       </div>
 
       <div id="pendingApproval" style="display:none">
-        <p>Task request sent to <h4 id="userName"></h4>for approval</p>
+        <p>Task request has been assigned to <b id="userName"></b>.</p>
         <button onclick="newTaskHome()">Done</button>
       </div>
 

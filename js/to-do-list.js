@@ -18,3 +18,4 @@ function openPage(pageName, elmnt, color){
   }
 
 /*GETTING INFO CONTENT*/
+var to_do_list_array = [];
