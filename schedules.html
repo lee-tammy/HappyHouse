@@ -26,15 +26,15 @@
 
 
 <!-- the tabs -->
-  <button class="tablink" onclick="openPage('weekly', this, 'gray')">WEEKLY SCHEDULE</button>
-  <button class="tablink" onclick="openPage('bills', this, 'gray')" id="defaultOpen">BILL DEADLINES</button>
+  <button class="tablink" onclick="openPage('weekly', this, 'gray')" id="defaultOpen">WEEKLY SCHEDULE</button>
+  <button class="tablink" onclick="openPage('bills', this, 'gray')">BILL DEADLINES</button>
   <button class="tablink" onclick="openPage('special', this, 'gray')">SPECIAL EVENTS</button>
 
 <!-- bill tab -->
   <div id="bills" class="tabcontent">
 
     <!-- Trigger/Open The Modal -->
-    <button id="writeBill"> Create New Bill </button>
+    <button id="writeBill">Create New Bill</button>
 
     <!-- the popup -->
     <div id="billPopup" class="modal">
@@ -55,10 +55,9 @@
 
   </div>
 
+<!-- weekly tab -->
   <div id="weekly" class="tabcontent">
-    <h3>Weekly</h3>
-    <p>Where roommates can add their weekly schedules</p>
-
+    <h1>Weekly Schedule</h1>
     <div><iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=ucsd.edu_47ib06grd43f4m65scnaa749po%40group.calendar.google.com&amp;color=%235229A3&amp;ctz=America%2FLos_Angeles" style="border-width:0" width="90%" height="500px" frameborder="0" scrolling="no"></iframe></div>
 
   </div>
