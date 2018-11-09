@@ -139,59 +139,11 @@ document.getElementById("openingTab").click();
     /*
      * FUNCTIONS IN THE IN-PROGRESS TAB
      */
-    /* for the checkbox in in-progress tab*/
-    function checkFunctionIP(){
-      var checkbox = document.getElementById("myCheckIP");
-      var text = document.getElementById("textIP");
-      if (checkbox.checked == true){
-        text.style.display = "block";
-      }
-      else{
-        text.style.display = "none";
-      }
-
-      var checkbox = document.getElementById("myCheckIP2");
-      var text = document.getElementById("textIP2");
-      if (checkbox.checked == true){
-        text.style.display = "block";
-      }
-      else{
-        text.style.display = "none";
-      }
-
-      var checkbox = document.getElementById("myCheckIP3");
-      var text = document.getElementById("textIP3");
-      if (checkbox.checked == true){
-        text.style.display = "block";
-      }
-      else{
-        text.style.display = "none";
-      }
-
-      var checkbox = document.getElementById("myCheckIP4");
-      var text = document.getElementById("textIP4");
-      if (checkbox.checked == true){
-        text.style.display = "block";
-      }
-      else{
-        text.style.display = "none";
-      }
-
-    }
 
     /* to show the home screen of the in-progress tab */
-    function inProgressHome(){
-      document.getElementById("myCheckIP").checked = false;
-      document.getElementById("initialIP").style.display = "block";
-      document.getElementById("initialIP2").style.display = "block";
-      document.getElementById("initialIP3").style.display = "block";
-      document.getElementById("initialIP4").style.display = "block";
-      document.getElementById("messageThread").style.display = "none";
-      document.getElementById("instIP1").style.display = "block";
-      document.getElementById("instIP2").style.display = "none";
-    }
 
-    /* to add a message */
+    /* HOLD FOR NOW!!!!
+    (to add a message)
     function viewChat(){
       document.getElementById("initialIP").style.display = "none";
       document.getElementById("initialIP2").style.display = "none";
@@ -203,7 +155,7 @@ document.getElementById("openingTab").click();
       document.getElementById("instIP2").style.display = "block";
     }
 
-    /* to send a message */
+    (send a message)
     function sendMessage(){
       var ul = document.getElementById("chat");
       var message = document.getElementById("message");
@@ -214,7 +166,7 @@ document.getElementById("openingTab").click();
       li.appendChild(b);
       li.appendChild(document.createTextNode("-User 1"));
       ul.appendChild(li);
-    }
+    } */
 
     /* for the tabs*/
     function openPage(pageName, elmnt, color){

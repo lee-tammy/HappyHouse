@@ -1,5 +1,4 @@
-/* for the tabs*/
-
+/*TABS HEADER*/
 document.getElementById("openingTab").click();
 
 function openPage(pageName, elmnt, color){
@@ -17,3 +16,5 @@ function openPage(pageName, elmnt, color){
 
     document.getElementById("defaultOpen").click();
   }
+
+/*GETTING INFO CONTENT*/

@@ -1,7 +1,7 @@
 var complexData = [
   {   'index': 1,
       'nameOfUser' : 'Janselle',
-      'notificationText': 'needs an item! Check your Tasks Tab.',
+      'notificationText': 'added a task! Check your Tasks Tab.',
       'timeStamp' : '2 Days Ago'
   },
   {   'index': 2,
@@ -11,15 +11,43 @@ var complexData = [
   },
   {   'index': 3,
       'nameOfUser' : 'Allison',
-      'notificationText': 'completed a Task! Check your Tasks Tab.',
+      'notificationText': 'completed a task! Check your Tasks Tab.',
       'timeStamp' : '1 Hours Ago'
   },
   {   'index': 4,
       'nameOfUser' : 'Tammy',
-      'notificationText': 'needs an item! Check your Tasks list.',
+      'notificationText': 'added a task! Check your Tasks list.',
       'timeStamp' : '20 Minutes Ago'
   },
 ]
+
+//functions tasks page
+function addingTaskNote(user) {
+  complexData[complexData.length + 1] = {
+    'index': (complexData.length + 1),
+    'nameOfUser': user,
+    'notificationText': 'added a task! Check your Tasks Tab.',
+    'timeStamp' : 'Today'
+  }
+}
+
+function assigningTaskNote(user) {
+  complexData[complexData.length + 1] = {
+    'index': (complexData.length + 1),
+    'nameOfUser': user,
+    'notificationText': 'took on a task! Check your Tasks Tab.',
+    'timeStamp' : 'Today'
+  }
+}
+
+function completedTaskNote(user) {
+  complexData[complexData.length + 1] = {
+    'index': (complexData.length + 1),
+    'nameOfUser': user,
+    'notificationText': 'completed a task! Check your Tasks Tab.',
+    'timeStamp' : 'Today'
+  }
+}
 
 //compile the template
 var source = $("#entry-notifications").html();
