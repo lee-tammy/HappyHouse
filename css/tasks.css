@@ -44,13 +44,10 @@ i {
 }
 
 .tabcontent{
-    
+
      text-align: center;
 }
 
-.tabheader{
-    padding: 20px 20px;
-}
 
 /* To position the homepage icon*/
 .left-side a {
@@ -82,7 +79,7 @@ body {
 }
 
 body, html{
-    height: 100%; 
+    height: 100%;
     margin: 0 auto;
     font-family: sans-serif;
     }
@@ -135,7 +132,7 @@ button{
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-  }   
+  }
 
 /* Popup for adding new tasks*/
 .popup-background{
@@ -174,7 +171,7 @@ button{
 
 form{
     top:50%;
-    width:50%; 
+    width:50%;
     margin:0 auto;
 }
 
@@ -264,8 +261,8 @@ body {
 }
 
 .time_div{
-  
+
     clear:right;
     margin-bottom:10px;
-    
+
 }

@@ -29,8 +29,8 @@
       <button id="openingTab" class="tablink" onclick="openPage('New', this, '#777')">New</button>
       <button class="tablink" onclick="openPage('In-Progress', this, '#777')">In-Progress</buton>
       <button class="tablink" onclick="openPage('Completed', this, '#777')">Completed</button>
-    
-      
+
+
     </div>
 
     <button id="addNewTaskButton" class="fixedbutton">Add New Task</button>
@@ -40,8 +40,8 @@
     <div id="New" class="tabcontent">
 
       <!--POPUP FOR ADDING NEW TASKS-->
-     
-    
+
+
       <div class="popup-background">
 
         <!-- FILL OUT INFO OF TASK AND ASSIGNEE -->
@@ -52,11 +52,6 @@
           <input id="task-description" class="task-popup" type="text" placeholder="Enter Task" required><br>
           <input id="submit" type="submit" value="Add" class="task-popup" onclick="addTask()">
         </div>
-      </div>
-
-      <div class="tabheader">
-        <!--<h1>NEW TASKS</h1>
-        <p>Choose a task to assign or create new task</p>-->
       </div>
 
       <!--<div id="initial" class="messageThread"> -->
@@ -118,12 +113,6 @@
     <!--In-Progress Task Tab-->
     <div id="In-Progress" class="tabcontent">
 
-      <div class="tabheader">
-        <!--<h1>TASKS IN-PROGRESS</h1>
-        <p id="instIP1">Choose a message thread to view</p>
-        <p id="instIP2" style="display:none">Add a message to this thread</p> -->
-      </div>
-
       <!--What first appears on the in-progress tab-->
       <div class="inprogresslist" id="initialIP">
         <h3><input type = "checkbox" id = "myCheckIP" onclick = "checkFunctionIP()">
@@ -176,11 +165,6 @@
     <!--Completed Task Tab-->
     <div id="Completed" class="tabcontent">
 
-      <div class="tabheader">
-        <!--<h2>COMPLETED TASKS</h2>
-        <p>A list of the user's completed tasks</p>-->
-      </div>
-
       <div class="completedList">
         <h3><input type="checkbox" checked="true"> task name<br></h3>
         completed on<br>xx/xx/xxx
@@ -208,5 +192,5 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/local-storage.js"></script>
   <script type="text/javascript" src="js/tasks.js"></script>
-  
+
 </html>
