@@ -1,21 +1,21 @@
 var complexData = [
   {   'index': 1,
-      'nameOfUser' : 'Janselle',
+      'nameOfUser' : 'Janselle Justo',
       'notificationText': 'added a task! Check your Tasks Tab.',
       'timeStamp' : '2 Days Ago'
   },
   {   'index': 2,
-      'nameOfUser' : 'Allison',
+      'nameOfUser' : 'Allison Patacsil',
       'notificationText': 'took on a task! Check your Tasks Tab',
       'timeStamp' : '1 Day Ago'
   },
   {   'index': 3,
-      'nameOfUser' : 'Allison',
+      'nameOfUser' : 'Allison Patacsil',
       'notificationText': 'completed a task! Check your Tasks Tab.',
       'timeStamp' : '1 Hours Ago'
   },
   {   'index': 4,
-      'nameOfUser' : 'Tammy',
+      'nameOfUser' : 'Tammy Lee',
       'notificationText': 'added a task! Check your Tasks list.',
       'timeStamp' : '20 Minutes Ago'
   },
