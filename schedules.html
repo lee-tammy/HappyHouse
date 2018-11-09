@@ -24,15 +24,11 @@
       </div>
     </div>
 
-<!--
-    <div><iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;mode=WEEK&amp;height=400&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=ucsd.edu_47ib06grd43f4m65scnaa749po%40group.calendar.google.com&amp;color=%2323164E&amp;ctz=America%2FLos_Angeles" style="border-width:0" width="90%" height="500px" frameborder="0" scrolling="no"></iframe></div>
--->
 
 <!-- the tabs -->
-  <button class="tablink" onclick="openPage('bills', this, 'gray')" id="defaultOpen">BILLS</button>
-  <button class="tablink" onclick="openPage('classes', this, 'gray')">CLASSES</button>
-  <button class="tablink" onclick="openPage('work', this, 'gray')">WORK</button>
-  <button class="tablink" onclick="openPage('special', this, 'gray')">SPECIAL</button>
+  <button class="tablink" onclick="openPage('weekly', this, 'gray')">WEEKLY SCHEDULE</button>
+  <button class="tablink" onclick="openPage('bills', this, 'gray')" id="defaultOpen">BILL DEADLINES</button>
+  <button class="tablink" onclick="openPage('special', this, 'gray')">SPECIAL EVENTS</button>
 
 <!-- bill tab -->
   <div id="bills" class="tabcontent">
@@ -59,13 +55,12 @@
 
   </div>
 
-  <div id="classes" class="tabcontent">
-    <h3>Classes</h3>
-    <p>Where roommates can add their class schedules</p>
-  </div>
-  <div id="work" class="tabcontent">
-    <h3>Work</h3>
-    <p>Where roommates can add their work schedules</p>
+  <div id="weekly" class="tabcontent">
+    <h3>Weekly</h3>
+    <p>Where roommates can add their weekly schedules</p>
+
+    <div><iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=ucsd.edu_47ib06grd43f4m65scnaa749po%40group.calendar.google.com&amp;color=%235229A3&amp;ctz=America%2FLos_Angeles" style="border-width:0" width="90%" height="500px" frameborder="0" scrolling="no"></iframe></div>
+
   </div>
 
 
