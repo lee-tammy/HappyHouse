@@ -82,6 +82,7 @@ function displayBill(){
     var br2 = document.createElement("br"); // break in list
     var h = document.createElement("h2");
 
+
     var name = nameArray[i]; // the name of the bill
       h.append(name);
     var cost = costArray[i]; // cost of the bill

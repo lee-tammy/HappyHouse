@@ -116,6 +116,8 @@ body {
 ul{
   list-style-type: none;
   padding: 0;
+  padding-right: 300px;
+  padding-left: 300px;
   text-align: center;
 }
 
@@ -125,19 +127,20 @@ li{
   margin: 10px;
   padding: 10px;
   padding-bottom: 30px;
+  font-size: 25px;
 }
 
-#writeBill {
+button {
   background-color: lightgrey;
   border: none;
   color: black;
   padding: 15px 32px;
   text-align: center;
-  font-size: 25px;
+  font-size: 20px;
   cursor: pointer;
 }
 
-#writeBill:hover {
+button:hover{
   background-color: gray;
   color: white;
 }
