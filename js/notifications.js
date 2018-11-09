@@ -22,31 +22,42 @@ var complexData = [
 ]
 
 //functions tasks page
-function addingTaskNote(user) {
-  complexData[complexData.length + 1] = {
-    'index': (complexData.length + 1),
-    'nameOfUser': user,
-    'notificationText': 'added a task! Check your Tasks Tab.',
-    'timeStamp' : 'Today'
-  }
+function addingTaskNote() {
+  let currentUser = (JSON.parse(localStorage.getItem("current-user")))["name"];
+  data = {
+      'index': (complexData.length + 1),
+      'nameOfUser': currentUser,
+      'notificationText': 'added a task! Check your Tasks on the New Tab.',
+      'timeStamp' : 'Today'
+    };
+  complexData.push(data);
+
+  localStorage.setItem('savedNotes', JSON.stringify(complexData));
 }
 
-function assigningTaskNote(user) {
-  complexData[complexData.length + 1] = {
+function assigningTaskNote() {
+  data = {
     'index': (complexData.length + 1),
-    'nameOfUser': user,
-    'notificationText': 'took on a task! Check your Tasks Tab.',
+    'nameOfUser': '',
+    'notificationText': 'A task has been assigned! Check your Tasks on the In-Progress Tab.',
     'timeStamp' : 'Today'
-  }
+  };
+  complexData.push(data);
+
+ localStorage.setItem('savedNotes', JSON.stringify(complexData));
 }
 
-function completedTaskNote(user) {
-  complexData[complexData.length + 1] = {
+function completedTaskNote() {
+  let currentUser = (JSON.parse(localStorage.getItem("current-user")))["name"];
+  data = {
     'index': (complexData.length + 1),
-    'nameOfUser': user,
-    'notificationText': 'completed a task! Check your Tasks Tab.',
+    'nameOfUser': currentUser,
+    'notificationText': 'completed a task! Check your Tasks on Completed Tab.',
     'timeStamp' : 'Today'
-  }
+  };
+  complexData.push(data);
+
+  localStorage.setItem('savedNotes', JSON.stringify(complexData));
 }
 
 //compile the template
@@ -57,8 +68,10 @@ var parentDiv = $("#list-of-notifications");
 
 //copied from the slides
 
-for (var i = (complexData.length - 1); i >= 0; i--) {
-  var curData = complexData[i];
+var newComplexData = JSON.parse(localStorage.getItem('savedNotes'));
+
+for (var i = (newComplexData.length - 1); i >= 0; i--) {
+  var curData = newComplexData[i];
   var curHtml = template(curData);
   parentDiv.append(curHtml);
 }

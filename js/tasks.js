@@ -50,7 +50,7 @@ document.getElementById("openingTab").click();
        li.appendChild(br1);
 
        let firstDiv = document.createElement('div');
-       let currentUser = (JSON.parse(localStorage.getItem("current-user")))["user-name"];
+       let currentUser = (JSON.parse(localStorage.getItem("current-user")))["name"];
        let creator = document.createElement("p");
        creator.innerHTML = currentUser;
        creator.classList = "creator";

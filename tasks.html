@@ -50,7 +50,7 @@
 
           <label for="task-name" id="task-name" class="task-popup"><b>Task Name</b></label><br>
           <input id="task-description" class="task-popup" type="text" placeholder="Enter Task" required><br>
-          <input id="submit" type="submit" value="Add" class="task-popup" onclick="addTask()">
+          <input id="submit" type="submit" value="Add" class="task-popup" onclick="addTask();addingTaskNote();">
         </div>
       </div>
 
@@ -99,13 +99,13 @@
           <input type="radio" name="user" value="User 3"> User 3 <br>
         </form>
 
-        <input type="submit" value="Assign" onclick="assignDone()">
+        <input type="submit" value="Assign" onclick="assignDone();assigningTaskNote();">
         <button onclick="newTaskHome()">Cancel</button>
       </div>
 
       <div id="pendingApproval" style="display:none">
         <p>Task request sent to <h4 id="userName"></h4>for approval</p>
-        <button onclick = "newTaskHome()">Done</button>
+        <button onclick="newTaskHome()">Done</button>
       </div>
 
     </div>
@@ -177,11 +177,13 @@
         <h3>task name<br></h3>
         completed on<br>xx/xx/xxx
       </div>
-      
+
     </div>
   </body>
+  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/local-storage.js"></script>
+  <script type="text/javascript" src="js/notifications.js"></script>
   <script type="text/javascript" src="js/tasks.js"></script>
 
 </html>
