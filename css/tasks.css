@@ -82,6 +82,7 @@ body, html{
     height: 100%;
     margin: 0 auto;
     font-family: sans-serif;
+    font-size: 22px;
     }
 button{
      margin: 10px;
@@ -93,6 +94,8 @@ button{
     .inprogresslist{
       background-color: #eaeaeb;
       margin: 10px;
+      margin-right: 320px;
+      margin-left: 320px;
       padding: 10px;
       padding-bottom: 25px;
     }
@@ -117,9 +120,12 @@ button{
    .completedList{
      background-color: #eaeaeb;
      margin: 10px;
+     margin-right: 320px;
+     margin-left: 320px;
      padding: 10px;
      padding-bottom: 25px;
    }
+
 
 .container{
     display: block;
