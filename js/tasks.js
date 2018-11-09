@@ -1,3 +1,5 @@
+// FOR THE TASKS
+
 document.getElementById("openingTab").click();
 
     /*
@@ -40,8 +42,8 @@ document.getElementById("openingTab").click();
        li.appendChild(checkbox);
 
        var p = document.createElement("p");
-       p.innerHTML = message.value; 
-       p.classList = "task_name";      
+       p.innerHTML = message.value;
+       p.classList = "task_name";
        li.appendChild(p);
 
        var br1 = document.createElement("br");
@@ -66,12 +68,12 @@ document.getElementById("openingTab").click();
 
        ul.appendChild(li);
 
-        
+
         // Putting task into local storage
         var info = {
-            "taskName": message.value, "userName": "This user", "timeCreated": "now" 
+            "taskName": message.value, "userName": "This user", "timeCreated": "now"
            };
-        
+
         addToStorage("created-tasks", info);
 
         newTaskHome()
@@ -131,7 +133,7 @@ document.getElementById("openingTab").click();
       }else{
         button.style.display = "none";
       }
-      
+
     }
 
     /*
