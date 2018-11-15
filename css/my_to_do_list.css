@@ -41,8 +41,12 @@ body {
   }
 
   i {
-    font-size: 50px;
-    color: gray;
+    font-size: 70px;
+    color: #362819;
+  }
+
+  i:hover{
+    color: #e68a00;
   }
 
 /* Popup for adding new tasks*/
@@ -99,7 +103,7 @@ body {
     -ms-user-select: none;
     user-select: none;
     background-color: #eaeaeb;
-    
+
   }
 
   .taskName{
@@ -116,9 +120,9 @@ body {
 
   .completeButton{
     clear:right;
-    
+
     margin:0px;
     margin-right:5%;
     margin-left:45%;
-    
+
   }

@@ -1,11 +1,15 @@
-
+body{
+    font-family: 'Quicksand';
+    background-color: #FFFACD; /*lemmonchiffon*/
+}
 div{
     padding:10px;
     text-align: center;
 }
 .textbox{
-    height:20px;
-    font-size:14pt;
+    height:40px;
+    font-size:22pt;
+    font-family: 'Quicksand';
     flex-flow: center;
 }
 
@@ -16,12 +20,12 @@ div{
 
 #image{
     margin-top:75px;
-    width:600px;
-    height:90px;
+    width:800px;
+    height:130px;
 }
 
 label{
-     font-size:20px;
+     font-size: 35px;
  }
 
  #parent {
@@ -33,4 +37,20 @@ label{
     display: table-cell;
     text-align: center;
     vertical-align: middle;
+ }
+
+ button{
+   background-color: #f5f5ef;
+   border-radius: 8px;
+   border: show;
+   color: black;
+   padding: 15px 32px;
+   text-align: center;
+   font-size: 22px;
+   cursor: pointer;
+   font-family: 'Quicksand';
+ }
+
+ button:hover{
+   background-color: lightgrey;
  }

@@ -1,6 +1,7 @@
 body {
     margin: 0 auto;
     font-family: sans-serif;
+    font-family: 'Quicksand';
  }
 
  #schedules-header {
@@ -9,10 +10,10 @@ body {
    background: #eaeaeb;
    color: grey;
    overflow: hidden;
-   font-family: sans-serif;
    padding: 30px;
    padding-left: 45px;
    padding-right: 45px;
+   font-family: 'Quicksand';
  }
 
  .centered {
@@ -40,7 +41,8 @@ body {
  body, html {
      height: 100%;
      margin: 0 auto;
-     font-family: Arial;
+     font-family: 'Quicksand';
+     background-color: #FFFACD; /*lemmonchiffon*/
  }
 
 
@@ -53,7 +55,8 @@ body {
      outline: none;
      cursor: pointer;
      padding: 14px 16px;
-     font-size: 17px;
+     font-size: 40px;
+     font-family: 'Quicksand';
      /*width: 33.3333%; */
      width: 50%;
      margin: 0;
@@ -134,8 +137,7 @@ li{
 }
 
 button {
-  background-color: lightgrey;
-  border: none;
+  background-color: #f5f5ef;
   color: black;
   padding: 15px 32px;
   text-align: center;
@@ -144,6 +146,9 @@ button {
 }
 
 button:hover{
-  background-color: gray;
-  color: white;
+    background-color: lightgrey;
+}
+
+#writeBill{
+    border-radius: 8px;
 }

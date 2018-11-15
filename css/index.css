@@ -32,7 +32,7 @@ body {
     float: left;
     text-align: center;
     /**/
-    margin-top: 50px;
+    margin-top: 25px;
     /**/
   }
 
@@ -48,7 +48,7 @@ body {
   .right-side a {
     float: right;
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: 25px;
   }
 
   .button1, .button2, .button3, .button4 {
@@ -69,7 +69,13 @@ body {
     padding-bottom: 20px;
     min-width: 250px;
     width: 50%;
-    background: #eaeaeb;
+    background-color: #f5f5ef;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  button:hover{
+    background-color: lightgrey;
   }
 
   .logoff {
@@ -80,7 +86,6 @@ body {
   }
 
   i {
-    font-size: 50px;
     font-size: 70px;
     color: #362819	;
   }
