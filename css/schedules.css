@@ -1,13 +1,12 @@
 body {
     margin: 0 auto;
-    font-family: sans-serif;
     font-family: 'Quicksand';
+    background-color: #FFFACD; /*lemmonchiffon*/
  }
 
  #schedules-header {
    margin: 0 auto;
    position: relative;
-   background: #eaeaeb;
    background: #ffe680	;
    color: grey;
    overflow: hidden;

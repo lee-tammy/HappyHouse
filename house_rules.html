@@ -7,6 +7,7 @@
 
   <head>
     <link rel="stylesheet" type="text/css" href="css/house_rules.css">
+    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/solid.css" integrity="sha384-rdyFrfAIC05c5ph7BKz3l5NG5yEottvO/DQ0dCrwD8gzeQDjYBHNr1ucUpQuljos" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/regular.css" integrity="sha384-z3ccjLyn+akM2DtvRQCXJwvT5bGZsspS4uptQKNXNg778nyzvdMqiGcqHVGiAUyY" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/brands.css" integrity="sha384-QT2Z8ljl3UupqMtQNmPyhSPO/d5qbrzWmFxJqmY7tqoTuT2YrQLEqzvVOP2cT5XW" crossorigin="anonymous">
@@ -17,7 +18,7 @@
 
     <div class="header" id="house-rules-header">
       <div class="centered">
-        <p><b>HOUSE RULES</b></p>
+        <p id="headTitle"><b>HOUSE RULES</b></p>
       </div>
       <div class="left-side">
         <a href="index.html" id="homepage"><i class="fas fa-home"></i><a>
@@ -27,14 +28,14 @@
     <div class="house-rules">
       <ul id="list_of_rules">
           <li>Make sure to lock the door before sleeping.</li>
-          <li>When taking the trash out, make sure to put a new trash back in.</li>
+          <li>When taking the trash out, make sure to put a new trash bag.</li>
           <li>Let everyone know that they have guests.</li>
       </ul>
     </div>
 
-    <div id="myDIV" class="header">
+    <div id="myDIV" class="header" style="margin-left: 10%">
       <input type="text" id="myInput" placeholder="Rules...">
-      <span onclick="newElement()" class="addBtn">Add</span>
+      <span onclick="newElement()" class="addBtn" id="addBtn">Add</span>
     </div>
 
   </body>
