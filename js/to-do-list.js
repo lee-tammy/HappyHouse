@@ -30,11 +30,13 @@ function removeFromList(){
   var filtered = todoListItems.filter(function(value){
     return value["taskInfo"]["taskName"] != taskName; 
   });
-  taskName = null;
+  
 
   localStorage.setItem(key, JSON.stringify(filtered));
+  removeFromInProgress();
   reload();
   returnToList();
+
 }
 
 function returnToList(){  
@@ -44,7 +46,6 @@ function returnToList(){
 
 /*GETTING INFO CONTENT*/
 function reload(){
-  var list = document.getElementById("newEntry");
   $( ".entry" ).remove();
   var currentUser = JSON.parse(localStorage.getItem("current-user"));
   var currentUserToDoList = currentUser["user-name"] + "-toDoList";
@@ -63,6 +64,27 @@ function reload(){
     var curHTML = template(task);
     parentDiv.append(curHTML);
   }
+}
+
+function removeFromInProgress(){
+  var inProgress = JSON.parse(localStorage.getItem("inProgressTasks"));
+  let removing = null;
+  var filtered = inProgress.filter(function(value){
+    if(value["taskName"] == taskName){
+      removing = JSON.stringify(value);
+    }
+    return value["taskName"] != taskName; 
+  });
+  taskName= null;
+  
+  addToCompleted(removing);
+  localStorage.setItem("inProgressTasks", JSON.stringify(filtered));
+
+}
+
+function addToCompleted(removing){
+  addToStorage("completedTasks", JSON.parse(removing));
+  console.log(localStorage);
 }
 
 

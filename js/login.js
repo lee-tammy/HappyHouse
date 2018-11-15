@@ -3,7 +3,6 @@ function goToHomePage(){
     if(getFromStorage(username) != null){
         document.location.href = "index.html";
         localStorage.setItem("current-user", getFromStorage(username));
-        console.log(getFromStorage(username));
     }
 
 }
