@@ -1,28 +1,39 @@
 body {
     margin: 0 auto;
+    font-family: 'Quicksand';
+    /*background-color: #FEF1B5; /* buttermilk */
+    /*background-color: #FFF8DC; /* cornsilk2 */
+    background-color: #FFFACD; /*lemmonchiffon*/
   }
 
   #main-page-header {
     margin: 0 auto;
     position: relative;
-    background: white;
+    /*background: #EDCB62; /* golden delicious apple */
+    background: #ffe680	;
     color: grey;
     overflow: hidden;
-    font-family: sans-serif;
+    /*font-family: sans-serif; */
+    font-family: 'Quicksand';
     padding: 30px;
     padding-left: 45px;
     padding-right: 45px;
   }
 
   #image {
-    width: 375px;
-    height: 55px;
+    /*width: 375px;
+    height: 55px; */
+    width: 650px;
+    height: 100px;
   }
 
   .header a {
     margin: 0 auto;
     float: left;
     text-align: center;
+    /**/
+    margin-top: 50px;
+    /**/
   }
 
   .centered {
@@ -37,6 +48,7 @@ body {
   .right-side a {
     float: right;
     margin: 0 auto;
+    margin-top: 50px;
   }
 
   .button1, .button2, .button3, .button4 {
@@ -44,10 +56,15 @@ body {
     padding-bottom: 19px;
   }
 
+  .vertical-buttons{
+    margin-top: 50px;
+  }
+
   button {
-    font-family: sans-serif;
+    /*font-family: sans-serif; */
+    font-family: 'Quicksand';
     text-align: center;
-    font-size: 20px;
+    font-size: 40px;
     padding-top: 20px;
     padding-bottom: 20px;
     min-width: 250px;
@@ -56,12 +73,22 @@ body {
   }
 
   .logoff {
-    font-family: sans-serif;
-    font-size: 20px;
+    /*font-family: sans-serif; */
+    font-family: 'Quicksand';
+    font-size: 40px;
     text-align: center;
   }
 
   i {
     font-size: 50px;
-    color: gray;
+    font-size: 70px;
+    color: #362819	;
+  }
+
+  i:hover{
+    color: #e68a00;
+  }
+
+  a{
+    color: #b34700;
   }

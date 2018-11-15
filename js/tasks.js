@@ -63,7 +63,7 @@ document.getElementById("openingTab").click();
        let secondDiv = document.createElement('div');
        let timeCreated = document.createElement("p");
 
-  
+
        var d = new Date();
        var hour = d.getHours();
        var minutes = d.getMinutes();
