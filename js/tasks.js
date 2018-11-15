@@ -33,12 +33,14 @@ document.getElementById("openingTab").click();
 
        var message = document.getElementById("task-description");
        var li = document.createElement("li");
-
+       li.id = message.value;
+  
        var checkbox = document.createElement("input")
        checkbox.type="checkbox";
        checkbox.name="checkbox";
        checkbox.onclick = checkNew;
        checkbox.classList = "task_checkbox"
+       checkbox.id = message.value;
        li.appendChild(checkbox);
 
        var p = document.createElement("p");
@@ -69,12 +71,12 @@ document.getElementById("openingTab").click();
        ul.appendChild(li);
 
 
+       let currentUserName = (JSON.parse(localStorage.getItem("current-user")))["user-name"];
         // Putting task into local storage
-        var info = {
-            "taskName": message.value, "userName": "This user", "timeCreated": "now"
-           };
+        var info = 
+            {taskName: message.value, userName: currentUserName, timeCreated: "now"};
 
-        addToStorage("created-tasks", info);
+        addToStorage("createdTasks", info);
 
         newTaskHome()
      }
@@ -103,15 +105,68 @@ document.getElementById("openingTab").click();
       }
 
         document.getElementById("userName").innerHTML = val;
+        //removeFromTasks();
+       // addToTheirToDoList(val, currentUser);
+
+      let tasksChecked = [];
 
         $("input[name='checkbox']").each(function() {
             var $this = $(this);
-            if ($this.is(":checked")) {
-                $(this).parent().remove()
+            if($this.is(":checked")){
+              console.log($this[0].id)
+              tasksChecked.push($this[0].id);
+              
+              $this.parent().remove()
             }
         });
 
+        console.log("tasksChecked: " + tasksChecked);
+        for(i in tasksChecked){
+          console.log("task: " + JSON.parse(localStorage.getItem("createdTasks")));
+          var task = (JSON.parse(localStorage.getItem("createdTasks"))).find(function(element) {
+            
+  
+            console.log("element's: " + element["taskName"]);
+            console.log("other one:" + tasksChecked[i]);
+            return element["taskName"] === tasksChecked[i];
+          });
+
+          console.log(task);
+          console.log("before: ");
+          console.log(localStorage);
+          let assignee = (JSON.parse(localStorage.getItem("cogs 120 house")))["members"].find(function(element){
+            return element["name"] == val;
+          })
+
+          removeFromTasks(tasksChecked[i]);
+          //console.log(JSON.stringify(assignee));
+          addToTheirToDoList(assignee, task);
+
+          console.log(localStorage)
+        }
+
         document.getElementById("assignButton").style.display = "none";
+    }
+
+    function removeFromTasks(taskChecked){
+      var taskList = JSON.parse(localStorage.getItem("createdTasks"));
+      var filtered = taskList.filter(function(value){
+
+        return value["taskName"] != taskChecked;
+    
+      });
+
+      localStorage.setItem("createdTasks", JSON.stringify(filtered));
+    }
+
+    function addToTheirToDoList(assignee, task){
+      var currentUser = JSON.parse(localStorage.getItem("current-user"));
+      var taskValue = {
+        assignedBy: currentUser,
+        taskInfo: task
+      }
+
+      addToStorage(assignee["userName"] + "-toDoList", taskValue);
     }
 
     /* To assign a task */

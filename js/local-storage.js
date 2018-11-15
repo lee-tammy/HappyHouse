@@ -1,7 +1,9 @@
 var localStorage = window.localStorage;
-
+//localStorage.clear();
 var groupMembers = {
-    "members":["lee-tammy", "janju129", "agpatacsi"],
+    "members":[{name: "Tammy Lee", userName: "lee-tammy"}, 
+                {name:"Janselle Justo", userName: "janju129"}, 
+                {name:"Allison Patacsil", userName: "agpatacsi"}],
     "address": "9500 Gilman Dr., La Jolla, CA 92020"
 }
 
@@ -36,19 +38,51 @@ var patacsilAllisonInfo = {
 }
 localStorage.setItem("agpatacsi", JSON.stringify(patacsilAllisonInfo));
 
-function addToStorage(key, value){
-    
+/*function addToStorage(key, value){
+    console.log(localStorage);
     if(localStorage.getItem(key) != null){
-        var data =[];
-        data.push(localStorage.getItem(key));
-        data[data.length] = JSON.stringify(value);
-        localStorage.setItem(key, data);
+        var newArr = JSON.parse('[]');
+        
+        var data = localStorage.getItem(key);
+
+        //var data = ;
+        console.log("HELLO" + data);
+
+        console.log(data.length);
+        for(var i = 0; i < data.length; i++){
+            console.log("in loop" + (data[i]));
+            newArr.push(JSON.stringify(data[i]));
+            
+            
+        }
+        
+        newArr.push(JSON.stringify(value));
+
+
+        console.log(newArr);
+        localStorage.setItem(key, newArr);
+        
+      var data = localStorage.getItem("created-tasks");
+       for(i in data){
+            console.log(i["taskName"]);
+        }
+
+        console.log(localStorage);
+
         
     }else{
         var data = [];
-        data[0] = JSON.stringify(value);
-        localStorage.setItem(key, data);
+        data.push(value)
+        localStorage.setItem(key, JSON.stringify(data));
     }
+}*/
+
+function addToStorage(key, value){
+    let tasks = JSON.parse(localStorage.getItem(key)) || [];
+        // add to it,
+    tasks.push(value);
+        // then put it back.
+    localStorage.setItem(key, JSON.stringify(tasks));
 }
 
 function getFromStorage(key){

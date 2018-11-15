@@ -14,6 +14,18 @@ body {
     padding-right: 45px;
   }
 
+  .anchor{
+    left: 0;
+    top: 0;
+    width: 100%;
+    position: fixed;
+}
+
+.spacer{
+  width: 100%;
+  height: 120px;
+}
+
   .centered {
     margin: 0 auto;
     position: absolute;
@@ -33,19 +45,80 @@ body {
     color: gray;
   }
 
-  /*TABS*/
-  .tablink{
-       color: black;
-       float: left;
-       border: none;
-       outline: none;
-       cursor: pointer;
-       padding: 14px 16px;
-       font-size: 17px;
-       width: 50%;
-       margin: 0;
+/* Popup for adding new tasks*/
+.complete-task-popup-background{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity:1;
+  position:fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  display: none;
+}
+
+.complete-task-popup-content{
+  width: 175px;
+  position:fixed;
+  display:flex;
+  height: 110px;
+  background-color: white;
+
+  opacity:1;
+  display:none;
+}
+
+#complete-text{
+  margin-left:25%;
+  font-size:20px;
+  margin-top:20px;
+  margin-bottom:20px;
+}
+
+#no-button{
+  margin-right:10%;
+}
+
+#yes-button{
+  float:left;
+  margin-left:30%;
+}
+
+  .entry{
+    display: block;
+    height:100px;
+    margin-left:15%;
+    margin-right:15%;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #eaeaeb;
+    
   }
 
-  .tablink:hover{
-      background-color: #777;
+  .taskName{
+    margin:0px;
+    padding:2px;
+    margin-left: 5%;
+  }
+
+  .assignerName{
+    float:right;
+    padding-top:10px;
+    margin-right:5%;
+  }
+
+  .completeButton{
+    clear:right;
+    
+    margin:0px;
+    margin-right:5%;
+    margin-left:45%;
+    
   }

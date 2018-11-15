@@ -1,4 +1,5 @@
 
+reload();
 /*TABS HEADER*/
 function openPage(pageName, elmnt, color){
     var i, tabcontent, tablinks;
@@ -14,7 +15,54 @@ function openPage(pageName, elmnt, color){
     elmnt.style.backgroundColor=color;
   }
 
-document.getElementById("openingTab").click();
+let taskName;
+function openCompletePopup(task){
+  document.querySelector(".complete-task-popup-background").style.display="flex";
+  document.querySelector(".complete-task-popup-content").style.display="table";
+  taskName = task;
+}
+
+function removeFromList(){
+  var currentUser = JSON.parse(localStorage.getItem("current-user"))["user-name"];
+  var key = currentUser + "-toDoList";
+
+  var todoListItems = JSON.parse(localStorage.getItem(key));
+  var filtered = todoListItems.filter(function(value){
+    return value["taskInfo"]["taskName"] != taskName; 
+  });
+  taskName = null;
+
+  localStorage.setItem(key, JSON.stringify(filtered));
+  reload();
+  returnToList();
+}
+
+function returnToList(){  
+  document.querySelector(".complete-task-popup-background").style.display="none";
+  document.querySelector(".complete-task-popup-background").style.display="none";
+}
 
 /*GETTING INFO CONTENT*/
-var to_do_list_array = [];
+function reload(){
+  var list = document.getElementById("newEntry");
+  $( ".entry" ).remove();
+  var currentUser = JSON.parse(localStorage.getItem("current-user"));
+  var currentUserToDoList = currentUser["user-name"] + "-toDoList";
+
+  var source = $("#inProgress").html();
+  var template = Handlebars.compile(source);
+  var parentDiv = $("#newEntry");
+
+  var items = JSON.parse(localStorage.getItem(currentUserToDoList));
+  for(var i = 0; i < items.length; i++){
+    var task = {
+      taskName: items[i]["taskInfo"]["taskName"],
+      assignerName: items[i]["assignedBy"]["name"],
+      assignerUserName: items[i]["assignedBy"]["userName"],
+    }
+    var curHTML = template(task);
+    parentDiv.append(curHTML);
+  }
+}
+
+
