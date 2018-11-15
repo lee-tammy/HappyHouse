@@ -117,8 +117,10 @@ body {
 ul{
   list-style-type: none;
   padding: 0;
-  padding-right: 300px;
-  padding-left: 300px;
+  /*padding-right: 300px;
+  padding-left: 300px; */
+  padding-right: 10%;
+  padding-left: 10%;
   text-align: center;
 }
 

@@ -34,7 +34,7 @@ document.getElementById("openingTab").click();
        var message = document.getElementById("task-description");
        var li = document.createElement("li");
        li.id = message.value;
-  
+
        var checkbox = document.createElement("input")
        checkbox.type="checkbox";
        checkbox.name="checkbox";
@@ -62,7 +62,15 @@ document.getElementById("openingTab").click();
 
        let secondDiv = document.createElement('div');
        let timeCreated = document.createElement("p");
-       timeCreated.innerHTML = "insert time this task was created";
+
+  
+       var d = new Date();
+       var hour = d.getHours();
+       var minutes = d.getMinutes();
+       var n = hour + ":" + minutes;
+
+       //timeCreated.innerHTML = "insert time this task was created";
+       timeCreated.innerHTML = "Created at " + n;
        timeCreated.classList = "time";
       secondDiv.appendChild(timeCreated);
       secondDiv.classList = "time_div";
@@ -73,8 +81,11 @@ document.getElementById("openingTab").click();
 
        let currentUserName = (JSON.parse(localStorage.getItem("current-user")))["user-name"];
         // Putting task into local storage
-        var info = 
+        /*var info =
             {taskName: message.value, userName: currentUserName, timeCreated: "now"};
+        */
+        var info =
+            {taskName: message.value, userName: currentUserName, timeCreated: n};
 
         addToStorage("createdTasks", info);
 
@@ -115,7 +126,7 @@ document.getElementById("openingTab").click();
             if($this.is(":checked")){
               console.log($this[0].id)
               tasksChecked.push($this[0].id);
-              
+
               $this.parent().remove()
             }
         });
@@ -124,8 +135,8 @@ document.getElementById("openingTab").click();
         for(i in tasksChecked){
           console.log("task: " + JSON.parse(localStorage.getItem("createdTasks")));
           var task = (JSON.parse(localStorage.getItem("createdTasks"))).find(function(element) {
-            
-  
+
+
             console.log("element's: " + element["taskName"]);
             console.log("other one:" + tasksChecked[i]);
             return element["taskName"] === tasksChecked[i];
@@ -153,7 +164,7 @@ document.getElementById("openingTab").click();
       var filtered = taskList.filter(function(value){
 
         return value["taskName"] != taskChecked;
-    
+
       });
 
       localStorage.setItem("createdTasks", JSON.stringify(filtered));
