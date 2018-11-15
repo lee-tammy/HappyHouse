@@ -18,7 +18,7 @@
 
     <div class="header" id="schedules-header">
       <div class="centered">
-        <p><b>SCHEDULES</b></p>
+        <p id="headTitle"><b>SCHEDULES</b></p>
       </div>
       <div class="left-side">
         <a href="index.html" id="homepage"><i class="fas fa-home"></i><a>
@@ -44,11 +44,11 @@
         <span class="close">&times;</span>
         <h1> Create New Bill </h1>
 
-          <h2>Name <br><input type="text" placeholder="Bill Name" id="billID"><br><br>
-          Amount <br><input type="number" step="any" placeholder="00.00" id="amountID"><br><br>
-          Due Date <br><input type="date" id="dueID"><br><br>
+          <h2>Name <br><input type="text" placeholder="Bill Name" id="billID" class="textbox"><br><br>
+          Amount <br><input type="number" step="any" placeholder="00.00" id="amountID" class="textbox"><br><br>
+          Due Date <br><input type="date" id="dueID" class="textbox"><br><br>
 
-        <button onclick="addBill()"> Add Bill </button>
+        <button onclick="addBill()" id="addBill"> Add Bill </button>
       </div>
     </div>
 

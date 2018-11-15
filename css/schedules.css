@@ -8,12 +8,18 @@ body {
    margin: 0 auto;
    position: relative;
    background: #eaeaeb;
+   background: #ffe680	;
    color: grey;
    overflow: hidden;
    padding: 30px;
    padding-left: 45px;
    padding-right: 45px;
    font-family: 'Quicksand';
+ }
+
+ #headTitle{
+   font-size: 70px;
+   color: black;
  }
 
  .centered {
@@ -31,8 +37,12 @@ body {
  }
 
  i {
-   font-size: 50px;
-   color: gray;
+   font-size: 70px;
+   color: #362819;
+ }
+
+ i:hover{
+   color: #e68a00;
  }
 
  * {box-sizing: border-box}
@@ -100,6 +110,7 @@ body {
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
+    font-size: 25px;
 }
 
 /* The Close Button */
@@ -128,12 +139,12 @@ ul{
 }
 
 li{
-  background-color: #eaeaeb;
+  background-color: #ffd480;
   text-align: center;
   margin: 10px;
   padding: 10px;
   padding-bottom: 30px;
-  font-size: 20px;
+  font-size: 30px;
 }
 
 button {
@@ -149,6 +160,13 @@ button:hover{
     background-color: lightgrey;
 }
 
-#writeBill{
+#writeBill, #addBill{
     border-radius: 8px;
+}
+
+.textbox{
+    height:40px;
+    font-size:22pt;
+    font-family: 'Quicksand';
+    flex-flow: center;
 }
