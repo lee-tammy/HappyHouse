@@ -84,10 +84,11 @@ body {
      font-family: 'Quicksand';
      width: 33.33%;
      margin: 0;
+     background-color: #ffcc80;
 }
 
 .tablink:hover{
-    background-color: #777;
+    background-color: #ffebcc;
 }
 
 body, html{

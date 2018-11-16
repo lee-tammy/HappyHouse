@@ -1,17 +1,23 @@
 body {
   margin: 0 auto;
+  font-family: 'Quicksand';
+  background-color: #FFFACD; /*lemmonchiffon*/
 }
 
 #notifications-header {
   margin: 0 auto;
   position: relative;
-  background: #eaeaeb;
+  background: #ffe680;
   color: grey;
   overflow: hidden;
-  font-family: sans-serif;
   padding: 30px;
   padding-left: 45px;
   padding-right: 45px;
+}
+
+#headTitle{
+  font-size: 70px;
+  color: black;
 }
 
 .centered {
@@ -29,17 +35,22 @@ body {
 }
 
 i {
-  font-size: 50px;
-  color: gray;
+  font-size: 70px;
+  color: #362819;
+}
+
+i:hover{
+  color: #e68a00;
 }
 
 .notification-group {
   margin: 10px 20px 10px 20px;
   padding: 30px;
   color: black;
-  background: #b3b3b3;
-  font-family: sans-serif;
+  background-color: #ffd480;
   font-size: 30px;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .notification-group (lastChild) {
