@@ -70,8 +70,16 @@ var parentDiv = $("#list-of-notifications");
 
 var newComplexData = JSON.parse(localStorage.getItem('savedNotes'));
 
-for (var i = (newComplexData.length - 1); i >= 0; i--) {
-  var curData = newComplexData[i];
-  var curHtml = template(curData);
-  parentDiv.append(curHtml);
+if (newComplexData != null) {
+  for (var i = (newComplexData.length - 1); i >= 0; i--) {
+    var curData = newComplexData[i];
+    var curHtml = template(curData);
+    parentDiv.append(curHtml);
+  }
+} else {
+  for (var i = (complexData.length - 1); i >= 0; i--) {
+    var curData = complexData[i];
+    var curHtml = template(curData);
+    parentDiv.append(curHtml);
+  }
 }
