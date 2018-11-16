@@ -1,5 +1,6 @@
-// FOR THE TASKS
+newTaskHome();
 
+// FOR THE TASKS
 document.getElementById("openingTab").click();
 
     /*
@@ -15,54 +16,27 @@ document.getElementById("openingTab").click();
     popup.addEventListener("click", function(){
         document.querySelector(".popup-background").style.display="flex";
         document.querySelector(".popup-content").style.display="table";
+        $(".task_checkbox").css('visibility', 'hidden');
     });
 
     document.querySelector(".close").addEventListener("click", function(){
         document.querySelector(".popup-background").style.display="none";
         document.querySelector(".popup-content").style.display="none";
+        $(".task_checkbox").css('visibility', 'visible');
     });
 
     var submit = document.getElementById("submit");
     submit.addEventListener("click", function(){
         document.querySelector(".popup-background").style.display = "none";
         document.querySelector(".popup-content").style.display="none";
+        $(".task_checkbox").css('visibility', 'visible');
     });
 
-     function addTask(){
-       var ul = document.getElementById("tasks");
-
-       var message = document.getElementById("task-description");
-       var li = document.createElement("li");
-       li.id = message.value;
-
-       var checkbox = document.createElement("input")
-       checkbox.type="checkbox";
-       checkbox.name="checkbox";
-       checkbox.onclick = checkNew;
-       checkbox.classList = "task_checkbox"
-       checkbox.id = message.value;
-       li.appendChild(checkbox);
-
-       var p = document.createElement("p");
-       p.innerHTML = message.value;
-       p.classList = "task_name";
-       li.appendChild(p);
-
-       var br1 = document.createElement("br");
-       li.appendChild(br1);
-
-       let firstDiv = document.createElement('div');
-       let currentUser = (JSON.parse(localStorage.getItem("current-user")))["name"];
-       let creator = document.createElement("p");
-       creator.innerHTML = currentUser;
-       creator.classList = "creator";
-       firstDiv.appendChild(creator);
-       firstDiv.classList = "username_div";
-       li.appendChild(firstDiv);
-
-       let secondDiv = document.createElement('div');
-       let timeCreated = document.createElement("p");
-
+    function addTask(){
+      var message = document.getElementById("task-description");
+      let currentUserName = (JSON.parse(localStorage.getItem("current-user")))["user-name"];
+      // Putting task into local storage
+      var info = {taskName: message.value, userName: currentUserName, timeCreated: "now"};
 
        var d = new Date();
        var hour = d.getHours();
@@ -87,16 +61,6 @@ document.getElementById("openingTab").click();
        }
 
 
-       //timeCreated.innerHTML = "insert time this task was created";
-       timeCreated.innerHTML = "Created at " + n;
-       timeCreated.classList = "time";
-      secondDiv.appendChild(timeCreated);
-      secondDiv.classList = "time_div";
-      li.appendChild(secondDiv);
-
-       ul.appendChild(li);
-
-
        let currentUserName = (JSON.parse(localStorage.getItem("current-user")))["user-name"];
         // Putting task into local storage
         /*var info =
@@ -117,6 +81,76 @@ document.getElementById("openingTab").click();
       document.getElementById("assigning").style.display = "none";
 
       document.getElementById("addNewTaskButton").style.display = "block";
+
+      $( ".entry" ).remove();
+
+      var source = $("#creating-tasks").html();
+      var template = Handlebars.compile(source);
+      var parentDiv = $("#tasks");
+
+      var items = JSON.parse(localStorage.getItem("createdTasks"));
+      if(items != null){
+        for(var i = 0; i < items.length; i++){
+          let creatorName = (JSON.parse(localStorage.getItem(items[i]["userName"])))["name"];
+          var task = {
+            taskName: items[i]["taskName"],
+            creator: creatorName,
+            timeCreated: items[i]["timeCreated"],
+          }
+          var curHTML = template(task);
+          parentDiv.append(curHTML);
+        }
+      }
+    }
+
+    function inProgressRefresh(){
+      $( ".in-progress-entry" ).remove();
+
+      var source = $("#in-progress-tasks").html();
+      var template = Handlebars.compile(source);
+      var parentDiv = $("#inProgressTasks");
+
+      var items = JSON.parse(localStorage.getItem("inProgressTasks"));
+
+      if(items != null){
+        for(var i = 0; i < items.length; i++){
+
+          var task = {
+            taskName: items[i]["taskName"],
+            assignee: items[i]["assignedTo"],
+            timeCreated: items[i]["timeCreated"],
+          }
+
+          var curHTML = template(task);
+          parentDiv.append(curHTML);
+        }
+      }
+    }
+
+    function completeRefresh(){
+      
+      $( ".complete-entry" ).remove();
+
+      var source = $("#completed-tasks").html();
+      console.log(source);
+      var template = Handlebars.compile(source);
+      var parentDiv = $("#completedTasks");
+
+      var items = JSON.parse(localStorage.getItem("completedTasks"));
+      console.log(items);
+      if(items != null){
+        for(var i = 0; i < items.length; i++){
+
+          var task = {
+            taskName: items[i]["taskName"],
+            assignee: items[i]["assignedTo"],
+            timeCreated: items[i]["timeCreated"],
+          }
+
+          var curHTML = template(task);
+          parentDiv.append(curHTML);
+        }
+      }
     }
 
     /* To show the message about pending approval */
@@ -134,44 +168,31 @@ document.getElementById("openingTab").click();
       }
 
         document.getElementById("userName").innerHTML = val;
-        //removeFromTasks();
-       // addToTheirToDoList(val, currentUser);
 
       let tasksChecked = [];
 
         $("input[name='checkbox']").each(function() {
             var $this = $(this);
             if($this.is(":checked")){
-              console.log($this[0].id)
               tasksChecked.push($this[0].id);
 
               $this.parent().remove()
             }
         });
 
-        console.log("tasksChecked: " + tasksChecked);
         for(i in tasksChecked){
-          console.log("task: " + JSON.parse(localStorage.getItem("createdTasks")));
           var task = (JSON.parse(localStorage.getItem("createdTasks"))).find(function(element) {
-
-
-            console.log("element's: " + element["taskName"]);
-            console.log("other one:" + tasksChecked[i]);
+            
             return element["taskName"] === tasksChecked[i];
           });
 
-          console.log(task);
-          console.log("before: ");
-          console.log(localStorage);
           let assignee = (JSON.parse(localStorage.getItem("cogs 120 house")))["members"].find(function(element){
             return element["name"] == val;
           })
 
           removeFromTasks(tasksChecked[i]);
-          //console.log(JSON.stringify(assignee));
           addToTheirToDoList(assignee, task);
-
-          console.log(localStorage)
+          addToInProgressList(assignee, task);
         }
 
         document.getElementById("assignButton").style.display = "none";
@@ -196,6 +217,18 @@ document.getElementById("openingTab").click();
       }
 
       addToStorage(assignee["userName"] + "-toDoList", taskValue);
+    }
+
+    function addToInProgressList(assignee, task){
+      var currentUser = JSON.parse(localStorage.getItem("current-user"));
+      var taskValue = {
+        assignedBy: currentUser["name"], 
+        assignedTo: assignee["name"],
+        taskName: task["taskName"],
+        timeCreated:task["timeCreated"]
+      }
+
+      addToStorage("inProgressTasks", taskValue);
     }
 
     /* To assign a task */
@@ -265,6 +298,5 @@ document.getElementById("openingTab").click();
         }
         document.getElementById(pageName).style.display="block";
         elmnt.style.backgroundColor=color;
-
-        document.getElementById("defaultOpen").click();
       }
+

@@ -27,12 +27,14 @@
         </div>
       </div>
       <!--The New, In-Progress, and Completed Tabs-->
-      <button id="openingTab" class="tablink" onclick="openPage('New', this, '#ffb84d')">NEW</button>
-      <button class="tablink" onclick="openPage('In-Progress', this, '#ffb84d')">IN-PROGRESS</buton>
-      <button class="tablink" onclick="openPage('Completed', this, '#ffb84d')">COMPLETED</button>
-
+      <button id="openingTab" class="tablink" onclick="openPage('New', this, '#777')">New</button>
+      <button class="tablink" onclick="openPage('In-Progress', this, '#777'); inProgressRefresh();">In-Progress</button>
+      <button class="tablink" onclick="openPage('Completed', this, '#777'); completeRefresh();">Completed</button>
 
     </div>
+    <div class="spacer">
+
+      </div>
 
     <!--<button id="addNewTaskButton" class="fixedbutton">Add New Task</button>
     <button id="assignButton" class="fixedbutton" onclick="toAssign()">Assign User</button> -->
@@ -60,28 +62,20 @@
 
       <!--<div id="initial" class="messageThread"> -->
       <div class="messageThread" id="initial">
-      <!--<ol id="tasks1">
-            <li>
-              <input type="checkbox" name = "checkbox" id="checkNewTask1" onclick="checkNew()">
-              <h3 style ="display: inline-block"> task name 1</h3><br>
-              made by user 2<br>
-              made today<br>
-        </ol>
-        <ol id="tasks2">
-            <li>
-              <input type="checkbox" name = "checkbox" id="checkNewTask2" onclick="checkNew()">
-              <h3 style ="display: inline-block"> task name 1</h3><br>
-              made by user 2<br>
-              made today<br>
-        </ol>
-        <ol id="tasks3">
-            <li>
-              <input type="checkbox" name = "checkbox" id="checkNewTask3" onclick="checkNew()">
-              <h3 style ="display: inline-block"> task name 1</h3><br>
-              made by user 2<br>
-              made today<br>
-        </ol>-->
         <ol id="tasks">
+          <script id="creating-tasks" type="text/x-handlebars-template">
+            <li class="entry">
+              <input id={{taskName}} type="checkbox" name="checkbox" onclick="checkNew()" class="task_checkbox">
+              <p class="task_name">{{taskName}}</p>
+              <br>
+              <div class="username_div">
+                <p class="creator">Created By: {{creator}}</p>
+              </div>
+              <div class="time_div">
+                <p>Time Created: {{timeCreated}}</p>
+              </div>
+            </li>
+          </script>
         </ol>
       </div>
 
@@ -116,76 +110,45 @@
 
     <!--In-Progress Task Tab-->
     <div id="In-Progress" class="tabcontent">
-
-      <!--What first appears on the in-progress tab-->
-      <div class="inprogresslist" id="initialIP">
-        <h3>buy DISH SOAP</h3>
-        You are working on it<br>
-        started: today
-      <!-- HOLD FOR NOW <button onclick = "viewChat()" style="display:none" id="textIP" class="textIP">View Chat?</button>-->
-      </div>
-
-      <div class="inprogresslist" id="initialIP2">
-        <h3>wash the DISHES</h3>
-        Tammy is working on it<br>
-        started: yesterday
-      </div>
-
-      <div class="inprogresslist" id="initialIP3">
-        <h3>buy more EGGS</h3>
-        Allison is working on it<br>
-        started: yesterday
-      </div>
-
-      <div class="inprogresslist" id="initialIP4">
-        <h3>take out the TRASH</h3>
-        You are working on it<br>
-        started: yesterday
-      </div>
-
-      <!--<div id="textIP" style="display:none">
-        <button onclick = "viewChat()">View Chat?</button>
-      </div> -->
-
-      <!--<div class="messageThread" id="messageThread" style="display:none">
-        <ol id="chat">
-            <li id="test">Sample Message<br>-User 1</li>
-
+      <div class="messageThread" id="initial">
+        <ol id="inProgressTasks">
+          <script id="in-progress-tasks" type="text/x-handlebars-template">
+            <li class="in-progress-entry">
+              <p class="task_name">{{taskName}}</p>
+              <br>
+              <div class="username_div">
+                <p class="creator">Assigned To: {{assignee}}</p>
+              </div>
+              <div class="time_div">
+                <p>Time Created: {{timeCreated}}</p>
+              </div>
+            </li>
+          </script>
         </ol>
-        <input type="text" id="message"/>
-        <button onclick="sendMessage()">Send</button>
-        <button onclick="inProgressHome()">Exit Chat</button>
-      </div>-->
-
+      </div>
     </div>
 
     <!--Completed Task Tab-->
     <div id="Completed" class="tabcontent">
-
-      <div class="completedList">
-        <h3>buy more COFFEE<br></h3>
-        completed on<br>2018-11-07
-      </div>
-
-      <div class="completedList">
-        <h3>put DISHES away<br></h3>
-        completed on<br>2018-11-01
-      </div>
-
-      <div class="completedList">
-        <h3>get the MAIL<br></h3>
-        completed on<br>2018-10-28
-      </div>
-
-      <div class="completedList">
-        <h3>take out the TRASH<br></h3>
-        completed on<br>2018-10-22
-      </div>
-
+      <div class="messageThread" id="initial">
+          <ol id="completedTasks">
+            <script id="completed-tasks" type="text/x-handlebars-template">
+              <li class="complete-entry">
+                <p class="task_name">{{taskName}}</p>
+                <br>
+                <div class="username_div">
+                  <p class="creator">Completed By: {{assignee}}</p>
+                </div>
+              </li>
+            </script>
+        </ol>
     </div>
+  </div>
   </body>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script type="text/javascript" src="js/handlebars-v4.0.11.js"></script>
   <script type="text/javascript" src="js/local-storage.js"></script>
   <script type="text/javascript" src="js/notifications.js"></script>
   <script type="text/javascript" src="js/tasks.js"></script>
