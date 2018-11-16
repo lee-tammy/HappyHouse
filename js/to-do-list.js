@@ -79,12 +79,38 @@ function removeFromInProgress(){
   
   addToCompleted(removing);
   localStorage.setItem("inProgressTasks", JSON.stringify(filtered));
-
 }
 
 function addToCompleted(removing){
-  addToStorage("completedTasks", JSON.parse(removing));
-  console.log(localStorage);
+  var info = {
+    taskName: JSON.parse(removing)["taskName"],
+    timeFinished: calculateDate(),
+    assignee: JSON.parse(removing)["assignedTo"]
+  }
+  addToStorage("completedTasks", info);
 }
 
-
+function calculateDate(){
+  var d = new Date();
+  var hour = d.getHours();
+  var minutes = d.getMinutes();
+  var n = hour + ":" + minutes;
+  if(hour > 12){
+    hour = hour - 12;
+    if(minutes < 10){
+      n = hour + ":0" + minutes + " pm";
+    }
+    else{
+      n = hour + ":" + minutes + " pm";
+    }
+  }
+  else{
+    if(minutes < 10){
+      n = hour + ":0" + minutes + " am";
+    }
+    else{
+      n = hour + ":" + minutes + " am";
+    }     
+  }
+  return n;
+ }
