@@ -60,8 +60,6 @@ document.getElementById("openingTab").click();
          }     
        }
 
-
-       let currentUserName = (JSON.parse(localStorage.getItem("current-user")))["user-name"];
         // Putting task into local storage
         /*var info =
             {taskName: message.value, userName: currentUserName, timeCreated: "now"};
