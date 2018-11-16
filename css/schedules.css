@@ -7,7 +7,7 @@ body {
  #schedules-header {
    margin: 0 auto;
    position: relative;
-   background: #ffe680	;
+   background: #ffe680;
    color: grey;
    overflow: hidden;
    padding: 30px;
@@ -54,11 +54,10 @@ body {
      background-color: #FFFACD; /*lemmonchiffon*/
  }
 
-
  /* Style tab links */
  .tablink {
-     background-color: #555;
-     color: white;
+     background-color: #E8E8E8;
+     color: black;
      float: left;
      border: none;
      outline: none;
@@ -87,6 +86,7 @@ body {
  .tabheader{
    padding: 20px 20px;
  }
+
 
  .modal {
     display: none; /* Hidden by default */
