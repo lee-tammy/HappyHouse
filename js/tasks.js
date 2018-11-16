@@ -68,6 +68,24 @@ document.getElementById("openingTab").click();
        var hour = d.getHours();
        var minutes = d.getMinutes();
        var n = hour + ":" + minutes;
+       if(hour > 12){
+         hour = hour - 12;
+         if(minutes < 10){
+           n = hour + ":0" + minutes + " pm";
+         }
+         else{
+           n = hour + ":" + minutes + " pm";
+         }
+       }
+       else{
+         if(minutes < 10){
+           n = hour + ":0" + minutes + " am";
+         }
+         else{
+           n = hour + ":" + minutes + " am";
+         }     
+       }
+
 
        //timeCreated.innerHTML = "insert time this task was created";
        timeCreated.innerHTML = "Created at " + n;
