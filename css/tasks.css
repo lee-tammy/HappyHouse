@@ -175,9 +175,11 @@ button{
 
 .popup-content{
     width: 250px;
+    width: 500px;
     position:fixed;
     display:flex;
     height: 200px;
+    height: 300px;
     background-color: white;
     font-family: 'Quicksand';
     opacity:1;
@@ -216,7 +218,7 @@ form{
 }
 
 label{
-    font-size:20px;
+    font-size:40px;
     font-family: 'Quicksand';
 }
 
@@ -264,7 +266,6 @@ label{
 }
 
 #tasks {
-
     overflow-y: scroll;
     height: 425px;
     z-index: -1;
@@ -334,4 +335,22 @@ body {
     overflow-y: scroll;
     height: 425px;
     z-index: -1;
+}
+
+#assignUser{
+  font-size: 40px;
+}
+
+#cancelbutton, #assignbutt, #donebutton{
+  background-color: #f5f5ef;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+#pendingApproval{
+  font-size: 30px;
 }

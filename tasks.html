@@ -97,13 +97,13 @@
           <input type="radio" name="user" value="Tammy Lee"> Tammy Lee <br>
         </form>
 
-        <input type="submit" value="Assign" onclick="assignDone();assigningTaskNote();">
-        <button onclick="newTaskHome()">Cancel</button>
+        <input id="assignbutt" type="submit" value="Assign" onclick="assignDone();assigningTaskNote();">
+        <button onclick="newTaskHome()" id="cancelbutton">Cancel</button>
       </div>
 
       <div id="pendingApproval" style="display:none">
         <p>Task request has been assigned to <b id="userName"></b>.</p>
-        <button onclick="newTaskHome()">Done</button>
+        <button id="donebutton" onclick="newTaskHome()">Done</button>
       </div>
 
     </div>
