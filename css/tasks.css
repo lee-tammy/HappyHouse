@@ -55,6 +55,7 @@ i:hover{
 
 .tabcontent{
     text-align: center;
+    font-family: 'Quicksand';
 }
 
 
@@ -84,6 +85,7 @@ body {
      width: 33.33%;
      margin: 0;
      background-color: #ffcc80;
+
 }
 
 .tablink:hover{
@@ -94,6 +96,7 @@ body, html{
     height: 100%;
     margin: 0 auto;
     font-size: 22px;
+    font-family: 'Quicksand';
 }
 
 button{
@@ -105,7 +108,6 @@ button{
   * FOR THE IN-PROGRESS TAB
   */
     .inprogresslist{
-      background-color: #ffd480;
       margin: 10px;
       margin-right: 10%;
       margin-left: 10%;
@@ -118,6 +120,7 @@ button{
       list-style-type: none;
       padding: 0;
       margin: 0;
+      font-family: 'Quicksand';
     }
 
     .messageThread li{
@@ -167,6 +170,7 @@ button{
     justify-content: center;
     align-items:center;
     display: none;
+    font-family: 'Quicksand';
 }
 
 .popup-content{
@@ -175,7 +179,7 @@ button{
     display:flex;
     height: 200px;
     background-color: white;
-
+    font-family: 'Quicksand';
     opacity:1;
     display:none;
 }
@@ -188,12 +192,14 @@ button{
     opacity:1;
     display: table;
     display:none;
+    font-family: 'Quicksand';
 }
 
 form{
     top:50%;
     width:50%;
     margin:0 auto;
+    font-family: 'Quicksand';
 }
 
 .close{
@@ -206,27 +212,31 @@ form{
 #task-description{
     height:20px;
     width:200px;
+    font-family: 'Quicksand';
 }
 
 label{
     font-size:20px;
+    font-family: 'Quicksand';
 }
 
 .task-popup{
     margin:7px;
+    font-family: 'Quicksand';
 }
 
 .task_name{
     margin:0px;
     float:left;
     margin-left:10px;
-    font-size:20px;
+    font-size:40px;
+    font-family: 'Quicksand';
 }
 
 .fixedbutton {
     position: fixed;
-    top: 160px;
-    left:40%;
+    top: 167px;
+    left:35%;
     background-color: #f5f5ef;
     color: black;
     padding: 15px 32px;
@@ -234,16 +244,16 @@ label{
     font-size: 20px;
     cursor: pointer;
     border-radius: 8px;
-    font-family: 'Quicksand';   
+    font-family: 'Quicksand';
 }
 
-#addNewTaskButton{
-    float: center;
+.fixedbutton:hover{
+    background-color: lightgrey;
 }
 
 #assignButton{
     float: center;
-    left:50%;
+    left:55%;
     display: none;
 }
 
@@ -254,7 +264,7 @@ label{
 }
 
 #tasks {
-    
+
     overflow-y: scroll;
     height: 500px;
     z-index: -1;
@@ -271,18 +281,20 @@ body {
 .creator{
     margin-bottom:1px;
     float:right;
-    font-size: 15px;
+    font-size: 30px;
 }
 
 .time{
     margin:0px;
     float:right;
-    font-size: 15px;
+    font-size: 30px;
+    font-family: 'Quicksand';
 }
 
 .username_div{
-    font-size: 15px;
+    font-size: 30px;
     float:right;
+    font-family: 'Quicksand';
 }
 
 .time_div{
@@ -290,17 +302,22 @@ body {
     clear:right;
     float:right;
     margin-bottom:5px;
-    font-size: 15px;
+    font-size: 30px;
+    font-family: 'Quicksand';
 
 }
 
 .entry{
-    height:100px;
+    height:150px;
+    font-family: 'Quicksand';
+    background-color: #ffd480;
 }
 
 .in-progress-entry{
-    height:100px;
+    height:150px;
+    background-color: #ffd480;
 }
+
 
 #inProgressTasks{
     overflow-y: scroll;
@@ -309,7 +326,8 @@ body {
 }
 
 .complete-entry{
-    height:100px;
+    height:150px;
+    background-color: #ffd480;
 }
 
 #completedTasks{

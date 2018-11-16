@@ -1,20 +1,28 @@
 body {
     margin: 0 auto;
+    font-family: 'Quicksand';
+    background-color: #FFFACD; /*lemmonchiffon*/
   }
-  
+
   * {
     font-family: 'Raleway', sans-serif;
   }
   #profile-header {
     margin: 0 auto;
     position: relative;
-    background: #eaeaeb;
+    background: #ffe680;
     color: grey;
     overflow: hidden;
     font-family: sans-serif;
     padding: 30px;
     padding-left: 45px;
     padding-right: 45px;
+  }
+
+  #headTitle{
+    font-size: 70px;
+    color: black;
+    font-family: 'Quicksand';
   }
 
   .centered {
@@ -32,8 +40,12 @@ body {
   }
 
   i {
-    font-size: 50px;
-    color: gray;
+    font-size: 70px;
+    color: #362819;
+  }
+
+  i:hover{
+    color: #e68a00;
   }
 
   div{
@@ -97,7 +109,7 @@ body {
     margin: 10px;
     border-radius: 5px;
     border: 1px solid white;
-  }     
+  }
 
   .emailPicture{
     margin-left:10px;
