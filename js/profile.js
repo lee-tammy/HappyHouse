@@ -87,11 +87,12 @@ for(i in members){
             groupDiv.style.marginLeft = "25%";
         }
         counter++;
-        let groupMemberInfo = JSON.parse(localStorage.getItem(members[i]));
+        let groupMemberInfo = JSON.parse(localStorage.getItem(members[i]["userName"]));
 
         let groupMemberPicture = document.createElement("IMG");
         groupMemberPicture.classList.add("group_member_picture");
-        groupMemberPicture.src = "images/" + members[i] + "-profile-picture.jpg";
+ 
+        groupMemberPicture.src = "images/" + members[i]["userName"] + "-profile-picture.jpg";
 
         let groupMemberInfoHTML = document.createElement("div");
         groupMemberInfoHTML.style.marginLeft = "10px";

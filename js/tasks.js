@@ -35,8 +35,6 @@ document.getElementById("openingTab").click();
     function addTask(){
       var message = document.getElementById("task-description");
       let currentUserName = (JSON.parse(localStorage.getItem("current-user")))["user-name"];
-      // Putting task into local storage
-      var info = {taskName: message.value, userName: currentUserName, timeCreated: "now"};
 
        var d = new Date();
        var hour = d.getHours();
@@ -70,6 +68,10 @@ document.getElementById("openingTab").click();
         addToStorage("createdTasks", info);
 
         newTaskHome()
+     }
+
+     function calculateDate(){
+       
      }
 
     /* To go to the home screen for new task tab */
@@ -130,12 +132,11 @@ document.getElementById("openingTab").click();
       $( ".complete-entry" ).remove();
 
       var source = $("#completed-tasks").html();
-      console.log(source);
       var template = Handlebars.compile(source);
       var parentDiv = $("#completedTasks");
 
       var items = JSON.parse(localStorage.getItem("completedTasks"));
-      console.log(items);
+
       if(items != null){
         for(var i = 0; i < items.length; i++){
 
