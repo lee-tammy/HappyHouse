@@ -266,7 +266,7 @@ label{
 #tasks {
 
     overflow-y: scroll;
-    height: 500px;
+    height: 425px;
     z-index: -1;
 }
 
@@ -321,7 +321,7 @@ body {
 
 #inProgressTasks{
     overflow-y: scroll;
-    height: 500px;
+    height: 425px;
     z-index: -1;
 }
 
@@ -332,6 +332,6 @@ body {
 
 #completedTasks{
     overflow-y: scroll;
-    height: 500px;
+    height: 425px;
     z-index: -1;
 }

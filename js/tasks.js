@@ -35,41 +35,44 @@ document.getElementById("openingTab").click();
     function addTask(){
       var message = document.getElementById("task-description");
       let currentUserName = (JSON.parse(localStorage.getItem("current-user")))["user-name"];
-      // Putting task into local storage
-      var info = {taskName: message.value, userName: currentUserName, timeCreated: "now"};
 
-       var d = new Date();
-       var hour = d.getHours();
-       var minutes = d.getMinutes();
-       var n = hour + ":" + minutes;
-       if(hour > 12){
-         hour = hour - 12;
-         if(minutes < 10){
-           n = hour + ":0" + minutes + " pm";
-         }
-         else{
-           n = hour + ":" + minutes + " pm";
-         }
-       }
-       else{
-         if(minutes < 10){
-           n = hour + ":0" + minutes + " am";
-         }
-         else{
-           n = hour + ":" + minutes + " am";
-         }     
-       }
+       
 
         // Putting task into local storage
         /*var info =
             {taskName: message.value, userName: currentUserName, timeCreated: "now"};
         */
         var info =
-            {taskName: message.value, userName: currentUserName, timeCreated: n};
+            {taskName: message.value, userName: currentUserName, timeCreated: calculateDate()};
 
         addToStorage("createdTasks", info);
 
         newTaskHome()
+     }
+
+     function calculateDate(){
+      var d = new Date();
+      var hour = d.getHours();
+      var minutes = d.getMinutes();
+      var n = hour + ":" + minutes;
+      if(hour > 12){
+        hour = hour - 12;
+        if(minutes < 10){
+          n = hour + ":0" + minutes + " pm";
+        }
+        else{
+          n = hour + ":" + minutes + " pm";
+        }
+      }
+      else{
+        if(minutes < 10){
+          n = hour + ":0" + minutes + " am";
+        }
+        else{
+          n = hour + ":" + minutes + " am";
+        }     
+      }
+      return n;
      }
 
     /* To go to the home screen for new task tab */
@@ -130,19 +133,18 @@ document.getElementById("openingTab").click();
       $( ".complete-entry" ).remove();
 
       var source = $("#completed-tasks").html();
-      console.log(source);
       var template = Handlebars.compile(source);
       var parentDiv = $("#completedTasks");
 
       var items = JSON.parse(localStorage.getItem("completedTasks"));
-      console.log(items);
+
       if(items != null){
         for(var i = 0; i < items.length; i++){
 
           var task = {
             taskName: items[i]["taskName"],
-            assignee: items[i]["assignedTo"],
-            timeCreated: items[i]["timeCreated"],
+            assignee: items[i]["assignee"],
+            timeFinished: items[i]["timeFinished"],
           }
 
           var curHTML = template(task);
