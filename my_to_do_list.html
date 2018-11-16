@@ -7,6 +7,7 @@
 
   <head>
     <link rel="stylesheet" type="text/css" href="css/my_to_do_list.css">
+    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet'>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/solid.css" integrity="sha384-rdyFrfAIC05c5ph7BKz3l5NG5yEottvO/DQ0dCrwD8gzeQDjYBHNr1ucUpQuljos" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/regular.css" integrity="sha384-z3ccjLyn+akM2DtvRQCXJwvT5bGZsspS4uptQKNXNg778nyzvdMqiGcqHVGiAUyY" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/brands.css" integrity="sha384-QT2Z8ljl3UupqMtQNmPyhSPO/d5qbrzWmFxJqmY7tqoTuT2YrQLEqzvVOP2cT5XW" crossorigin="anonymous">
@@ -17,7 +18,7 @@
     <div class="anchor">
       <div class="header" id="to-do-list-header">
         <div class="centered">
-          <p><b>MY TO DO LIST</b></p>
+          <p id="headTitle"><b>MY TO DO LIST</b></p>
         </div>
         <div class="left-side">
           <a href="index.html" id="homepage"><i class="fas fa-home"></i><a>
@@ -32,7 +33,7 @@
 
       <!-- POPUP FOR COMPLETING TASK-->
       <div class="complete-task-popup-background">
-  
+
         <div class="complete-task-popup-content">
           <div id="complete-text">
             <label for="complete-confirmation" id="complete-confirmation"><b>Completed?</b></label><br>
@@ -46,7 +47,7 @@
 
         </div>
       </div>
-    
+
 
       <ol id="newEntry">
         <script id="inProgress" type="text/x-handlebars-template">
