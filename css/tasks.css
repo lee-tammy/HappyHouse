@@ -125,7 +125,7 @@ button{
 
     .messageThread li{
       padding: 15px;
-      background: #eaeaeb;
+      background-color: #ffd480;
       width: 50%;
       margin-left: 25%;
       margin-top:10px;
@@ -231,7 +231,7 @@ label{
     margin:0px;
     float:left;
     margin-left:10px;
-    font-size:40px;
+    font-size:30px;
     font-family: 'Quicksand';
 }
 
@@ -282,13 +282,15 @@ body {
 .creator{
     margin-bottom:1px;
     float:right;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .time{
     margin:0px;
     float:right;
-    font-size: 30px;
+    font-size: 25px;
+    margin-top: 1px;
+    margin-bottom:5px;
     font-family: 'Quicksand';
 }
 
@@ -302,8 +304,7 @@ body {
 
     clear:right;
     float:right;
-    margin-bottom:5px;
-    font-size: 30px;
+    font-size: 25px;
     font-family: 'Quicksand';
 
 }
@@ -311,7 +312,6 @@ body {
 .entry{
     height:150px;
     font-family: 'Quicksand';
-    background-color: #ffd480;
 }
 
 .in-progress-entry{
