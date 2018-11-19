@@ -137,4 +137,6 @@ function addBill(){
   li.append(br2);
   li.append("Due Date: " + due);
   ul.append(li);
+
+  popup.style.display = "none";
 }
