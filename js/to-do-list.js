@@ -23,16 +23,24 @@ function openCompletePopup(task){
 }
 
 function removeFromList(){
-  var currentUser = JSON.parse(localStorage.getItem("current-user"))["user-name"];
-  var key = currentUser + "-toDoList";
+  var currentUser = JSON.parse(localStorage.getItem("current-user"));
+  var key = currentUser["user-name"] + "-toDoList";
 
   var todoListItems = JSON.parse(localStorage.getItem(key));
   var filtered = todoListItems.filter(function(value){
     return value["taskInfo"]["taskName"] != taskName; 
   });
   
-
   localStorage.setItem(key, JSON.stringify(filtered));
+
+  var members = (JSON.parse(localStorage.getItem("cogs 120 house")))["members"];
+
+  var info = {type: currentUser['name'] + "finished a task", taskName: taskName, userName: currentUser['name'], timeCreated: calculateDate()};
+  for(var i = 0; i < members.length; i++){
+    var notif = members[i]["userName"] + "-notifications";
+    addToStorage(notif, info);
+  }
+
   removeFromInProgress();
   reload();
   returnToList();

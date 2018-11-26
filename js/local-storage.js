@@ -1,5 +1,6 @@
 var localStorage = window.localStorage;
 //localStorage.clear();
+console.log(localStorage);
 var groupMembers = {
     "members":[{name: "Tammy Lee", userName: "lee-tammy"}, 
                 {name:"Janselle Justo", userName: "janju129"}, 
@@ -92,3 +93,28 @@ function getFromStorage(key){
 function printStorage(key){
     console.log(localStorage.getItem(key));
 }
+
+function calculateDate(){
+    var d = new Date();
+    var hour = d.getHours();
+    var minutes = d.getMinutes();
+    var n = hour + ":" + minutes;
+    if(hour > 12){
+      hour = hour - 12;
+      if(minutes < 10){
+        n = hour + ":0" + minutes + " pm";
+      }
+      else{
+        n = hour + ":" + minutes + " pm";
+      }
+    }
+    else{
+      if(minutes < 10){
+        n = hour + ":0" + minutes + " am";
+      }
+      else{
+        n = hour + ":" + minutes + " am";
+      }     
+    }
+    return n;
+   }
