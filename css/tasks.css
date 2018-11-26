@@ -173,6 +173,20 @@ button{
     font-family: 'Quicksand';
 }
 
+.popup-warning{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity:1;
+    position:fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    display: none;
+    font-family: 'Quicksand';
+}
+
 .popup-content{
     width: 250px;
     width: 500px;
@@ -185,6 +199,18 @@ button{
     opacity:1;
     display:none;
 }
+
+.warning-content{
+    width: 350px;
+    position:fixed;
+    display:flex;
+    height: 200px;
+    background-color: white;
+    font-family: 'Quicksand';
+    opacity:1;
+    display:none;
+}
+
 
 .confirmation-content{
     width: 200px;
@@ -205,6 +231,15 @@ form{
 }
 
 .close{
+    margin-top:10%;
+    margin-left:85%;
+    text-align: center;
+    background-color:grey;
+    color: white;
+}
+
+.warning-close{
+    margin-top:10%;
     margin-left:85%;
     text-align: center;
     background-color:grey;

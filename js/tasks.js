@@ -25,6 +25,12 @@ document.getElementById("openingTab").click();
         $(".task_checkbox").css('visibility', 'visible');
     });
 
+    document.querySelector(".warning-close").addEventListener("click", function(){
+      document.querySelector(".popup-warning").style.display="none";
+      document.querySelector(".warning-content").style.display="none";
+      $(".task_checkbox").css('visibility', 'visible');
+    })
+
     var submit = document.getElementById("submit");
     submit.addEventListener("click", function(){
         document.querySelector(".popup-background").style.display = "none";
@@ -33,22 +39,32 @@ document.getElementById("openingTab").click();
     });
 
     function addTask(){
+      
       var message = document.getElementById("task-description");
-      let currentUserName = (JSON.parse(localStorage.getItem("current-user")))["user-name"];
+      
+      if(message.value.length != 0){
+        let currentUserName = (JSON.parse(localStorage.getItem("current-user")))["user-name"];
 
-        var info =
-            {taskName: message.value, userName: currentUserName, timeCreated: calculateDate()};
+          var info =
+              {taskName: message.value, userName: currentUserName, timeCreated: calculateDate()};
 
-        addToStorage("createdTasks", info);
+          addToStorage("createdTasks", info);
 
-        var members = (JSON.parse(localStorage.getItem("cogs 120 house")))["members"];
-        for(var i = 0; i < members.length; i++){
-          var notif = members[i]["userName"] + "-notifications";
-          info.type = "added to task list";
-          addToStorage(notif, info);
-        }
+          var members = (JSON.parse(localStorage.getItem("cogs 120 house")))["members"];
+          for(var i = 0; i < members.length; i++){
+            var notif = members[i]["userName"] + "-notifications";
+            info.type = "added to task list";
+            addToStorage(notif, info);
+          }
+      }else{
+        
+        document.querySelector(".popup-warning").style.display="flex";
+        document.querySelector(".warning-content").style.display="table";
+        $(".task_checkbox").css('visibility', 'hidden');
+      }
 
-        newTaskHome();
+      newTaskHome();
+        
      }
 
     /* To go to the home screen for new task tab */
