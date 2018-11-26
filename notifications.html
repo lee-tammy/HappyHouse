@@ -29,7 +29,10 @@
       <!-- List of old notifications via Handlebars -->
       <script id="entry-notifications" type="text/x-handlebars-template">
         <div class="notification-group" id="notification">
-          <p class="Text-on-notification">{{type}}</p>
+          <button class="delete" onclick="deleteNotification(this)">x</button>
+          <p style="display:none">{{taskName}}</p>
+          <p style="display:none">{{type}}</p>
+          <p class="Text-on-notification1">{{taskName}} - {{type}}</p>
           <p class="Time-stamp">{{timeCreated}}</p>
         </div>
       </script>

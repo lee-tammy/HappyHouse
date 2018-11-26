@@ -44,7 +44,7 @@ document.getElementById("openingTab").click();
         var members = (JSON.parse(localStorage.getItem("cogs 120 house")))["members"];
         for(var i = 0; i < members.length; i++){
           var notif = members[i]["userName"] + "-notifications";
-          info.type = "A new task has been added";
+          info.type = "added to task list";
           addToStorage(notif, info);
         }
 
@@ -149,29 +149,32 @@ document.getElementById("openingTab").click();
         $("input[name='checkbox']").each(function() {
             var $this = $(this);
             if($this.is(":checked")){
-              tasksChecked.push($this[0].id);
+              tasksChecked.push($this.parent().children()[1].innerHTML);
 
               $this.parent().remove()
             }
         });
-console.log(tasksChecked)
+
+
         for(i in tasksChecked){
           var task = (JSON.parse(localStorage.getItem("createdTasks"))).find(function(element) {
-            
             return element["taskName"] === tasksChecked[i];
           });
 
           let assignee = (JSON.parse(localStorage.getItem("cogs 120 house")))["members"].find(function(element){
             return element["name"] == val;
           })
-console.log(task)
           removeFromTasks(tasksChecked[i]);
-          addToTheirToDoList(assignee, task);
           addToInProgressList(assignee, task);
-        }
+          addToTheirToDoList(assignee, task);
+          
+          task.type = "assigned to you";
+          addToStorage(assignee["userName"] + "-notifications", task);
 
         document.getElementById("assignButton").style.display = "none";
+      }
     }
+    
 
     function removeFromTasks(taskChecked){
       var taskList = JSON.parse(localStorage.getItem("createdTasks"));
@@ -195,8 +198,6 @@ console.log(task)
     }
 
     function addToInProgressList(assignee, task){
-      console.log(localStorage);
-      console.log(task);
       var currentUser = JSON.parse(localStorage.getItem("current-user"));
       var taskValue = {
         assignedBy: currentUser["name"], 
@@ -230,38 +231,6 @@ console.log(task)
 
     }
 
-    /*
-     * FUNCTIONS IN THE IN-PROGRESS TAB
-     */
-
-    /* to show the home screen of the in-progress tab */
-
-    /* HOLD FOR NOW!!!!
-    (to add a message)
-    function viewChat(){
-      document.getElementById("initialIP").style.display = "none";
-      document.getElementById("initialIP2").style.display = "none";
-      document.getElementById("initialIP3").style.display = "none";
-      document.getElementById("initialIP4").style.display = "none";
-      document.getElementById("textIP").style.display = "none";
-      document.getElementById("messageThread").style.display = "block";
-      document.getElementById("instIP1").style.display = "none";
-      document.getElementById("instIP2").style.display = "block";
-    }
-
-    (send a message)
-    function sendMessage(){
-      var ul = document.getElementById("chat");
-      var message = document.getElementById("message");
-      var li = document.createElement("li");
-      li.setAttribute('id',message.value);
-      li.appendChild(document.createTextNode(message.value));
-      var b = document.createElement("br");
-      li.appendChild(b);
-      li.appendChild(document.createTextNode("-User 1"));
-      ul.appendChild(li);
-    } */
-
     /* for the tabs*/
     function openPage(pageName, elmnt, color){
         var i, tabcontent, tablinks;
@@ -275,5 +244,4 @@ console.log(task)
         }
         document.getElementById(pageName).style.display="block";
         elmnt.style.backgroundColor=color;
-      }
-
+    }

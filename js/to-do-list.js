@@ -35,7 +35,7 @@ function removeFromList(){
 
   var members = (JSON.parse(localStorage.getItem("cogs 120 house")))["members"];
 
-  var info = {type: currentUser['name'] + "finished a task", taskName: taskName, userName: currentUser['name'], timeCreated: calculateDate()};
+  var info = {type: "completed by " + currentUser['name'], taskName: taskName, userName: currentUser['name'], timeCreated: calculateDate()};
   for(var i = 0; i < members.length; i++){
     var notif = members[i]["userName"] + "-notifications";
     addToStorage(notif, info);
