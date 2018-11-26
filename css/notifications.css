@@ -65,3 +65,13 @@ i:hover{
   float: right;
   font-size: 20px;
 }
+
+.Text-on-notification1{
+  clear:right;
+}
+
+.delete{
+  float:right;
+  background-color:#FFFACD;
+  font-size:25px;
+}
