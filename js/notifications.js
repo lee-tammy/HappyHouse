@@ -1,4 +1,5 @@
-var complexData = [
+refreshPage();
+/*var complexData = [
   {   'index': 1,
       'nameOfUser' : 'Janselle Justo',
       'notificationText': 'added a task! Check your Tasks Tab.',
@@ -58,28 +59,25 @@ function completedTaskNote() {
   complexData.push(data);
 
   localStorage.setItem('savedNotes', JSON.stringify(complexData));
-}
+}*/
 
-//compile the template
-var source = $("#entry-notifications").html();
-var template = Handlebars.compile(source);
+function refreshPage(){
+  //compile the template
+  var source = $("#entry-notifications").html();
+  var template = Handlebars.compile(source);
 
-var parentDiv = $("#list-of-notifications");
+  var parentDiv = $("#list-of-notifications");
 
-//copied from the slides
+  //copied from the slides
 
-var newComplexData = JSON.parse(localStorage.getItem('savedNotes'));
-
-if (newComplexData != null) {
-  for (var i = (newComplexData.length - 1); i >= 0; i--) {
-    var curData = newComplexData[i];
-    var curHtml = template(curData);
-    parentDiv.append(curHtml);
-  }
-} else {
-  for (var i = (complexData.length - 1); i >= 0; i--) {
-    var curData = complexData[i];
-    var curHtml = template(curData);
-    parentDiv.append(curHtml);
-  }
+  var user = (JSON.parse(localStorage.getItem("current-user")))['user-name'];
+  var newComplexData = JSON.parse(localStorage.getItem(user + "-notifications"));
+console.log(newComplexData);
+  if (newComplexData != null) {
+    for (var i = (newComplexData.length - 1); i >= 0; i--) {
+      var curData = newComplexData[i];
+      var curHtml = template(curData);
+      parentDiv.append(curHtml);
+    }
+  } 
 }

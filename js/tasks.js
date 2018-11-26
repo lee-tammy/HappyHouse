@@ -36,43 +36,19 @@ document.getElementById("openingTab").click();
       var message = document.getElementById("task-description");
       let currentUserName = (JSON.parse(localStorage.getItem("current-user")))["user-name"];
 
-       
-
-        // Putting task into local storage
-        /*var info =
-            {taskName: message.value, userName: currentUserName, timeCreated: "now"};
-        */
         var info =
             {taskName: message.value, userName: currentUserName, timeCreated: calculateDate()};
 
         addToStorage("createdTasks", info);
 
-        newTaskHome()
-     }
+        var members = (JSON.parse(localStorage.getItem("cogs 120 house")))["members"];
+        for(var i = 0; i < members.length; i++){
+          var notif = members[i]["userName"] + "-notifications";
+          info.type = "A new task has been added";
+          addToStorage(notif, info);
+        }
 
-     function calculateDate(){
-      var d = new Date();
-      var hour = d.getHours();
-      var minutes = d.getMinutes();
-      var n = hour + ":" + minutes;
-      if(hour > 12){
-        hour = hour - 12;
-        if(minutes < 10){
-          n = hour + ":0" + minutes + " pm";
-        }
-        else{
-          n = hour + ":" + minutes + " pm";
-        }
-      }
-      else{
-        if(minutes < 10){
-          n = hour + ":0" + minutes + " am";
-        }
-        else{
-          n = hour + ":" + minutes + " am";
-        }     
-      }
-      return n;
+        newTaskHome();
      }
 
     /* To go to the home screen for new task tab */
@@ -166,9 +142,8 @@ document.getElementById("openingTab").click();
           break;
         }
       }
-
         document.getElementById("userName").innerHTML = val;
-
+        
       let tasksChecked = [];
 
         $("input[name='checkbox']").each(function() {
@@ -179,7 +154,7 @@ document.getElementById("openingTab").click();
               $this.parent().remove()
             }
         });
-
+console.log(tasksChecked)
         for(i in tasksChecked){
           var task = (JSON.parse(localStorage.getItem("createdTasks"))).find(function(element) {
             
@@ -189,7 +164,7 @@ document.getElementById("openingTab").click();
           let assignee = (JSON.parse(localStorage.getItem("cogs 120 house")))["members"].find(function(element){
             return element["name"] == val;
           })
-
+console.log(task)
           removeFromTasks(tasksChecked[i]);
           addToTheirToDoList(assignee, task);
           addToInProgressList(assignee, task);
@@ -220,6 +195,8 @@ document.getElementById("openingTab").click();
     }
 
     function addToInProgressList(assignee, task){
+      console.log(localStorage);
+      console.log(task);
       var currentUser = JSON.parse(localStorage.getItem("current-user"));
       var taskValue = {
         assignedBy: currentUser["name"], 

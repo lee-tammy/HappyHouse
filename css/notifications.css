@@ -53,7 +53,7 @@ i:hover{
   margin-right: 10%;
 }
 
-.notification-group (lastChild) {
+.notification-group{
   margin-bottom: 10px;
 }
 
