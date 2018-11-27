@@ -39,9 +39,9 @@ document.getElementById("openingTab").click();
     });
 
     function addTask(){
-      
+
       var message = document.getElementById("task-description");
-      
+
       if(message.value.length != 0){
         let currentUserName = (JSON.parse(localStorage.getItem("current-user")))["user-name"];
 
@@ -57,14 +57,13 @@ document.getElementById("openingTab").click();
             addToStorage(notif, info);
           }
       }else{
-        
+
         document.querySelector(".popup-warning").style.display="flex";
         document.querySelector(".warning-content").style.display="table";
         $(".task_checkbox").css('visibility', 'hidden');
       }
 
       newTaskHome();
-        
      }
 
     /* To go to the home screen for new task tab */
@@ -121,7 +120,7 @@ document.getElementById("openingTab").click();
     }
 
     function completeRefresh(){
-      
+
       $( ".complete-entry" ).remove();
 
       var source = $("#completed-tasks").html();
@@ -159,7 +158,7 @@ document.getElementById("openingTab").click();
         }
       }
         document.getElementById("userName").innerHTML = val;
-        
+
       let tasksChecked = [];
 
         $("input[name='checkbox']").each(function() {
@@ -183,14 +182,14 @@ document.getElementById("openingTab").click();
           removeFromTasks(tasksChecked[i]);
           addToInProgressList(assignee, task);
           addToTheirToDoList(assignee, task);
-          
+
           task.type = "assigned to you";
           addToStorage(assignee["userName"] + "-notifications", task);
 
         document.getElementById("assignButton").style.display = "none";
       }
     }
-    
+
 
     function removeFromTasks(taskChecked){
       var taskList = JSON.parse(localStorage.getItem("createdTasks"));
@@ -216,7 +215,7 @@ document.getElementById("openingTab").click();
     function addToInProgressList(assignee, task){
       var currentUser = JSON.parse(localStorage.getItem("current-user"));
       var taskValue = {
-        assignedBy: currentUser["name"], 
+        assignedBy: currentUser["name"],
         assignedTo: assignee["name"],
         taskName: task["taskName"],
         timeCreated:task["timeCreated"]

@@ -46,6 +46,22 @@ body {
     margin: 0 auto;
   }
 
+  .right-side a {
+    float: right;
+    margin: 0 auto;
+  }
+
+  #badge {
+    position: absolute;
+    right: 40px;
+    padding: 5px 10px;
+    border-radius: 50%;
+    background: red;
+    color: white;
+    font-size: 15px;
+    font-family: sans-serif;
+  }
+
   i {
     font-size: 70px;
     color: #362819;

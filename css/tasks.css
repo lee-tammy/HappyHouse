@@ -48,6 +48,7 @@ i:hover{
   transform: translate(-50%, -50%);
 }
 
+
 .textIP{
     margin: 0 auto;
     left: 50%;
@@ -68,6 +69,22 @@ i:hover{
 body {
     overflow: none;
     background-color: #FFFACD; /*lemmonchiffon*/
+}
+
+.right-side a {
+  float: right;
+  margin: 0 auto;
+}
+
+#badge {
+  position: absolute;
+  right: 40px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  background: red;
+  color: white;
+  font-size: 15px;
+  font-family: sans-serif;
 }
 
 /*

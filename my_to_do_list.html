@@ -23,6 +23,9 @@
         <div class="left-side">
           <a href="index.html" id="homepage"><i class="fas fa-home"></i><a>
         </div>
+        <div class="right-side">
+          <a href="notifications.html" id="nofications" onclick="clearBadge()"><i class="fas fa-bell"></i><span id="badge" style="none"></span><a>
+        </div>
       </div>
     </div>
     <div class="spacer">
@@ -39,7 +42,7 @@
             <label for="complete-confirmation" id="complete-confirmation"><b>Completed?</b></label><br>
           </div>
           <div id="yes-button">
-            <button type="submit" onclick="removeFromList()">Yes</button>
+            <button type="submit" onclick="removeFromList();bumpBadge();refreshBadge();">Yes</button>
           </div>
           <div id="no-button">
             <button type="submit" onclick="returnToList()">No</button>
@@ -72,5 +75,6 @@
   <script type="text/javascript" src="js/handlebars-v4.0.11.js"></script>
   <script type="text/javascript" src="js/to-do-list.js"></script>
   <script type="text/javascript" src="js/local-storage.js"></script>
+  <script type="text/javascript" src="js/badgeNum.js"></script>
 
 </html>

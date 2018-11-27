@@ -80,7 +80,7 @@ function refreshPage(){
       var curHtml = template(curData);
       parentDiv.append(curHtml);
     }
-  } 
+  }
 }
 
 function deleteNotification(button){

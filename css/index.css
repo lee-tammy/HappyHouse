@@ -51,6 +51,16 @@ body {
     margin-top: 25px;
   }
 
+  #badge {
+    position: absolute;
+    right: 40px;
+    padding: 5px 10px;
+    border-radius: 50%;
+    background: red;
+    color: white;
+    font-family: sans-serif;
+  }
+
   .button1, .button2, .button3, .button4 {
     text-align: center;
     padding-bottom: 19px;

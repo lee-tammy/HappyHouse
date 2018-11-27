@@ -25,6 +25,9 @@
         <div class="left-side">
           <a href="index.html" id="homepage"><i class="fas fa-home"></i><a>
         </div>
+        <div class="right-side">
+          <a href="notifications.html" id="nofications" onclick="clearBadge()"><i class="fas fa-bell"></i><span id="badge" style="none"></span><a>
+        </div>
       </div>
       <!--The New, In-Progress, and Completed Tabs-->
       <button id="openingTab" class="tablink" onclick="openPage('New', this, '#ffb84d')">NEW</button>
@@ -56,7 +59,7 @@
 
           <label for="task-name" id="task-name" class="task-popup"><b>Task Name</b></label><br>
           <input id="task-description" class="task-popup" type="text" placeholder="Enter Task" required><br>
-          <input id="submit" type="submit" value="Add" class="task-popup" onclick="addTask();">
+          <input id="submit" type="submit" value="Add" class="task-popup" onclick="addTask();bumpBadge();refreshBadge();">
         </div>
       </div>
 
@@ -162,5 +165,6 @@
   <script type="text/javascript" src="js/local-storage.js"></script>
   <script type="text/javascript" src="js/notifications.js"></script>
   <script type="text/javascript" src="js/tasks.js"></script>
+  <script type="text/javascript" src="js/badgeNum.js"></script>
 
 </html>
