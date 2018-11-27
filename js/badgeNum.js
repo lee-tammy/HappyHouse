@@ -26,6 +26,19 @@ function bumpBadge() {
   }
 }
 
+function specialBump(user) {
+  var currentUser = (JSON.parse(localStorage.getItem("current-user")))['name'];
+  if (currentUser == "Tammy Lee"){
+      bumpBadge();
+  }
+  else if (currentUser == "Janselle Justo"){
+      bumpBadge();
+  }
+  else if (currentUser == "Allison Patacsil"){
+      bumpBadge();
+  }
+}
+
 function clearBadge() {
   numTrack = 0;
   localStorage.setItem("badgeNumber", JSON.stringify(numTrack));
