@@ -162,7 +162,7 @@ body {
   }
 
   #no-tasks{
-    display:none;
+    display:block;
     font-size:50px;
     text-align:center;
   }
