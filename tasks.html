@@ -32,26 +32,24 @@
       <!--The New, In-Progress, and Completed Tabs-->
       <button id="openingTab" class="tablink" onclick="openPage('New', this, '#ffb84d')">NEW</button>
       <button class="tablink" onclick="openPage('In-Progress', this, '#ffb84d'); inProgressRefresh();">IN-PROGRESS</button>
-      <button class="tablink" onclick="openPage('Completed', this, '#ffb84d'); completeRefresh();">COMPLETED</button>
+      <button class="tablink" onclick="openPage('Completed', this, '#ffb84d'); completeRefresh();">HISTORY</button>
 
     </div>
     <div class="spacer">
 
       </div>
 
-    <!--<button id="addNewTaskButton" class="fixedbutton">Add New Task</button>
-    <button id="assignButton" class="fixedbutton" onclick="toAssign()">Assign User</button> -->
-
     <!--New Task Tab-->
     <div id="New" class="tabcontent">
-
       <div id="new-task-blurb"  style="display:none">
         <br>
         Check the checkbox(es) for the task(s) you want to assign
       </div>
+      <div id="wrapper">
+        <button id="addNewTaskButton" class="fixedbutton">Add New Task</button>
+        <button id="assignButton" class="fixedbutton" onclick="toAssign()">Assign Task</button>
 
-      <button id="addNewTaskButton" class="fixedbutton">Add New Task</button>
-      <button id="assignButton" class="fixedbutton" onclick="toAssign()">Assign User</button>
+      </div>
 
       <!--POPUP FOR ADDING NEW TASKS-->
 

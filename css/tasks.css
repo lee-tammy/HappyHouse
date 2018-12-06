@@ -35,7 +35,7 @@ i:hover{
 
 .spacer{
     width: 100%;
-    height: 275px;
+    height: 225px;
 }
 
 /* To center the objects */
@@ -114,11 +114,6 @@ body, html{
     margin: 0 auto;
     font-size: 22px;
     font-family: 'Quicksand';
-}
-
-button{
-  margin-top: 50px;
-
 }
 
  /*
@@ -288,9 +283,7 @@ label{
 }
 
 .fixedbutton {
-    position: fixed;
-    top: 167px;
-    left:35%;
+    
     background-color: #f5f5ef;
     color: black;
     padding: 15px 32px;
@@ -301,13 +294,16 @@ label{
     font-family: 'Quicksand';
 }
 
+#wrapper{
+    text-align: center;
+}
+
 .fixedbutton:hover{
     background-color: lightgrey;
 }
 
 #assignButton{
-    float: center;
-    left:55%;
+    display:inline;
     display: none;
 }
 

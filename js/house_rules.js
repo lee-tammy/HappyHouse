@@ -24,6 +24,9 @@ function newElement() {
   var li = document.createElement("li");
   var inputValue = document.getElementById("myInput").value;
   var t = document.createTextNode(inputValue);
+
+  addHouseRuleToNotifications(inputValue);
+
   li.appendChild(t);
   if (inputValue === '') {
     alert("You must write something!");
@@ -60,3 +63,14 @@ $('input#comment').autoResize({
     // More extra space:
     extraSpace : 40
   });
+
+
+  function addHouseRuleToNotifications(name){
+
+    var members = (JSON.parse(localStorage.getItem("cogs 120 house")))["members"];
+    for(var i = 0; i < members.length; i++){
+        var notif = members[i]["userName"] + "-notifications";
+        var info = {taskName: name, type:"New house rule added"};
+        addToStorage(notif, info);
+    }
+}

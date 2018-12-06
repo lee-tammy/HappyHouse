@@ -71,8 +71,8 @@ document.getElementById("openingTab").click();
       document.getElementById("pendingApproval").style.display = "none";
       document.getElementById("assigning").style.display = "none";
       document.getElementById("new-task-blurb").style.display = "none";
+      document.getElementById("addNewTaskButton").style.display = "inline";
 
-      document.getElementById("addNewTaskButton").style.display = "block";
 
       $( ".entry" ).remove();
 
@@ -120,10 +120,22 @@ document.getElementById("openingTab").click();
 
           var curHTML = template(task);
           parentDiv.append(curHTML);
+
           document.getElementById("in-progress-blurb").style.display = "block";
           document.getElementById("in-progress-empty").style.display = "none";
+
+
+        }
+        var currentUser = JSON.parse(localStorage.getItem("current-user"));
+        elements = document.getElementsByClassName("in-progress-entry");
+        for(var i = 0; i < elements.length; i++){
+          var text = elements[i].children[2].innerText;
+          if(currentUser.name == text.split(': ')[1]){
+            elements[i].style.backgroundColor = "#ffb84d";
+          }
         }
       }
+
     }
 
     function completeRefresh(){
@@ -252,7 +264,7 @@ document.getElementById("openingTab").click();
 
         var button = document.getElementById("assignButton");
       if(atLeastOneIsChecked){
-        button.style.display = "block";
+        button.style.display = "inline";
       }else{
         button.style.display = "none";
       }
