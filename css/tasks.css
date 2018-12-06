@@ -406,3 +406,47 @@ body {
 #pendingApproval{
   font-size: 30px;
 }
+
+a{
+  color: #b34700;
+}
+
+p, b{
+  color: black;
+}
+
+
+input[type='checkbox'] {
+    -webkit-appearance:none;
+    width:23px;
+    height:23px;
+    background:white;
+    border-radius:5px;
+    border:2px solid #555;
+}
+input[type='checkbox']:checked {
+    background-color: white;
+    background:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUx_o8PaHlVlj3AnRtug_mDoVnP52R9uE_LEEvm0ZMCz7XIG22") no-repeat;
+    height: 23px;
+    width: 23px;
+    background-size: 100%;
+}
+
+
+input[type="radio"] {
+  /* remove standard background appearance */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* create custom radiobutton appearance */
+  display: inline-block;
+  width: 23px;
+  height: 23px;
+  border: 2px solid #bbbbbb;
+  background-color: #e7e6e7;
+  border-radius: 50%;
+}
+
+input[type="radio"]:checked {
+  background-color: #e68a00;
+}

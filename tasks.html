@@ -45,6 +45,11 @@
     <!--New Task Tab-->
     <div id="New" class="tabcontent">
 
+      <div id="new-task-blurb"  style="display:none">
+        <b>Want to assign a task?</b><br>
+        Check the checkbox(es) for the task(s) you want to assign
+      </div>
+
       <button id="addNewTaskButton" class="fixedbutton">Add New Task</button>
       <button id="assignButton" class="fixedbutton" onclick="toAssign()">Assign User</button>
 
@@ -54,6 +59,8 @@
       <div class="popup-background">
 
         <!-- FILL OUT INFO OF TASK AND ASSIGNEE -->
+
+
         <div class="popup-content">
           <button class="close">x</button>
 
@@ -62,6 +69,7 @@
           <input id="submit" type="submit" value="Add" class="task-popup" onclick="addTask();bumpBadge();refreshBadge();">
         </div>
       </div>
+
 
       <div class="popup-warning">
         <div class="warning-content">
@@ -119,6 +127,18 @@
 
     <!--In-Progress Task Tab-->
     <div id="In-Progress" class="tabcontent">
+
+      <div id="in-progress-empty" style="display:none">
+        <b>Looks like no one is working on anything right now!</b><br>
+        Go to <a href="tasks.html">New Tasks Tab</a> to create some tasks!
+      </div>
+
+      <div id="in-progress-blurb" style="display:none">
+        <b>Look at what everyone in the house is doing!</b><br><br>
+        See a task you're done with?<br>
+        <a href="my_to_do_list.html" id="link">Complete task now</a>
+      </div>
+
       <div class="messageThread" id="initial">
         <ol id="inProgressTasks">
           <script id="in-progress-tasks" type="text/x-handlebars-template">
@@ -139,6 +159,17 @@
 
     <!--Completed Task Tab-->
     <div id="Completed" class="tabcontent">
+
+      <div id="history-empty" style="display:none">
+        <b>No one has completed a task yet!</b><br>
+        Go to <a href="tasks.html">New Tasks Tab</a> to create some tasks!
+      </div>
+
+      <div id="history-blurb" style="display:none">
+        <b>Look at what everyone in the house has completed!</b>
+      </div>
+
+
       <div class="messageThread" id="initial">
           <ol id="completedTasks">
             <script id="completed-tasks" type="text/x-handlebars-template">

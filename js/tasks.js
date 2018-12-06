@@ -9,7 +9,6 @@ document.getElementById("openingTab").click();
      function writeTask(){
        document.getElementById("initial").style.display = "none";
        document.getElementById("atbutton").style.display = "none";
-
      }
 
     var popup = document.getElementById("addNewTaskButton");
@@ -71,10 +70,12 @@ document.getElementById("openingTab").click();
       document.getElementById("initial").style.display = "block";
       document.getElementById("pendingApproval").style.display = "none";
       document.getElementById("assigning").style.display = "none";
+      document.getElementById("new-task-blurb").style.display = "none";
 
       document.getElementById("addNewTaskButton").style.display = "block";
 
       $( ".entry" ).remove();
+
 
       var source = $("#creating-tasks").html();
       var template = Handlebars.compile(source);
@@ -91,6 +92,7 @@ document.getElementById("openingTab").click();
           }
           var curHTML = template(task);
           parentDiv.append(curHTML);
+          document.getElementById("new-task-blurb").style.display = "block";
         }
       }
     }
@@ -104,6 +106,9 @@ document.getElementById("openingTab").click();
 
       var items = JSON.parse(localStorage.getItem("inProgressTasks"));
 
+      document.getElementById("in-progress-blurb").style.display = "none";
+      document.getElementById("in-progress-empty").style.display = "block";
+
       if(items != null){
         for(var i = 0; i < items.length; i++){
 
@@ -115,11 +120,15 @@ document.getElementById("openingTab").click();
 
           var curHTML = template(task);
           parentDiv.append(curHTML);
+          document.getElementById("in-progress-blurb").style.display = "block";
+          document.getElementById("in-progress-empty").style.display = "none";
         }
       }
     }
 
     function completeRefresh(){
+      document.getElementById("history-empty").style.display = "block";
+      document.getElementById("history-blurb").style.display = "none";
 
       $( ".complete-entry" ).remove();
 
@@ -140,6 +149,8 @@ document.getElementById("openingTab").click();
 
           var curHTML = template(task);
           parentDiv.append(curHTML);
+          document.getElementById("history-empty").style.display = "none";
+          document.getElementById("history-blurb").style.display = "block";
         }
       }
     }
@@ -148,6 +159,7 @@ document.getElementById("openingTab").click();
     function assignDone(){
       document.getElementById("pendingApproval").style.display = "block";
       document.getElementById("assigning").style.display = "none";
+      document.getElementById("new-task-blurb").style.display = "none";
       var val;
       var f = document.getElementById("assignUser");
       var radios = f.elements["user"];
@@ -228,6 +240,7 @@ document.getElementById("openingTab").click();
     function toAssign(){
       document.getElementById("initial").style.display = "none";
       document.getElementById("assigning").style.display = "block";
+      document.getElementById("new-task-blurb").style.display = "none";
 
       document.getElementById("addNewTaskButton").style.display = "none";
       document.getElementById("assignButton").style.display = "none";
