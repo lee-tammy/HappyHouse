@@ -27,17 +27,20 @@ function bumpBadge() {
 }
 
 function specialBump() {
+  var value = document.getElementById("assignUser");
+  var radios = value.elements["user"]
+
+  for(var i = 0, len = radios.length; i < len; i++){
+    if (radios[i].checked) {
+      value = radios[i].value;
+      break;
+    }
+  }
+
   var currentUser = (JSON.parse(localStorage.getItem("current-user")))['name'];
-  if (currentUser === "Tammy Lee"){
-      bumpBadge();
-  }
 
-  if (currentUser === "Janselle Justo"){
-      bumpBadge();
-  }
-
-  if (currentUser === "Allison Patacsil"){
-      bumpBadge();
+  if (currentUser === value) {
+    bumpBadge();
   }
 }
 

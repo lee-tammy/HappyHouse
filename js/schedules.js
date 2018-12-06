@@ -133,7 +133,7 @@ function addBillToNotifications(name){
     var members = (JSON.parse(localStorage.getItem("cogs 120 house")))["members"];
     for(var i = 0; i < members.length; i++){
         var notif = members[i]["userName"] + "-notifications";
-        var info = {taskName: name, type:"New bill added"};
+        var info = {taskName: name, type:"New bill added", timeCreated: calculateDate()};
         addToStorage(notif, info);
     }
 }
