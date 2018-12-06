@@ -160,3 +160,9 @@ body {
   button:hover{
       background-color: lightgrey;
   }
+
+  #no-tasks{
+    visibility:hidden;
+    font-size:50px;
+    text-align:center;
+  }

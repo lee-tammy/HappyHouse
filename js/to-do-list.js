@@ -63,14 +63,21 @@ function reload(){
   var parentDiv = $("#newEntry");
 
   var items = JSON.parse(localStorage.getItem(currentUserToDoList));
-  for(var i = 0; i < items.length; i++){
-    var task = {
-      taskName: items[i]["taskInfo"]["taskName"],
-      assignerName: items[i]["assignedBy"]["name"],
-      assignerUserName: items[i]["assignedBy"]["userName"],
+
+  if(items.length == 0){
+    $("#no-tasks").css('visibility', 'visible');
+  }else{
+
+    $("#no-tasks").css('visibility', 'hidden');
+    for(var i = 0; i < items.length; i++){
+      var task = {
+        taskName: items[i]["taskInfo"]["taskName"],
+        assignerName: items[i]["assignedBy"]["name"],
+        assignerUserName: items[i]["assignedBy"]["userName"],
+      }
+      var curHTML = template(task);
+      parentDiv.append(curHTML);
     }
-    var curHTML = template(task);
-    parentDiv.append(curHTML);
   }
 }
 

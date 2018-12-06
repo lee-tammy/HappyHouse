@@ -160,7 +160,8 @@ document.getElementById("openingTab").click();
       document.getElementById("pendingApproval").style.display = "block";
       document.getElementById("assigning").style.display = "none";
       var val;
-     
+      var f = document.getElementById("assignUser");
+      var radios = f.elements["user"];
       for(var i = 0, len = radios.length; i < len; i++){
         if(radios[i].checked){
           val = radios[i].value;
