@@ -71,8 +71,8 @@ document.getElementById("openingTab").click();
       document.getElementById("initial").style.display = "block";
       document.getElementById("pendingApproval").style.display = "none";
       document.getElementById("assigning").style.display = "none";
+      document.getElementById("addNewTaskButton").style.display = "inline";
 
-      document.getElementById("addNewTaskButton").style.display = "block";
 
       $( ".entry" ).remove();
 
@@ -250,7 +250,7 @@ document.getElementById("openingTab").click();
 
         var button = document.getElementById("assignButton");
       if(atLeastOneIsChecked){
-        button.style.display = "block";
+        button.style.display = "inline";
       }else{
         button.style.display = "none";
       }
