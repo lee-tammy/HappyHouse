@@ -1,4 +1,3 @@
-
 reload();
 /*TABS HEADER*/
 function openPage(pageName, elmnt, color){
@@ -28,9 +27,9 @@ function removeFromList(){
 
   var todoListItems = JSON.parse(localStorage.getItem(key));
   var filtered = todoListItems.filter(function(value){
-    return value["taskInfo"]["taskName"] != taskName; 
+    return value["taskInfo"]["taskName"] != taskName;
   });
-  
+
   localStorage.setItem(key, JSON.stringify(filtered));
 
   var members = (JSON.parse(localStorage.getItem("cogs 120 house")))["members"];
@@ -40,20 +39,20 @@ function removeFromList(){
     var notif = members[i]["userName"] + "-notifications";
     addToStorage(notif, info);
   }
-
   removeFromInProgress();
   reload();
   returnToList();
 
 }
 
-function returnToList(){  
+function returnToList(){
   document.querySelector(".complete-task-popup-background").style.display="none";
   document.querySelector(".complete-task-popup-background").style.display="none";
 }
 
 /*GETTING INFO CONTENT*/
 function reload(){
+  $("#no-tasks").css('display', 'none');
   $( ".entry" ).remove();
   var currentUser = JSON.parse(localStorage.getItem("current-user"));
   var currentUserToDoList = currentUser["user-name"] + "-toDoList";
@@ -63,12 +62,12 @@ function reload(){
   var parentDiv = $("#newEntry");
 
   var items = JSON.parse(localStorage.getItem(currentUserToDoList));
+  $("#no-tasks").css('display', 'none');
 
   if(items.length == 0){
-    $("#no-tasks").css('visibility', 'visible');
+     $("#no-tasks").css('display', 'block');
   }else{
 
-    $("#no-tasks").css('visibility', 'hidden');
     for(var i = 0; i < items.length; i++){
       var task = {
         taskName: items[i]["taskInfo"]["taskName"],
@@ -88,10 +87,10 @@ function removeFromInProgress(){
     if(value["taskName"] == taskName){
       removing = JSON.stringify(value);
     }
-    return value["taskName"] != taskName; 
+    return value["taskName"] != taskName;
   });
   taskName= null;
-  
+
   addToCompleted(removing);
   localStorage.setItem("inProgressTasks", JSON.stringify(filtered));
 }
@@ -125,7 +124,7 @@ function calculateDate(){
     }
     else{
       n = hour + ":" + minutes + " am";
-    }     
+    }
   }
   return n;
  }
