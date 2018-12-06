@@ -407,13 +407,10 @@ body {
   font-size: 30px;
 }
 
-a{
+#link, #link2, #link3{
   color: #b34700;
 }
 
-p, b{
-  color: black;
-}
 
 
 input[type='checkbox'] {
