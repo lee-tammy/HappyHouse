@@ -18,9 +18,6 @@ function openPage(pageName,elmnt,color) {
 document.getElementById("defaultOpen").click();
 
 
-
-
-
 /* pop up box to add new bill*/
 // Get the popup + button that opens the popup + span to close it
 var popup = document.getElementById("billPopup");
@@ -37,11 +34,6 @@ span.onclick = function() {
     popup.style.display = "none";
 }
 
-
-
-
-
-
 var nameArray = ['Dec WIFI', 'Dec RENT'];
 var costArray = ['50.00', '2300.00'];
 var dueArray = ['2018-12-15', '2018-12-17'];
@@ -55,9 +47,6 @@ else{localStorage.setItem('cost', JSON.stringify(costArray));}
 
 if(localStorage.getItem('due')){}
 else{localStorage.setItem('due', JSON.stringify(dueArray));}
-
-
-
 
 
 displayBill();
@@ -78,7 +67,6 @@ function displayBill(){
   for (var i = 0; i < nameArray.length; i++){
     var li = document.createElement("li"); // create list element
     var ul = document.getElementById("billList"); // where put list
-    var br = document.createElement("br"); // break in list
     var br2 = document.createElement("br"); // break in list
     var h = document.createElement("h2");
 
@@ -96,9 +84,6 @@ function displayBill(){
     ul.append(li);
   }
 }
-
-
-
 
 
 /* for adding a bill */
@@ -139,4 +124,16 @@ function addBill(){
   ul.append(li);
 
   popup.style.display = "none";
+
+  addBillToNotifications(name);
+}
+
+function addBillToNotifications(name){
+
+    var members = (JSON.parse(localStorage.getItem("cogs 120 house")))["members"];
+    for(var i = 0; i < members.length; i++){
+        var notif = members[i]["userName"] + "-notifications";
+        var info = {taskName: name, type:"New bill added"};
+        addToStorage(notif, info);
+    }
 }
