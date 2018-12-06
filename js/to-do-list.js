@@ -28,9 +28,9 @@ function removeFromList(){
 
   var todoListItems = JSON.parse(localStorage.getItem(key));
   var filtered = todoListItems.filter(function(value){
-    return value["taskInfo"]["taskName"] != taskName; 
+    return value["taskInfo"]["taskName"] != taskName;
   });
-  
+
   localStorage.setItem(key, JSON.stringify(filtered));
 
   var members = (JSON.parse(localStorage.getItem("cogs 120 house")))["members"];
@@ -47,7 +47,7 @@ function removeFromList(){
 
 }
 
-function returnToList(){  
+function returnToList(){
   document.querySelector(".complete-task-popup-background").style.display="none";
   document.querySelector(".complete-task-popup-background").style.display="none";
 }
@@ -88,10 +88,10 @@ function removeFromInProgress(){
     if(value["taskName"] == taskName){
       removing = JSON.stringify(value);
     }
-    return value["taskName"] != taskName; 
+    return value["taskName"] != taskName;
   });
   taskName= null;
-  
+
   addToCompleted(removing);
   localStorage.setItem("inProgressTasks", JSON.stringify(filtered));
 }
@@ -125,7 +125,7 @@ function calculateDate(){
     }
     else{
       n = hour + ":" + minutes + " am";
-    }     
+    }
   }
   return n;
  }

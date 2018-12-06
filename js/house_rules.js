@@ -70,7 +70,7 @@ $('input#comment').autoResize({
     var members = (JSON.parse(localStorage.getItem("cogs 120 house")))["members"];
     for(var i = 0; i < members.length; i++){
         var notif = members[i]["userName"] + "-notifications";
-        var info = {taskName: name, type:"New house rule added", timeCreated: calculateDate()};
+        var info = {taskName: name, type:"new house rule added", timeCreated: calculateDate()};
         addToStorage(notif, info);
     }
 }
