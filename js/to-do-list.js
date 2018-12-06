@@ -1,4 +1,3 @@
-
 reload();
 /*TABS HEADER*/
 function openPage(pageName, elmnt, color){
@@ -40,7 +39,6 @@ function removeFromList(){
     var notif = members[i]["userName"] + "-notifications";
     addToStorage(notif, info);
   }
-
   removeFromInProgress();
   reload();
   returnToList();
@@ -54,6 +52,7 @@ function returnToList(){
 
 /*GETTING INFO CONTENT*/
 function reload(){
+  $("#no-tasks").css('display', 'none');
   $( ".entry" ).remove();
   var currentUser = JSON.parse(localStorage.getItem("current-user"));
   var currentUserToDoList = currentUser["user-name"] + "-toDoList";
@@ -63,12 +62,12 @@ function reload(){
   var parentDiv = $("#newEntry");
 
   var items = JSON.parse(localStorage.getItem(currentUserToDoList));
+  $("#no-tasks").css('display', 'none');
 
   if(items.length == 0){
-    $("#no-tasks").css('visibility', 'visible');
+     $("#no-tasks").css('display', 'block');
   }else{
 
-    $("#no-tasks").css('visibility', 'hidden');
     for(var i = 0; i < items.length; i++){
       var task = {
         taskName: items[i]["taskInfo"]["taskName"],
