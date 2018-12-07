@@ -275,7 +275,7 @@ label{
 .task_name{
     margin:0px;
     float:left;
-    margin-left:10px;
+    margin-left:15px;
     font-size:30px;
     font-family: 'Quicksand';
 }
@@ -307,7 +307,7 @@ label{
 
 .task_checkbox{
     float:left;
-    margin-left: 10%;
+    margin-left: 5%;
     transform:scale(1.5);
 }
 
@@ -385,6 +385,7 @@ body {
 
 #assignUser{
   font-size: 40px;
+  margin-bottom: 25px;
 }
 
 #cancelbutton, #assignbutt, #donebutton{
@@ -395,6 +396,7 @@ body {
   font-size: 20px;
   cursor: pointer;
   border-radius: 8px;
+  font-family: 'Quicksand';
 }
 
 #pendingApproval{
@@ -440,4 +442,29 @@ input[type="radio"] {
 
 input[type="radio"]:checked {
   background-color: #e68a00;
+}
+
+#new-task-blurb {
+  margin-bottom: 12px;
+}
+
+#in-progress-empty{
+  margin: 10px;
+}
+
+#in-progress-blurb{
+  margin: 10px;
+}
+
+#history-empty{
+  margin: 10px;
+}
+
+#history-blurb{
+  margin: 10px;
+}
+
+#assign-task-blurb {
+  font-size: 25px;
+  margin: 10px;
 }

@@ -41,14 +41,13 @@
 
     <!--New Task Tab-->
     <div id="New" class="tabcontent">
-      <div id="new-task-blurb"  style="display:none">
-        <br>
-        Check the checkbox(es) for the task(s) you want to assign
-      </div>
       <div id="wrapper">
         <button id="addNewTaskButton" class="fixedbutton">Add New Task</button>
         <button id="assignButton" class="fixedbutton" onclick="toAssign()">Assign Task</button>
-
+      </div>
+      <div id="new-task-blurb"  style="display:none">
+        <br>
+        Check the checkbox(es) for the task(s) you want to assign.
       </div>
 
       <!--POPUP FOR ADDING NEW TASKS-->
@@ -72,7 +71,7 @@
       <div class="popup-warning">
         <div class="warning-content">
           <button class="warning-close">x</button>
-          <p>Please give a name for your task</p>
+          <p>Please give a name for your task.</p>
         </div>
       </div>
 
@@ -104,7 +103,7 @@
 
       <!--What appears when the user wants to assign a task-->
       <div id="assigning" style="display:none">
-        <p>Assign a task to</p>
+        <p id="assign-task-blurb">Assign a task to:</p>
 
         <form id="assignUser">
           <input type="radio" name="user" value="Allison Patacsil"> Allison Patacsil <br>
@@ -132,9 +131,8 @@
       </div>
 
       <div id="in-progress-blurb" style="display:none">
-        <b>Look at what everyone in the house is doing!</b><br><br>
-        See a task you're done with?<br>
-        <a href="my_to_do_list.html" id="link">Complete task now</a>
+        <b>Look at what everyone in the house is doing!</b><br>
+        See a task you're done with? <a href="my_to_do_list.html" id="link">Complete task now!</a>
       </div>
 
       <div class="messageThread" id="initial">

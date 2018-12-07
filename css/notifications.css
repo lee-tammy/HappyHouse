@@ -75,3 +75,10 @@ i:hover{
   background-color:#FFFACD;
   font-size:25px;
 }
+
+button {
+  width: auto;
+  height: auto;
+  text-align: center;
+  font-family: 'Arial';
+}
