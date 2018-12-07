@@ -161,3 +161,10 @@ body {
     font-size:50px;
     text-align:center;
   }
+
+  h1 {
+    color: #737373;
+    font-size: 60px;
+    font-weight: normal;
+    margin-top: 50px;
+  }
